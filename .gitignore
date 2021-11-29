@@ -1,0 +1,12 @@
+TextAdventure/bin/zork/Command.class
+TextAdventure/bin/zork/CommandWords.class
+TextAdventure/bin/zork/Exit.class
+TextAdventure/bin/zork/Game.class
+TextAdventure/bin/zork/Inventory.class
+TextAdventure/bin/zork/Item.class
+TextAdventure/bin/zork/Key.class
+TextAdventure/bin/zork/OpenableObject.class
+TextAdventure/bin/zork/Parser.class
+TextAdventure/bin/zork/Room.class
+TextAdventure/bin/zork/Zork.class
+*.class
