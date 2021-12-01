@@ -19,27 +19,53 @@
           ]
         },
         {
-          "id": "Bedroom",
-          "name": "Bedroom",
-          "description": "You are in a large bedroom",
-          "exits": [
-            {
-              "isLocked": false,
-              "direction": "South",
-              "adjacentRoom": "Hallway"
-            },
-            {
-              "isLocked": false,
-              "direction": "SouthEast",
-              "adjacentRoom": "Bathroom"
-            },
-            {
-              "isLocked": false,
-              "direction": "East",
-              "adjacentRoom": "Closet"
-            }
-          ]
+          "id": "Health Regen1",
+          "name": "Health Regen",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
         },
+        {
+          "id": "Health Regen2",
+          "name": "Health Regen",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
+        }, 
+        {
+          "id": "Health Regen3",
+          "name": "Health Regen",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
+        }, 
+        {
+          "id": "Health Regen4",
+          "name": "Health Regen",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
+        }, 
+        {
+          "id": "Health Regen5",
+          "name": "Health Regen",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
+        }, 
+        {
+          "id": "Health Regen6",
+          "name": "Health Regen",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
+        }, 
         {
           "id": "Bathroom",
           "name": "Bathroom",
