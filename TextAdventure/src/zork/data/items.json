@@ -1,22 +1,28 @@
 {
-    "rooms": [
+    "items": [
         {
-          "id": "Hallway",
-          "name": "Hallway",
-          "description": "You are in a long hallway. There are family pictures on all of the walls.",
-          "exits": [
-            {
-              "isLocked": false,
-              "direction": "North",
-              "adjacentRoom": "Bedroom"
-            },
-            {
-              "isLocked": true,
-              "direction": "East",
-              "adjacentRoom": "Bathroom",
-              "keyId": "1234"
-            }
-          ]
+          "id": "Leer",
+          "name": "Leer",
+          "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
+          "isOpenable": true,
+          "weight": 0,
+          "startingRoom": ""
+        },
+        {
+          "id": "Leer1",
+          "name": "Leer",
+          "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
+          "isOpenable": true,
+          "weight": 0,
+          "startingRoom": ""
+        },
+        {
+          "id": "Leer2",
+          "name": "Leer",
+          "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
+          "isOpenable": true,
+          "weight": 0,
+          "startingRoom": ""
         },
         {
           "id": "Bedroom",
