@@ -91,16 +91,12 @@
           ]
         },
         {
-          "id": "Closet",
-          "name": "Closet",
-          "description": "You are in the closet. It is dark.",
-          "exits": [
-            {
-              "isLocked": false,
-              "direction": "West",
-              "adjacentRoom": "Bedroom"
-            }
-          ]
+          "id": "Operator1",
+          "name": "Operator",
+          "description": "Long range gun, 200dmg per bullet, 50% of killing",
+          "isOpenable":true,
+          "weight": 0,
+          "startingRoom": ""
         }
       ]   
 }
