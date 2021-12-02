@@ -111,6 +111,14 @@
           "isOpenable": false,
           "weight": 1000,
           "startingRoom": ""
+        },
+        {
+          "id": "Odin1",
+          "name": "Odin",
+          "description": "Odin is a average range gun",
+          "isOpenable": false,
+          "weight": 0,
+          "startingRoom": ""
         }
       ]   
 }
