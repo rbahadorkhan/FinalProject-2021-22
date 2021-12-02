@@ -127,6 +127,14 @@
           "isOpenable": false,
           "weight": 500,
           "startingRoom": ""
+        },
+        {
+          "id": "Odin1",
+          "name": "Odin",
+          "description": "Odin is an average range gun. I thas 30 damage per bullet and it has 30% accuracy.",
+          "isOpenable": false,
+          "weight": 1050,
+          "startingRoom": ""
         }
       ]   
 }
