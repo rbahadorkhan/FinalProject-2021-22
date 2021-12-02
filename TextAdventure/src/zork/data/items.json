@@ -3,7 +3,7 @@
         {
           "id": "Leer1",
           "name": "Leer",
-          "description": "Leer is a blinding ability. Any character who looks at the center of the eye will be nearsighted.",
+          "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
           "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
@@ -11,7 +11,7 @@
         {
           "id": "Leer2",
           "name": "Leer",
-          "description": "Leer is a blinding ability. Any character who looks at the center of the eye will be nearsighted.",
+          "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
           "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
@@ -19,7 +19,7 @@
         {
           "id": "Leer3",
           "name": "Leer",
-          "description": "Leer is a blinding ability. Any character who looks at the center of the eye will be nearsighted.",
+          "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
           "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
@@ -27,7 +27,7 @@
         {
           "id": "Health Regen1",
           "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp. You can only use it when you are less than 100hp.",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
           "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
@@ -35,7 +35,7 @@
         {
           "id": "Health Regen2",
           "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp. You can only use it when you are less than 100hp.",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
           "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
@@ -43,7 +43,7 @@
         {
           "id": "Health Regen3",
           "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
           "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
@@ -51,7 +51,7 @@
         {
           "id": "Health Regen4",
           "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
           "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
@@ -59,7 +59,7 @@
         {
           "id": "Health Regen5",
           "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
           "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
@@ -67,7 +67,7 @@
         {
           "id": "Health Regen6",
           "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
+          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
           "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
@@ -75,7 +75,7 @@
         {
           "id": "Grenade1",
           "name": "Grenade",
-          "description": "A small missile that contains an explosive or a chemical agent.",
+          "description": "A small missile that contains an explosive or a chemical agent ",
           "isOpenable": true,
           "weight": 50,
           "startingRoom":""
@@ -83,7 +83,7 @@
         {
           "id": "Grenade2",
           "name": "Grenade",
-          "description": "A small missile that contains an explosive or a chemical agent.",
+          "description": "A small missile that contains an explosive or a chemical agent ",
           "isOpenable": true,
           "weight": 50,
           "startingRoom":""
@@ -91,7 +91,7 @@
         {
           "id": "Grenade3",
           "name": "Grenade",
-          "description": "A small missile that contains an explosive or a chemical agent.",
+          "description": "A small missile that contains an explosive or a chemical agent ",
           "isOpenable": true,
           "weight": 50,
           "startingRoom":""
@@ -99,7 +99,7 @@
         {
           "id": "Operator1",
           "name": "Operator",
-          "description": "Opertor is a long range gun. It has 200 damage per bullet and 50% accuracy.",
+          "description": "Long range gun, 200dmg per bullet, 50% of killing",
           "isOpenable": false,
           "weight": 1000,
           "startingRoom": ""
@@ -107,26 +107,18 @@
         {
           "id": "Operator2",
           "name": "Operator",
-          "description": "Operator is a long range gun. It has 200 damage per bullet and 50% accuracy.",
+          "description": "Long range gun, 200dmg per bullet, 50% of killing",
           "isOpenable": false,
           "weight": 1000,
           "startingRoom": ""
         },
         {
-          "id": "Spectre1",
-          "name": "Operator",
-          "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
+          "id": "Odin1",
+          "name": "Odin",
+          "description": "Odin is a average range gun",
           "isOpenable": false,
-          "weight": 500,
+          "weight": 0,
           "startingRoom": ""
-        },
-        {
-        "id": "Spectre2",
-          "name": "Operator",
-          "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
-          "isOpenable": false,
-          "weight": 500,
-          "startingRoom": ""
-        },
+        }
       ]   
 }
