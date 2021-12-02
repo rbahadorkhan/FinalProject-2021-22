@@ -1,18 +1,18 @@
 package zork;
 
-public class Item extends PickableObject {
+public class Item extends OpenableObject {
   private int weight;
   private String name;
-  private boolean isPickable;
+  private boolean isOpenable;
 
-  public Item(int weight, String name, boolean isPickable) {
+  public Item(int weight, String name, boolean isOpenable) {
     this.weight = weight;
     this.name = name;
-    this.isPickable = isPickable;
+    this.isOpenable = isOpenable;
   }
 
   public void open() {
-    if (!isPickable)
+    if (!isOpenable)
       System.out.println("The " + name + " cannot be opened.");
 
   }
@@ -33,12 +33,12 @@ public class Item extends PickableObject {
     this.name = name;
   }
 
-  public boolean isPickable() {
-    return isPickable;
+  public boolean isOpenable() {
+    return isOpenable;
   }
 
-  public void setPickable(boolean isPickable) {
-    this.isPickable = isPickable;
+  public void setOpenable(boolean isOpenable) {
+    this.isOpenable = isOpenable;
   }
 
 }
