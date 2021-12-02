@@ -113,15 +113,6 @@
           "startingRoom": ""
         },
         {
-<<<<<<< HEAD
-          "id": "Odin1",
-          "name": "Odin",
-          "description": "Odin is a average range gun",
-          "isOpenable": false,
-          "weight": 0,
-          "startingRoom": ""
-        }
-=======
           "id": "Spectre1",
           "name": "Operator",
           "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
@@ -137,6 +128,5 @@
           "weight": 500,
           "startingRoom": ""
         },
->>>>>>> d8ce82b1d6c2832ea197d9a66467c1db39471937
       ]   
 }
