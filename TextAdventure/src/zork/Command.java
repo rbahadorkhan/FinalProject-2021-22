@@ -3,6 +3,7 @@ package zork;
 public class Command {
   private String commandWord;
   private String secondWord;
+  // test
 
   /**
    * Create a command object. First and second word must be supplied, but either
