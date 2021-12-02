@@ -76,7 +76,7 @@
           "id": "Grenade1",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent ",
-          "isOpenable": false,
+          "isOpenable": true,
           "weight": 50,
           "startingRoom":""
         },
@@ -84,7 +84,7 @@
           "id": "Grenade2",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent ",
-          "isOpenable": false,
+          "isOpenable": true,
           "weight": 50,
           "startingRoom":""
         },
@@ -92,7 +92,7 @@
           "id": "Grenade3",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent ",
-          "isOpenable": false,
+          "isOpenable": true,
           "weight": 50,
           "startingRoom":""
         },
@@ -101,7 +101,15 @@
           "name": "Operator",
           "description": "Long range gun, 200dmg per bullet, 50% of killing",
           "isOpenable": false,
-          "weight": 0,
+          "weight": 1000,
+          "startingRoom": ""
+        },
+        {
+          "id": "Operator2",
+          "name": "Operator",
+          "description": "Long range gun, 200dmg per bullet, 50% of killing",
+          "isOpenable": false,
+          "weight": 1000,
           "startingRoom": ""
         }
       ]   
