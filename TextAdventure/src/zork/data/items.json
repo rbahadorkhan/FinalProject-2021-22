@@ -4,7 +4,7 @@
           "id": "Leer1",
           "name": "Leer",
           "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
-          "isOpenable": true,
+          "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
         },
@@ -12,7 +12,7 @@
           "id": "Leer2",
           "name": "Leer",
           "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
-          "isOpenable": true,
+          "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
         },
@@ -20,7 +20,7 @@
           "id": "Leer3",
           "name": "Leer",
           "description": "Leer is a blinding ability. Any character who loos atthe center of the eye will be nearsighted",
-          "isOpenable": true,
+          "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
         },
@@ -28,7 +28,7 @@
           "id": "Health Regen1",
           "name": "Health Regen",
           "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
-          "isOpenable":true,
+          "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
         },
@@ -36,7 +36,7 @@
           "id": "Health Regen2",
           "name": "Health Regen",
           "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
-          "isOpenable":true,
+          "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
         }, 
@@ -44,7 +44,7 @@
           "id": "Health Regen3",
           "name": "Health Regen",
           "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
-          "isOpenable":true,
+          "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
         }, 
@@ -52,7 +52,7 @@
           "id": "Health Regen4",
           "name": "Health Regen",
           "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
-          "isOpenable":true,
+          "isOpenable":false,
           "weight": 0,
           "startingRoom": ""
         }, 
@@ -60,7 +60,7 @@
           "id": "Health Regen5",
           "name": "Health Regen",
           "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
-          "isOpenable":true,
+          "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
         }, 
@@ -68,7 +68,7 @@
           "id": "Health Regen6",
           "name": "Health Regen",
           "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp",
-          "isOpenable":true,
+          "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
         }, 
@@ -76,7 +76,7 @@
           "id": "Grenade1",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent ",
-          "isOpenable":true,
+          "isOpenable": false,
           "weight": 50,
           "startingRoom":""
         },
@@ -84,7 +84,7 @@
           "id": "Grenade2",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent ",
-          "isOpenable":true,
+          "isOpenable": false,
           "weight": 50,
           "startingRoom":""
         },
@@ -92,7 +92,7 @@
           "id": "Grenade3",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent ",
-          "isOpenable":true,
+          "isOpenable": false,
           "weight": 50,
           "startingRoom":""
         },
@@ -100,7 +100,7 @@
           "id": "Operator1",
           "name": "Operator",
           "description": "Long range gun, 200dmg per bullet, 50% of killing",
-          "isOpenable":true,
+          "isOpenable": false,
           "weight": 0,
           "startingRoom": ""
         }
