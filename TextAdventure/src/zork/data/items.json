@@ -131,9 +131,41 @@
         {
           "id": "Odin1",
           "name": "Odin",
-          "description": "Odin is an average range gun. I thas 30 damage per bullet and it has 30% accuracy.",
+          "description": "Odin is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
           "isOpenable": false,
           "weight": 1050,
+          "startingRoom": ""
+        },
+        {
+          "id": "Odin2",
+          "name": "Odin",
+          "description": "Odin is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
+          "isOpenable": false,
+          "weight": 1050,
+          "startingRoom": ""
+        },
+        {
+          "id": "Vandal1",
+          "name": "Vandal",
+          "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
+          "isOpenable": false,
+          "weight": 750,
+          "startingRoom": ""
+        },
+        {
+          "id": "Vandal2",
+          "name": "Vandal",
+          "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
+          "isOpenable": false,
+          "weight": 750,
+          "startingRoom": ""
+        },
+        {
+          "id": "Vandal2",
+          "name": "Vandal",
+          "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
+          "isOpenable": false,
+          "weight": 750,
           "startingRoom": ""
         }
       ]   
