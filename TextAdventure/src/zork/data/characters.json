@@ -1,0 +1,33 @@
+{
+    "characters": [
+      {
+        "id": "Attacker1",
+        "name": "Raze",
+        "description": "You see a person. They have grenades on their waist. They are holding a rocket launcher amnd it looks like they wont leave without putting up a  fight. "
+        
+      },
+      {
+        "id": "Attacker2",
+        "name": "Sova",
+        "description": "You see a tall figure. Their eye is a piercing blue . They're all clothed and they have a bow, with three long range, enegry blasts. Looks like they arent going anywhere without a fight."
+      },
+      {
+        "id": "Attacker3",
+        "name": "Sage",
+        "description": "You see a"
+        
+      },
+      {
+        "id": "Closet",
+        "name": "Closet",
+        "description": "You are in the closet. It is dark.",
+        "exits": [
+          {
+            "isLocked": false,
+            "direction": "West",
+            "adjacentRoom": "Bedroom"
+          }
+        ]
+      }
+    ]
+  }
