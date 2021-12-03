@@ -11,3 +11,4 @@ TextAdventure/bin/zork/Room.class
 TextAdventure/bin/zork/Zork.class
 *.class
 TextAdventure/bin/zork/data/items.json
+TextAdventure/bin/zork/data/characters.json
