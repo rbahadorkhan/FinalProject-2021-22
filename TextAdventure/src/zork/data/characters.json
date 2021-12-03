@@ -14,20 +14,14 @@
       {
         "id": "Attacker3",
         "name": "Sage",
-        "description": "You see a"
+        "description": "You see a person behind a shining green glow, a spere illuminating above thier body"
         
       },
       {
-        "id": "Closet",
-        "name": "Closet",
-        "description": "You are in the closet. It is dark.",
-        "exits": [
-          {
-            "isLocked": false,
-            "direction": "West",
-            "adjacentRoom": "Bedroom"
-          }
-        ]
+        "id": "Attacker4",
+        "name": "Pheonix",
+        "description": "Flames cover the room you are in, you a person holding a ball of fire ready to throw. "
+    
       }
     ]
   }
