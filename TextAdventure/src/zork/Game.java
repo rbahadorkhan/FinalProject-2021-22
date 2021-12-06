@@ -172,9 +172,32 @@ public class Game {
   }
 
   private void shoot(Command command) {
+    if(!command.hasSecondWord())  {
+      //if there is no second word, we don't know what to shoot with...
+      System.out.println("Shoot with what?");
+      return;
+    }
+
+    String gun = command.getSecondWord();
+    // Trys to shoot someone.
+    Character shootingat; //idk how to do this
+    // if charachter is in the room we are in
+      //charachter health -- 
+    
   }
 
   private void pickUp(Command command) {
+    if(!command.hasSecondWord()) {
+      System.out.println("What do you want to pick up?");
+      return;
+    }
+
+    String newitem = command.getSecondWord();
+
+    Item pickedup; //idekdikd
+
+    //if item is in the room pick up and remove the item from the room and add to inventory
+    // 
   }
 
 }
