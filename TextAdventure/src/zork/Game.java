@@ -22,6 +22,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
+      initItems("src\\zork\\data\\items.json");
       currentRoom = roomMap.get("Spawn");
     } catch (Exception e) {
       e.printStackTrace();
@@ -60,6 +61,8 @@ public class Game {
       roomMap.put(roomId, room);
     }
   }
+
+  
 
   /**
    * Main play routine. Loops until end of play.
@@ -113,9 +116,17 @@ public class Game {
         System.out.println("Quit what?");
       else
         return true; // signal that we want to quit
-    } else if (commandWord.equals("eat")) {
-      System.out.println("Do you really think you should be eating at a time like this?");
-    }
+    } /* else if (commandWord.equals("shoot")) 
+        shoot(command); 
+      else if(commandWord.equals("take"))
+        pickUp(command); */ //
+        //we need write these methods
+      else if(commandWord.equals("look"))
+        currentRoom.longDescription();
+      else if(commandWord.equals("use"))
+        //useItem(command);
+
+     
     return false;
   }
 
