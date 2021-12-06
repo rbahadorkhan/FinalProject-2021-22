@@ -116,14 +116,14 @@ public class Game {
         System.out.println("Quit what?");
       else
         return true; // signal that we want to quit
-    } /* else if (commandWord.equals("shoot")) 
+    }  else if (commandWord.equals("shoot")) 
         shoot(command); 
       else if(commandWord.equals("take"))
-        pickUp(command); */ //
+        pickUp(command); //
         //we need write these methods
       else if(commandWord.equals("look"))
         currentRoom.longDescription();
-      else if(commandWord.equals("use"))
+      else if(commandWord.equals("use")){}
         //useItem(command);
 
      
@@ -131,6 +131,9 @@ public class Game {
   }
 
   // implementations of user commands:
+
+
+
 
   /**
    * Print out some help information. Here we print some stupid, cryptic message
@@ -167,4 +170,11 @@ public class Game {
       System.out.println(currentRoom.longDescription());
     }
   }
+
+  private void shoot(Command command) {
+  }
+
+  private void pickUp(Command command) {
+  }
+
 }
