@@ -3,30 +3,30 @@
       {
         "id": "Raze",
         "name": "Raze",
-        "description": "You see a person. They have grenades on their waist. They are holding a rocket launcher amnd it looks like they wont leave without putting up a  fight. "
+        "description": "You see a person. They have grenades on their waist. They are holding a rocket launcher amnd it looks like they wont leave without putting up a fight. "
         
       },
       {
         "id": "Sova",
         "name": "Sova",
-        "description": "You see a tall figure with a piercing blue eye. They're all clothed and they have a bow, with three long range, enegry blasts. Looks like they arent going anywhere without a fight."
+        "description": "You see a tall figure with a piercing blue eye. They have a bow, with three long range, enegry blasts. Looks like they arent going anywhere without a fight."
       },
       {
-        "id": "Attacker3",
+        "id": "Sage",
         "name": "Sage",
-        "description": "You see a person behind a shining green glow, a spere illuminating above thier body"
+        "description": "You see a person behind a shining green glow, a spere illuminating above their body"
         
       },
       {
         "id": "Pheonix",
         "name": "Pheonix",
-        "description": "Flames cover the room you are in, you a person holding a ball of fire ready to throw. "
+        "description": "Flames cover the room you are in, you see a person holding a ball of fire ready to throw. "
     
       },
       {
         "id": "Cypher",
         "name": "Cypher",
-        "description": "A man with a wide brimmed hat with a meanacing look with a mask covering their face"
+        "description": "A man with a wide brimmed hat with a menacing look with a mask covering their lower face"
         
       },
       {
@@ -38,13 +38,13 @@
       {
         "id": "Killjoy",
         "name": "Killjoy",
-        "description": "You see a happy figure, but deep down they want your blood. They're wearing a green hat with robots surrounding them"
+        "description": "You see a figure, they seem happy, but deep down they want your blood. They're wearing a green hat with robots surrounding them"
         
       },
       {
         "id": "Reyna",
         "name": "Reyna",
-        "description": "A tall figure emerges from thin air with a purple glow, thier arms are coverd in purple fog and tatoos."
+        "description": "A tall figure emerges from thin air with a purple glow, their arms are coverd in purple fog and tatoos."
         
       },
       {
