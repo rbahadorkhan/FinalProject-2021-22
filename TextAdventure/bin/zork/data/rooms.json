@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "id": "Hallway",
+      "id": "NOTE: WHEN YOU ENTER A ROOM YOU SYSOUT ALL THE ITEMS INSTEAD OF CHANGING THE DESCRIPTION",
       "name": "Hallway",
       "description": "You are in a long hallway. There are family pictures on all of the walls.",
       "exits": [
