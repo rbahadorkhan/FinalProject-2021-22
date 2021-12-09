@@ -6,7 +6,7 @@
       "description": "You are in a long hallway. There are family pictures on all of the walls.",
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
           "direction": "North",
           "adjacentRoom": "Bedroom"
         },
