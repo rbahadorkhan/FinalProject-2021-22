@@ -30,6 +30,10 @@ public class Game {
     parser = new Parser();
   }
 
+  private void initItems(String string) {
+    Path 
+  }
+
   private void initRooms(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
