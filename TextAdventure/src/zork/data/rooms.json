@@ -1,74 +1,118 @@
 {
   "rooms": [
     {
-      "id": "NOTE: WHEN YOU ENTER A ROOM YOU SYSOUT ALL THE ITEMS INSTEAD OF CHANGING THE DESCRIPTION",
-      "name": "Hallway",
-      "description": "You are in a long hallway. There are family pictures on all of the walls.",
+      "id": "Spawn",
+      "name": "Spawn",
+      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity. You have two choices. You can go east towards B site or west towards A site.",
       "exits": [
         {
           "isLocked": false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-          "direction": "North",
-          "adjacentRoom": "Bedroom"
+          "direction": "East",
+          "adjacentRoom": "B-Hall"
         },
         {
-          "isLocked": true,
-          "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "A-Hall"
         }
       ]
     },
     {
-      "id": "Bedroom",
-      "name": "Bedroom",
-      "description": "You are in a large bedroom",
+      "id": "B-Hall",
+      "name": "B-Hall",
+      "description": "You are in a hall that leads towards B-Main. There is a door on the south side of the hall and there is an opening that leads to another room.",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "B-Hall",
+          "keyId": "6666"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "B-Elbow"
+        }
+      ]
+    },
+    {
+      "id": "B-Elbow",
+      "name": "B-Elbow",
+      "description": "You are in an elbow shaped hall. At the end of the hall there is an opening leading to a huge site. You can go to B-Hall or you can go to the huge site.",
       "exits": [
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway"
+          "adjacentRoom": "B-Hall"
         },
         {
           "isLocked": false,
-          "direction": "SouthEast",
-          "adjacentRoom": "Bathroom"
-        },
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Closet"
+          "direction": "West",
+          "adjacentRoom": "B-Main"
         }
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
-      "description": "You are in a blue bathroom",
+      "id": "B-Main",
+      "name": "B-Main",
+      "description": "You are in a huge site with sand surrounding you. There is an attacker waiting to hurt you. You have five choices. You can go to B-hall, B-Elbow, Garage, Hookah, or you can shoot at the attacker.",
       "exits": [
         {
           "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "B-Hall",
+          "keyId": "6666"
+        },
+        {
+          "isLocked": false, 
           "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
+          "adjacentRoom": "B-Elbow"
         },
         {
           "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
+          "direction": "SouthWest",
+          "adjacentRoom": "Garage"
+        },
+        {
+          "isLocked": false, 
+          "direction": "SouthEast",
+          "adjacentRoom":"Hookah"
         }
       ]
     },
     {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
-      "exits": [
-        {
-          "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Bedroom"
-        }
-      ]
+    "id": "Garage",
+    "name": "Garage",
+    "description": "You are in a room with dark walls surrounding you. You can go to B-Hall or you can go to B-Lobby. If you go to B-Lobby you can teleport to A site.",
+    "exits": [
+      {
+        "isLocked": false,
+        "direction": "North",
+        "adjacentRoom": "B-Main"
+      },
+      {
+        "isLocked": false,
+        "direction": "West",
+        "adjacentRoom": "B-Lobby"
+      }
+    ]
+  },
+  {
+  "id": "B-Lobby",
+  "name": "B-Lobby",
+  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter, however if you go into the teleporter you cannot come out and you get teleported immediately. You can go to garage that leads to b-Main ",
+  "exits": [
+    {
+      "isLocked": false,
+      "direction": "South",
+      "adjacentRoom": "B-Hall"
+    },
+    {
+      "isLocked": false,
+      "direction": "West",
+      "adjacentRoom": "B-Main"
     }
+  ]
+  },
   ]
 }
