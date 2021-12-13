@@ -31,7 +31,7 @@ public class Game {
   }
 
   private void initItems(String string) {
-    Path pa  
+    
   }
 
   private void initRooms(String fileName) throws Exception {
