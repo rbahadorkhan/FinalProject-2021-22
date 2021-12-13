@@ -23,6 +23,7 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
+      initCharacters("src\\zork\\data\\characters.json");
       currentRoom = roomMap.get("Spawn");
     } catch (Exception e) {
       e.printStackTrace();
@@ -30,8 +31,11 @@ public class Game {
     parser = new Parser();
   }
 
-  private void initItems(String string) {
-    
+  private void initCharacters(String fileName) throws Exception{
+  }
+
+  private void initItems(String fileName) throws Exception {
+
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -129,7 +133,6 @@ public class Game {
         currentRoom.longDescription();
       else if(commandWord.equals("use")){}
         //useItem(command);
-
      
     return false;
   }
@@ -181,7 +184,9 @@ public class Game {
     }
 
     String gun = command.getSecondWord();
+
     // Trys to shoot someone.
+    
     Character shootingat; //idk how to do this
     // if charachter is in the room we are in
       //charachter health -- 
