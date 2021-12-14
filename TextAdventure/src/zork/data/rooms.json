@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter, however if you go into the teleporter you cannot come out and you get teleported immediately. You can go to garage that leads to b-Main ",
+  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter, however if you go into the teleporter you cannot come out and you get teleported immediately. You can go to garage that leads to B-Main ",
   "exits": [
     {
       "isLocked": false,
@@ -113,6 +113,6 @@
       "adjacentRoom": "B-Main"
     }
   ]
-  }
+  },
   ]
 }
