@@ -3,7 +3,7 @@
     {
       "id": "Spawn",
       "name": "Spawn",
-      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity. You have two choices. You can go east towards B site or west towards A site.",
+      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity. You have two choices: You can go east towards B site or west towards A site.",
       "exits": [
         {
           "isLocked": false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -20,7 +20,7 @@
     {
       "id": "B-Hall",
       "name": "B-Hall",
-      "description": "You are in a hall that leads towards B-Main. There is a door on the south side of the hall and there is an opening that leads to another room.",
+      "description": "You are in a hall that leads towards B-Main. There is a door on the south side of the hall and there is an opening on the north side that leads to another room.",
       "exits": [
         {
           "isLocked": true,
