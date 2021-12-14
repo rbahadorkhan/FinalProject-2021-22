@@ -3,7 +3,7 @@
     {
       "id": "Spawn",
       "name": "Spawn",
-      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity. You have two choices. You can go east towards B site or west towards A site.",
+      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity. You have two choices: You can go east towards B site or west towards A site.",
       "exits": [
         {
           "isLocked": false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -20,7 +20,7 @@
     {
       "id": "B-Hall",
       "name": "B-Hall",
-      "description": "You are in a hall that leads towards B-Main. There is a door on the south side of the hall and there is an opening that leads to another room.",
+      "description": "You are in a hall that leads towards B-Main. There is a door on the south side of the hall and there is an opening on the north side that leads to another room.",
       "exits": [
         {
           "isLocked": true,
@@ -121,15 +121,81 @@
     "exits": [
       {
         "isLocked": false,
-        "direction": "South",
-        "adjacentRoom": "B-Hall"
+        "direction": "West",
+        "adjacentRoom": "B-Lobby"
       },
       {
         "isLocked": false,
-        "direction": "West",
-        "adjacentRoom": "B-Main"
+        "direction": "Northeast",
+        "adjacentRoom": "Sahara"
+      },
+      {
+        "isLocked": false, 
+        "direction": "East", 
+        "adjacentRoom": "Mid"
       }
     ]
-    }
+  },
+  {
+    "id": "Sahara",
+    "name": "Sahara",
+    "description": "You're in a room with dusty old walls and sand as floor. You can go to fountain, hookah which leads to B-Main or cafeteria which leads to A-Hall.",
+    "exits": [
+      {
+        "isLocked": false,
+        "direction": "West",
+        "adjacentRoom": "Hookah"
+      },
+      {
+        "isLocked": false,
+        "direction": "Southwest",
+        "adjacentRoom": "Fountain"
+      },
+      {
+        "isLocked": false, 
+        "direction": "South", 
+        "adjacentRoom": "Cafeteria"
+      }
+    ]
+  },
+  {
+    "id": "Hookah",
+    "name": "Hookah",
+    "description": "You're in a room that looks like a balcony, behind a box is an attacker waiting to shoot you. You can go to cafeteria, to A-Main, or you can shoot the attacker.",
+    "exits": [
+      {
+        "isLocked": false,
+        "direction": "North",
+        "adjacentRoom": "B-Main"
+      },
+      {
+        "isLocked": false,
+        "direction": "East",
+        "adjacentRoom": "Sahara"
+      }
+    ]
+  }
+  {
+    "id": "Mid",
+    "name": "Mid",
+    "description": "You're in a long hall that is covered in sand and cacti. There is an attacker hiding behind a cactus. You can go North",
+    "exits": [
+      {
+        "isLocked": false,
+        "direction": "West",
+        "adjacentRoom": "Hookah"
+      },
+      {
+        "isLocked": false,
+        "direction": "Southwest",
+        "adjacentRoom": "Fountain"
+      },
+      {
+        "isLocked": false, 
+        "direction": "South", 
+        "adjacentRoom": "Cafeteria"
+      }
+    ]
+  }    
   ]
 }
