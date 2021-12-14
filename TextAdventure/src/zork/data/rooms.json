@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter, however if you go into the teleporter you cannot come out and you get teleported immediately. You can go to garage that leads to b-Main ",
+  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter, however if you go into the teleporter you cannot come out and you get teleported immediately. You can go to garage that leads to B-Main or you can go to Fountain, however there is an attacker waiting for you at the entrance. ",
   "exits": [
     {
       "isLocked": false,
@@ -114,5 +114,22 @@
     }
   ]
   },
+  {
+    "id": "Fountain",
+    "name": "Fountain",
+    "description": "You are in a an outdoor area with a huge fountain that stands in the middle. It seems like this is the only water source here. You have many options: you can go to B-Lobby, Sahara, Cafeteria or to Mid. ",
+    "exits": [
+      {
+        "isLocked": false,
+        "direction": "South",
+        "adjacentRoom": "B-Hall"
+      },
+      {
+        "isLocked": false,
+        "direction": "West",
+        "adjacentRoom": "B-Main"
+      }
+    ]
+    }
   ]
 }
