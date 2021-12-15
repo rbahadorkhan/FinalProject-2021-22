@@ -1,8 +1,10 @@
 package zork;
 
+import java.util.ArrayList;
+
 public class Command {
   private String commandWord;
-  private String secondWord;
+  private ArrayList <String> extra = new ArrayList <String>();
   // test
 
   /**
@@ -10,9 +12,9 @@ public class Command {
    * one (or both) can be null. The command word should be null to indicate that
    * this was a command that is not recognised by this game.
    */
-  public Command(String firstWord, String secondWord) {
+  public Command(String firstWord, ArrayList <String> extra) {
     commandWord = firstWord;
-    this.secondWord = secondWord;
+    this.extra = extra;
   }
 
   /**
@@ -27,8 +29,8 @@ public class Command {
    * Return the second word of this command. Returns null if there was no second
    * word.
    */
-  public String getSecondWord() {
-    return secondWord;
+  public ArrayList <String> getExtraWord() {
+    return extra;
   }
 
   /**
@@ -41,7 +43,7 @@ public class Command {
   /**
    * Return true if the command has a second word.
    */
-  public boolean hasSecondWord() {
-    return (secondWord != null);
+  public boolean hasExtraWord() {
+    return (extra.size() != 0);
   }
 }
