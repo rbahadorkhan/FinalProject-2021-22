@@ -35,7 +35,22 @@ public class Game {
   }
 
   private void initItems(String fileName) throws Exception {
+    Path pa = Path.of(fileName);
+    String jsString = Files.readString(pa);
+    JSONParser pars= new JSONParser();
+    JSONObject js = (JSONObject) pars.parse(jsString);
 
+    JSONArray jsonItems = (JSONArray) js.get("items");
+    
+    for (Object itemObj : jsonItems) {
+      Item item = new Item();
+      String itemName = (String) ((JSONObject) itemObj).get("name");
+      String itemId = (String) ((JSONObject) itemObj).get("id");
+      String itemDescription = (String) ((JSONObject) itembj).get("description");
+      Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
+       
+      }
+     
   }
 
   private void initRooms(String fileName) throws Exception {
