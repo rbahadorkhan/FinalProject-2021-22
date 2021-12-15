@@ -32,6 +32,11 @@ public class Game {
   }
 
   private void initCharacters(String fileName) throws Exception{
+    Path pth = Path.of(fileName);
+    String jString = Files.readString(pth);
+    JSONParser par = new JSONParser();
+    JSONObject j = (JSONObject) pars.par(jString);
+
   }
 
   private void initItems(String fileName) throws Exception {
