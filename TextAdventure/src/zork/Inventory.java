@@ -2,10 +2,14 @@ package zork;
 
 import java.util.ArrayList;
 
+
 public class Inventory {
+  
   private ArrayList<Item> items;
-  private int maxWeight;
+  private int maxWeight = 2000;
   private int currentWeight;
+  
+    
 
   public Inventory(int maxWeight) {
     this.items = new ArrayList<Item>();
