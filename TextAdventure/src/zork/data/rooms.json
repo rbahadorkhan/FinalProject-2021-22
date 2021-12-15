@@ -383,7 +383,7 @@
   {
     "id": "Teleporterb",
     "name": "Teleporter b",
-    "description": "You've teleported to A-site. You can only go out nof the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
+    "description": "You've teleported to A-site. You can only go out of the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
     "exits": [
       {
         "isLocked": false,
