@@ -44,4 +44,8 @@ public void open() {
     this.isOpenable = isOpenable;
   }
 
+  public int damageDealt(Item gun){
+    return;
+    //so return the total damage by calculating damage per bullet, % chance and how many bullets;
+  }  
 }
