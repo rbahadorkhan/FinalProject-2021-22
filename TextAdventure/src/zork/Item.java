@@ -4,17 +4,19 @@ public class Item extends OpenableObject {
   private int weight;
   private String name;
   private boolean isOpenable;
+  private int damage;
+  private int accuracy;
+  private int numBullets;
 
-  public Item(int weight, String name, boolean isOpenable) {
+  public Item(int weight, int damage, String name, boolean isOpenable) {
     this.weight = weight;
     this.name = name;
     this.isOpenable = isOpenable;
+    this.damage = damage;
   }
 
-  public Item() {
-}
 
-public void open() {
+  public void open() {
     if (!isOpenable)
       System.out.println("The " + name + " cannot be opened.");
 
@@ -44,8 +46,29 @@ public void open() {
     this.isOpenable = isOpenable;
   }
 
-  public int damageDealt(Item gun){
-    return;
-    //so return the total damage by calculating damage per bullet, % chance and how many bullets;
+
+  private int getNumBullets() {
+    return numBullets;
   }  
+
+  private int getDamage() {
+    return damage;
+  }
+
+  private int getAccuracy(){
+    return accuracy;
+  }
+
+  public int damageDealt(){
+    int totalDamage = 0;
+    for (int i = 0; i < this.getNumBullets(); i++) {
+      int accuracy = (int)(Math.random()*100 + 1);
+        if(accuracy < this.getAccuracy()){
+          totalDamage += this.getDamage();
+        }
+    }
+    return totalDamage;
+  }
 }
+
+

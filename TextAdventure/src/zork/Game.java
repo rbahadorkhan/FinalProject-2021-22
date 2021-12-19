@@ -203,14 +203,17 @@ public class Game {
       return;
     }
 
-    String gun = command.getSecondWord();
+    Item gun = command.getSecondWord();
 
-    // Trys to shoot someone.
-    
-    Character shootingat; //idk how to do this
-    // if charachter is in the room we are in
-      //charachter health -- 
-    
+    int damageDealt = gun.damageDealt();
+    if(/*room has a charachter*/){
+      Characters inRoom; //equals the rooms charachter
+      inRoom.setHp(damageDealt);
+    }
+    else{
+      System.out.println("There is no one in this room");
+    }
+     
   }
 
   private void pickUp(Command command) {
@@ -226,5 +229,6 @@ public class Game {
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
   }
+
 
 }
