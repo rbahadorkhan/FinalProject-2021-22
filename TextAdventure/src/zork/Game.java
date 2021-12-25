@@ -40,12 +40,12 @@ public class Game {
   }
 
   private void initItems(String fileName) throws Exception {
-    Path pa = Path.of(fileName);
-    String jsString = Files.readString(pa);
-    JSONParser pars= new JSONParser();
-    JSONObject js = (JSONObject) pars.parse(jsString);
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
 
-    JSONArray jsonItems = (JSONArray) js.get("items");
+    JSONArray jsonRooms = (JSONArray) json.get("rooms");
     
     for (Object itemObj : jsonItems) {
       Item item = new Item();
@@ -208,10 +208,10 @@ public class Game {
     int damageDealt = gun.damageDealt();
     if(/*room has a charachter*/){
       Characters inRoom; //equals the rooms charachter
-      inRoom.setHp(damageDealt);
+      inRoom.reduceHp(damageDealt);
     }
     else{
-      System.out.println("There is no one in this room");
+      System.out.println("There is no enemy in this room");
     }
      
   }

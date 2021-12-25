@@ -21,6 +21,10 @@ public class Characters {
     public int getHp(){
         return hp;
     }
+
+    public void reduceHp(int loss){
+        hp-= loss;
+    }
     
     public int getAttack(){
         return attack; 
