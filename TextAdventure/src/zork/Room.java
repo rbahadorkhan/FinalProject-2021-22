@@ -7,6 +7,7 @@ public class Room {
   private String roomName;
   private String description;
   private ArrayList<Exit> exits;
+  private Attacker attacker;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -110,5 +111,17 @@ public class Room {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public boolean hasAttacker(){
+    return attacker != null;
+  }
+
+  public void setAttacker(Attacker attacker){
+    this.attacker = attacker;
+  }
+
+  public Attacker getAttacker() {
+    return attacker;
   }
 }
