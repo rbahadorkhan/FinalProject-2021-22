@@ -25,7 +25,7 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
-      initAttacker("src\\zork\\data\\characters.json");
+      initAttacker("src\\zork\\data\\attacker.json");
       for (Attacker attacker : attackerList) {
         String startingRoom = attacker.getStartingRoom();
         Room room = roomMap.get(startingRoom);
@@ -38,13 +38,14 @@ public class Game {
     parser = new Parser();
   }
 
+
   private void initAttacker(String fileName) throws Exception{
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(jsonString);
 
-    JSONArray jsonAttacker = (JSONArray) json.get("charachters");
+    JSONArray jsonAttacker = (JSONArray) json.get("attacker");
     
     for (Object attackerObj : jsonAttacker) {
       Attacker attacker = new Attacker();
