@@ -1,78 +1,6 @@
 {
     "items": [
         {
-          "id": "Leer1",
-          "name": "Leer",
-          "description": "Leer is a blinding ability. Any character who looks at the center of the eye will be nearsighted.",
-          "isOpenable": false,
-          "weight": 0,
-          "startingRoom": ""
-        },
-        {
-          "id": "Leer2",
-          "name": "Leer",
-          "description": "Leer is a blinding ability. Any character who looks at the center of the eye will be nearsighted.",
-          "isOpenable": false,
-          "weight": 0,
-          "startingRoom": ""
-        },
-        {
-          "id": "Leer3",
-          "name": "Leer",
-          "description": "Leer is a blinding ability. Any character who looks at the center of the eye will be nearsighted.",
-          "isOpenable": false,
-          "weight": 0,
-          "startingRoom": ""
-        },
-        {
-          "id": "Health Regen1",
-          "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp. You can only use it when you are less than 100hp.",
-          "isOpenable":false,
-          "weight": 0,
-          "startingRoom": ""
-        },
-        {
-          "id": "Health Regen2",
-          "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp. You can only use it when you are less than 100hp.",
-          "isOpenable":false,
-          "weight": 0,
-          "startingRoom": ""
-        }, 
-        {
-          "id": "Health Regen3",
-          "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
-          "isOpenable":false,
-          "weight": 0,
-          "startingRoom": ""
-        }, 
-        {
-          "id": "Health Regen4",
-          "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
-          "isOpenable":false,
-          "weight": 0,
-          "startingRoom": ""
-        }, 
-        {
-          "id": "Health Regen5",
-          "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
-          "isOpenable": false,
-          "weight": 0,
-          "startingRoom": ""
-        }, 
-        {
-          "id": "Health Regen6",
-          "name": "Health Regen",
-          "description": "You can use the health regen to gain 60hp, you can only use it when you are less than 100hp.",
-          "isOpenable": false,
-          "weight": 0,
-          "startingRoom": ""
-        }, 
-        {
           "id": "Grenade1",
           "name": "Grenade",
           "description": "A small missile that contains an explosive or a chemical agent.",
@@ -181,14 +109,6 @@
           "numBullets": 7,
           "damage": 75,
           "accuracy": 70
-        },
-        {
-          "id": "Vandal2",
-          "name": "Vandal",
-          "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
-          "isOpenable": false,
-          "weight": 750,
-          "startingRoom": ""
         },
         {
           "id": "Vandal2",

@@ -33,6 +33,7 @@ public class Game {
       }
       currentRoom = roomMap.get("Spawn");
     } catch (Exception e) {
+      currentRoom = roomMap.get("Spawn"); //please remove this later we have many issues because we dont know how to code :))
       e.printStackTrace();
     }
     parser = new Parser();
@@ -52,9 +53,9 @@ public class Game {
       String attackerName = (String) ((JSONObject) attackerObj).get("name");
       String attackerId = (String) ((JSONObject) attackerObj).get("id");
       String attackerDescription = (String) ((JSONObject) attackerObj).get("description");
-      Room startingRoom = (Room)((JSONObject)attackerObj).get("startingRoom");
-      int hp = (int)((JSONObject)attackerObj).get("hp");
-      int attack = (int)((JSONObject)attackerObj).get("attack");
+      Room startingRoom = roomMap.get((String)((JSONObject)attackerObj).get("startingRoom"));
+      int hp = ((Long)((JSONObject)attackerObj).get("hp")).intValue();
+      int attack = ((Long)((JSONObject)attackerObj).get("attack")).intValue();;
       attackerList.add(attacker);
 
       }
@@ -74,11 +75,11 @@ public class Game {
       String itemId = (String) ((JSONObject) itemObj).get("id");
       String itemDescription = (String) ((JSONObject) itemObj).get("description");
       Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
-      int itemWeight = (int)((JSONObject)itemObj).get("weight");
-      Room startingRoom = (Room)((JSONObject)itemObj).get("startingRoom");
-      int numBullets = (int)((JSONObject)itemObj).get("numBullets");
-      int damage = (int)((JSONObject)itemObj).get("damage");
-      int accuracy = (int)((JSONObject)itemObj).get("accuracy");
+      int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
+      Room startingRoom = roomMap.get((String)((JSONObject)itemObj).get("startingRoom"));
+      int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
+      int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
+      int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
       ItemList.add(item);
 
       }

@@ -38,4 +38,12 @@ public class Parser {
   public void showCommands() {
     commands.showAll();
   }
+
+  public boolean isDirection(){
+    String[] directions = {"north", "east", "south", "west", "northeast", "northwest", "southeast", "southwest", "n", "e", "s", "w", "ne", "nw", "se", "sw"};
+    
+    
+    return;
+  }
+
 }
