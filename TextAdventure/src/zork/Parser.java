@@ -24,7 +24,16 @@ public class Parser {
     words = inputLine.split(" ");
 
     String word1 = words[0];
-    String word2 = words[1];
+    String word2;
+    if(isDirection(words) > -1){
+      word2 = words[isDirection(words)];
+    }
+    else if(isItem(words) > -1){
+      word2 = words[isItem(words)];
+    }
+    else{
+      word2 = null;
+    }
 
     if (words.length > 1)
       word2 = words[1];
