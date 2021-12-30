@@ -12,7 +12,7 @@ public class Command {
    * one (or both) can be null. The command word should be null to indicate that
    * this was a command that is not recognised by this game.
    */
-  public Command(String firstWord, ArrayList <String> extra) {
+  public Command(String firstWord, ArrayList <String> extra) { //eva we might not need an arraylist because we might only need 2 words, the command and the item/direction so... maybe its fine idk
     commandWord = firstWord;
     this.extra = extra;
   }
