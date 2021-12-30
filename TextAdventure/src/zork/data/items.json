@@ -6,7 +6,7 @@
           "description": "A small missile that contains an explosive or a chemical agent.",
           "isOpenable": true,
           "weight": 50,
-          "startingRoom":"",
+          "startingRoom":"Camps",
           "numBullets": 1,
           "damage": 100,
           "accuracy": 100
@@ -17,7 +17,7 @@
           "description": "A small missile that contains an explosive or a chemical agent.",
           "isOpenable": true,
           "weight": 50,
-          "startingRoom":"",
+          "startingRoom":"Hiding Spot",
           "numBullets": 1,
           "damage": 100,
           "accuracy": 100
@@ -28,7 +28,7 @@
           "description": "A small missile that contains an explosive or a chemical agent.",
           "isOpenable": true,
           "weight": 50,
-          "startingRoom":"",
+          "startingRoom":"Teleporter B",
           "numBullets": 1,
           "damage": 100,
           "accuracy": 100
@@ -39,7 +39,7 @@
           "description": "Opertor is a long range gun. It has 200 damage per bullet and 50% accuracy.",
           "isOpenable": false,
           "weight": 1000,
-          "startingRoom": "",
+          "startingRoom": "Mid",
           "numBullets": 1,
           "damage": 200,
           "accuracy": 50
@@ -50,29 +50,29 @@
           "description": "Operator is a long range gun. It has 200 damage per bullet and 50% accuracy.",
           "isOpenable": false,
           "weight": 1000,
-          "startingRoom": "",
+          "startingRoom": "B-Hall",
           "numBullets": 1,
           "damage": 200,
           "accuracy": 50
         },
         {
           "id": "Spectre1",
-          "name": "Operator",
+          "name": "Spectre",
           "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
           "isOpenable": false,
           "weight": 500,
-          "startingRoom": "",
+          "startingRoom":"Showers",
           "numBullets": 15,
           "damage": 45,
           "accuracy": 70
         },
         {
         "id": "Spectre2",
-          "name": "Operator",
+          "name": "Spectre",
           "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
           "isOpenable": false,
           "weight": 500,
-          "startingRoom": "",
+          "startingRoom":"Fountain",
           "numBullets": 15,
           "damage": 45,
           "accuracy": 70
@@ -83,7 +83,7 @@
           "description": "Odin is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
           "isOpenable": false,
           "weight": 1050,
-          "startingRoom": "",
+          "startingRoom": "Spawn",
           "numBullets": 45,
           "damage": 40,
           "accuracy": 65
@@ -94,7 +94,7 @@
           "description": "Odin is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
           "isOpenable": false,
           "weight": 1050,
-          "startingRoom": "",
+          "startingRoom": "B-Elbow",
           "numBullets": 45,
           "damage": 40,
           "accuracy": 65
@@ -105,7 +105,7 @@
           "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
           "isOpenable": false,
           "weight": 750,
-          "startingRoom": "",
+          "startingRoom": "Garage",
           "numBullets": 7,
           "damage": 75,
           "accuracy": 70
@@ -116,7 +116,7 @@
           "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
           "isOpenable": false,
           "weight": 750,
-          "startingRoom": "",
+          "startingRoom": "Living Room",
           "numBullets": 7,
           "damage": 75,
           "accuracy": 70

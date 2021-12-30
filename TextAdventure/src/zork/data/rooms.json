@@ -293,7 +293,7 @@
   {
     "id": "Camps",
     "name": "Camps",
-    "description": "You are in a small room with a box in the corner. There is an attacker waiting for you behind them. You can attack the,, go to A-Hall, or go to A-Main.",
+    "description": "You are in a small room with a box in the corner. There is an attacker waiting for you behind them. You can attack them, go to A-Hall, or go to A-Main.",
     "exits": [
       {
         "isLocked": false,
@@ -382,7 +382,7 @@
   },
   {
     "id": "Teleporter-B",
-    "name": "Teleporter b",
+    "name": "Teleporter B",
     "description": "You've teleported to A-site. You can only go out of the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
     "exits": [
       {
