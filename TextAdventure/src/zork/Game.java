@@ -244,7 +244,7 @@ public class Game {
      
   }
 
-  private void pickUp(Command command) {
+  private void take(Command command) {
     if(!command.hasSecondWord()) {
       System.out.println("What do you want to pick up?");
       return;
@@ -257,5 +257,11 @@ public class Game {
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
   }
+
+  private void look(Command command) {
+    System.out.println(currentRoom.getDescription());
+  }
+
+  
 
 }
