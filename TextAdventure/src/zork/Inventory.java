@@ -30,9 +30,10 @@ public class Inventory {
     return items.add(item);
     } else {
       System.out.println("You don't have room in your inventory for this item");
-      return false;
     }
+    return true; 
   }
+
 
   //work on dropItem
   public boolean dropItem (Command com){
