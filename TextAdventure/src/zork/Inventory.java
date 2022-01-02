@@ -25,48 +25,27 @@ public class Inventory {
     return currentWeight;
   }
   
-  public boolean addItem (Command com, Item item) {
-    if (!com.hasSecondWord()){
-      System.out.println("What do you want to take?");
-
-    } else if (com.getSecondWord().toString().equals(item.getName())) { //add weight part
-      return items.add(item);
-
-    } else if (com.getSecondWord().toString() != item.getName()){
-      System.out.println("This item doesn't exist");
-
+  public boolean addItem (Item item) {
+    if (item.getWeight() + currentWeight <= maxWeight) {
+    return items.add(item);
     } else {
-      System.out.println("There is no space in your inventory for this item, drop it or something else.");
-    }
-    return true; 
-    //work on it after commands
-
-  }
-
-  public boolean addItem(Item item) {
-    if (item.getWeight() + currentWeight <= maxWeight)
-      return items.add(item);
-    else {
-      System.out.println("There is no room to add the item.");
+      System.out.println("You don't have room in your inventory for this item");
       return false;
     }
   }
 
+  //work on dropItem
   public boolean dropItem (Command com){
-    if (com.getSecondWord().size() > 0) {
-      for (int i = items.size(); i >= 0; i--) {
-        String name = com.getSecondWord().toString();
-          if (items.get(i).getName().equals(name)) {
-            items.remove(i); 
-            return true; 
-          } else if (items.get(i).getName() != name) {
-            System.out.println("You don't have this.");
-          }
-      } 
-      } else {
-        System.out.println("What do you want to drop?");
-    }
-    return false; //just until i finish it
+    return false; 
   }
-
-}
+  
+  //work on this
+  public boolean inInventory (String item){
+    for (Item i : items) {
+      if (i.getName().equals(item)){
+        return true;
+      }
+    }
+      return false;
+    }
+  }
