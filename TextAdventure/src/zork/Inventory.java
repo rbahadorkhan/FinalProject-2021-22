@@ -20,7 +20,28 @@ public class Inventory {
   public int getCurrentWeight() {
     return currentWeight;
   }
+<<<<<<< HEAD
 
+=======
+  
+  public boolean addItem (Command com, Item item) {
+    if (!com.hasSecondWord()){
+      System.out.println("What do you want to take?");
+
+    } else if (com.getSecondWord().toString().equals(item.getName())) { //add weight part
+      return items.add(item);
+
+    } else if (com.getSecondWord().toString() != item.getName()){
+      System.out.println("This item doesn't exist");
+
+    } else {
+      System.out.println("There is no space in your inventory for this item, drop it or something else.");
+    }
+    return true; 
+    //work on it after commands
+
+  }
+>>>>>>> 471300bf04074137c3ba025ea1d6a747d1ab6cab
 
   public boolean addItem(Item item) {
     if (item.getWeight() + currentWeight <= maxWeight)
@@ -32,4 +53,23 @@ public class Inventory {
   }
 }
 
+<<<<<<< HEAD
+=======
+  public boolean dropItem (Command com){
+    if (com.getSecondWord().size() > 0) {
+      for (int i = items.size(); i >= 0; i--) {
+        String name = com.getSecondWord().toString();
+          if (items.get(i).getName().equals(name)) {
+            items.remove(i); 
+            return true; 
+          } else if (items.get(i).getName() != name) {
+            System.out.println("You don't have this.");
+          }
+      } 
+      } else {
+        System.out.println("What do you want to drop?");
+    }
+    return false; //just until i finish it
+  }
+>>>>>>> 471300bf04074137c3ba025ea1d6a747d1ab6cab
 

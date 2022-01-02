@@ -12,6 +12,8 @@ import org.json.simple.parser.JSONParser;
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
+  public static ArrayList<Attacker> attackerList = new ArrayList<Attacker>();
+  public static ArrayList<Item> ItemList = new ArrayList<Item>();
 
   private Parser parser;
   private Room currentRoom;
@@ -23,37 +25,63 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
-      initCharacters("src\\zork\\data\\characters.json");
+      initAttacker("src\\zork\\data\\attacker.json");
+      for (Attacker attacker : attackerList) {
+        String startingRoom = attacker.getStartingRoom();
+        Room room = roomMap.get(startingRoom);
+        room.setAttacker(attacker);
+      }
       currentRoom = roomMap.get("Spawn");
     } catch (Exception e) {
+      currentRoom = roomMap.get("Spawn"); //please remove this later we have many issues because we dont know how to code :))
       e.printStackTrace();
     }
     parser = new Parser();
   }
 
-  private void initCharacters(String fileName) throws Exception{
-    Path pth = Path.of(fileName);
-    String jString = Files.readString(pth);
-    JSONParser par = new JSONParser();
-    JSONObject j = (JSONObject) pars.par(jString);
 
+  private void initAttacker(String fileName) throws Exception{
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+
+    JSONArray jsonAttacker = (JSONArray) json.get("attacker");
+    
+    for (Object attackerObj : jsonAttacker) {
+      Attacker attacker = new Attacker();
+      String attackerName = (String) ((JSONObject) attackerObj).get("name");
+      String attackerId = (String) ((JSONObject) attackerObj).get("id");
+      String attackerDescription = (String) ((JSONObject) attackerObj).get("description");
+      Room startingRoom = roomMap.get((String)((JSONObject)attackerObj).get("startingRoom"));
+      int hp = ((Long)((JSONObject)attackerObj).get("hp")).intValue();
+      int attack = ((Long)((JSONObject)attackerObj).get("attack")).intValue();;
+      attackerList.add(attacker);
+
+      }
   }
 
   private void initItems(String fileName) throws Exception {
-    Path pa = Path.of(fileName);
-    String jsString = Files.readString(pa);
-    JSONParser pars= new JSONParser();
-    JSONObject js = (JSONObject) pars.parse(jsString);
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
 
-    JSONArray jsonItems = (JSONArray) js.get("items");
+    JSONArray jsonItems = (JSONArray) json.get("items");
     
     for (Object itemObj : jsonItems) {
-      Item item = new Item();
+      Item item = new Item(); //we need to make a no attribute constructor in Item.java
       String itemName = (String) ((JSONObject) itemObj).get("name");
       String itemId = (String) ((JSONObject) itemObj).get("id");
-      String itemDescription = (String) ((JSONObject) itembj).get("description");
+      String itemDescription = (String) ((JSONObject) itemObj).get("description");
       Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
-       
+      int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
+      Room startingRoom = roomMap.get((String)((JSONObject)itemObj).get("startingRoom"));
+      int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
+      int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
+      int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
+      ItemList.add(item);
+
       }
      
   }
@@ -203,17 +231,20 @@ public class Game {
       return;
     }
 
-    String gun = command.getSecondWord();
+    Item gun = command.getSecondWord();
 
-    // Trys to shoot someone.
-    
-    Character shootingat; //idk how to do this
-    // if charachter is in the room we are in
-      //charachter health -- 
-    
+    int damageDealt = gun.damageDealt();
+    if(currentRoom.hasAttacker()){
+      Attacker attacker = currentRoom.getAttacker();
+      attacker.reduceHp(damageDealt);
+    }
+    else{
+      System.out.println("There is no enemy in this room");
+    }
+     
   }
 
-  private void pickUp(Command command) {
+  private void take(Command command) {
     if(!command.hasSecondWord()) {
       System.out.println("What do you want to pick up?");
       return;
@@ -226,5 +257,11 @@ public class Game {
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
   }
+
+  private void look(Command command) {
+    System.out.println(currentRoom.getDescription());
+  }
+
+  
 
 }
