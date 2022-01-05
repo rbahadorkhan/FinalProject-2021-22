@@ -3,8 +3,9 @@ package zork;
 import java.util.ArrayList;
 
 public class Command {
+  private ArrayList <String> commandWords;
   private String commandWord;
-  private ArrayList <String> extra = new ArrayList <String>();
+  private String secondWord;
   // test
 
   /**
@@ -12,16 +13,23 @@ public class Command {
    * one (or both) can be null. The command word should be null to indicate that
    * this was a command that is not recognised by this game.
    */
-  public Command(String firstWord, ArrayList <String> extra) { //eva we might not need an arraylist because we might only need 2 words, the command and the item/direction so... maybe its fine idk
-    commandWord = firstWord;
-    this.extra = extra;
-  }
+
+
+  public Command (String word1, String word2){
+  commandWords = new ArrayList<String>(); //new array list to hold words
+  //adding all the words, so 2
+  commandWords.add(word1);
+  commandWords.add(word2);
+}
 
   /**
    * Return the command word (the first word) of this command. If the command was
    * not understood, the result is null.
    */
   public String getCommandWord() {
+    if (commandWord == null) {
+      return "";
+    }
     return commandWord;
   }
 
@@ -29,8 +37,8 @@ public class Command {
    * Return the second word of this command. Returns null if there was no second
    * word.
    */
-  public ArrayList <String> getExtraWord() {
-    return extra;
+  public String getSecondWord(){
+    return secondWord;
   }
 
   /**
@@ -43,7 +51,12 @@ public class Command {
   /**
    * Return true if the command has a second word.
    */
-  public boolean hasExtraWord() {
-    return (extra.size() != 0);
+  public boolean hasSecondWord() {
+    String secondWord = commandWords.get(1);
+    if (secondWord != null){
+      return true;
+    } else {
+    return false;
+    }
   }
 }
