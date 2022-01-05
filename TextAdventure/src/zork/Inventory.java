@@ -28,10 +28,9 @@ public class Inventory {
   public boolean addItem (Item item) {
     if (item.getWeight() + currentWeight <= maxWeight) {
     return items.add(item);
-    } else {
-      System.out.println("You don't have room in your inventory for this item");
-    }
-    return true; 
+    } 
+    System.out.println("You don't have room in your inventory for this item");
+    return false; 
   }
 
 
