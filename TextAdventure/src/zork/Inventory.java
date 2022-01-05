@@ -36,7 +36,17 @@ public class Inventory {
 
 
   //work on dropItem
-  public boolean dropItem (Command com){
+  public boolean dropItem (String item){
+    if (inInventory(item)) {
+      for (int i = 0; i < items.size(); i++) {
+        Item rem = items.get(i);
+          if (rem.getName().equals(item)){
+            items.remove(i);
+            System.out.println("You dropped " + item + ".");
+            return true;
+          }
+      }
+    }
     return false; 
   }
   
