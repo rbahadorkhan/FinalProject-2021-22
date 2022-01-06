@@ -271,17 +271,22 @@ public class Game {
 
     String newitem = command.getSecondWord();
 
-    Item item;
+    Item item = ItemList.get(1); //temporary until i figure out how to see the id and stuff
+
 
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
     myInventory.addItem(item);
+    currentRoom.removeItem(item);
   }
 
   private void look(Command command) {
     System.out.println(currentRoom.getDescription());
   }
 
+  private void inventory() {
+    myInventory.printItems();
+  }
   
 
 }
