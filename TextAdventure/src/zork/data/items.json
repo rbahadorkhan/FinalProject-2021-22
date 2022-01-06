@@ -22,8 +22,8 @@
           "accuracy": 100
         },
         {
-          "id": "Bomb",
-          "name": "Bomb",
+          "id": "Explosive",
+          "name": "Explosive",
           "description": "A small missile that contains a chemical agent.",
           "weight": 50,
           "startingRoom":"Teleporter B",
