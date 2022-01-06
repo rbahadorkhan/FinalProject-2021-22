@@ -139,7 +139,7 @@ public class Game {
       }
 
     }
-    System.out.println("Thank you for playing.  Good bye.");
+    System.out.println("Thank you for playing. Good bye.");
   }
 
   /**
