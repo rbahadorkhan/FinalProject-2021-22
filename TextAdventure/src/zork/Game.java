@@ -17,6 +17,8 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
+  private int myHealth = 150;
+  private Inventory myInventory;
 
   /**
    * Create the game and initialise its internal map.
@@ -175,7 +177,7 @@ public class Game {
     }  else if (commandWord.equals("shoot")) 
         shoot(command); 
       else if(commandWord.equals("take"))
-        pickUp(command); //
+        take(command); //
         //we need write these methods
       else if(commandWord.equals("look"))
         currentRoom.longDescription();
@@ -186,6 +188,7 @@ public class Game {
   }
 
   // implementations of user commands:
+
 
 
   /**
@@ -232,17 +235,33 @@ public class Game {
     }
 
     String gun = command.getSecondWord();
- // needs to see if that item is in the inventory
-    int damageDealt = gun.damageDealt();
-    if(currentRoom.hasAttacker()){
-      Attacker attacker = currentRoom.getAttacker();
-      attacker.reduceHp(damageDealt);
-    }
-    else{
-      System.out.println("There is no enemy in this room");
-    }
-     
+    if(myInventory.inInventory(gun)){
+      //set the gun in inventory thing 
+      int damageDealt = gun.damageDealt();
+      if(currentRoom.hasAttacker()){
+        Attacker attacker = currentRoom.getAttacker();
+        attacker.reduceHp(damageDealt);
+        if(attacker.getHp() < 1){
+          attackerList.remove(attacker);
+        }
+        else{
+          myHealth -= attacker.getAttack();
+          if(myHealth < 1){
+            currentRoom = roomMap.get("Spawn");
+            System.out.println("You died you have been respawned in spawn");
+            //drop items idk how yet
+          }
+        }
+      }
+      else{
+        System.out.println("There is no enemy in this room");
+      }
+      
   }
+  else{
+    System.out.println("You do not have this gun");
+  }
+}
 
   private void take(Command command) {
     if(!command.hasSecondWord()) {
@@ -252,10 +271,11 @@ public class Game {
 
     String newitem = command.getSecondWord();
 
-    Item pickedup; 
+    Item item;
 
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
+    myInventory.addItem(item);
   }
 
   private void look(Command command) {
