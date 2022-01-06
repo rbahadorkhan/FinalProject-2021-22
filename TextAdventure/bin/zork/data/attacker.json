@@ -1,0 +1,87 @@
+{
+    "attacker": [
+      {
+        "id": "Raze",
+        "name": "Raze",
+        "description": "You see a person. They have grenades on their waist. They are holding a rocket launcher amnd it looks like they wont leave without putting up a fight. ",
+        "startingRoom": "B-Elbow",
+        "hp":100,
+        "attack": 80
+        
+      },
+      {
+        "id": "Sova",
+        "name": "Sova",
+        "description": "You see a tall figure with a piercing blue eye. They have a bow, with three long range, enegry blasts. Looks like they arent going anywhere without a fight.",
+        "startingRoom": "B-Main",
+        "hp":100,
+        "attack":80
+      },
+      {
+        "id": "Sage",
+        "name": "Sage",
+        "description": "You see a person behind a shining green glow, a spere illuminating above their body",
+        "startingRoom": "Hookah",
+        "hp":100,
+        "attack": 80
+      },
+      {
+        "id": "Pheonix",
+        "name": "Pheonix",
+        "description": "Flames cover the room you are in, you see a person holding a ball of fire ready to throw. ",
+        "startingRoom":"B-Lobby",
+        "hp":100,
+        "attack":60
+
+      },
+      {
+        "id": "Cypher",
+        "name": "Cypher",
+        "description": "A man with a wide brimmed hat with a menacing look with a mask covering their lower face.",
+        "startingRoom":"A-Main",
+        "hp":100,
+        "attack":60
+      },
+      {
+        "id": "Yoru",
+        "name": "Yoru",
+        "description": "The room flashes blue, blinding you. When your vision recovers you see a man with blue hair staring you down",
+        "startingRoom":"Haven",
+        "hp":100,
+        "attack":60
+      },
+      {
+        "id": "Killjoy",
+        "name": "Killjoy",
+        "description": "You see a figure, they seem happy, but deep down they want your blood. They're wearing a green hat with robots surrounding them.",
+        "startingRoom":"Showers",
+        "hp":100,
+        "attack": 70
+      },
+      {
+        "id": "Reyna",
+        "name": "Reyna",
+        "description": "A tall figure emerges from thin air with a purple glow, their arms are coverd in purple fog and tatoos.",
+        "startingRoom":"Camps",
+        "hp":100,
+        "attack":60
+      },
+      {
+        "id": "Viper",
+        "name": "Viper",
+        "description": "Out of a large green cloud emerges an intimidating figure with poison around their waist.",
+        "startingRoom":"Mid",
+        "hp":100,
+        "attack":70
+      },
+      {
+        "id": "Breach",
+        "name": "Breach",
+        "description": "There is a sharp orange flash in the sky, you see a cyborg come out of the walls, looking at you straight in the eyes.",
+        "startingRoom":"A-Hall",
+        "hp": 100,
+        "attack":70
+      }
+      
+    ]
+  }
