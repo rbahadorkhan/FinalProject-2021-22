@@ -374,9 +374,10 @@
     "description": "You've teleported to B-site. You can only go out of the teleporter to Hookah, or stay in the teleporter. You cannot teleport back.",
     "exits": [
       {
-        "isLocked": false,
+        "isLocked": true,
         "direction": "West",
-        "adjacentRoom": "Hookah"
+        "adjacentRoom": "Hookah",
+        "keyId": "6666"
       }
     ]
   },
@@ -386,9 +387,10 @@
     "description": "You've teleported to A-site. You saw a grenade in front of you. You can only go out of the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
     "exits": [
       {
-        "isLocked": false,
+        "isLocked": true,
         "direction": "West",
-        "adjacentRoom": "A-Hall"
+        "adjacentRoom": "A-Hall",
+        "keyId": "6666"
       }
     ]
   }
