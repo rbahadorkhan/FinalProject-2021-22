@@ -70,7 +70,7 @@ public class Game {
     JSONArray jsonItems = (JSONArray) json.get("items");
     
     for (Object itemObj : jsonItems) {
-      Item item = new Item(); //we need to make a no attribute constructor in Item.java
+      Item item = new Item(); 
       String itemName = (String) ((JSONObject) itemObj).get("name");
       String itemId = (String) ((JSONObject) itemObj).get("id");
       String itemDescription = (String) ((JSONObject) itemObj).get("description");
@@ -252,7 +252,7 @@ public class Game {
 
     String newitem = command.getSecondWord();
 
-    Item pickedup; //idekdikd
+    Item pickedup; 
 
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
