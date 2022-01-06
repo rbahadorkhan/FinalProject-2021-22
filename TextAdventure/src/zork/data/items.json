@@ -1,9 +1,9 @@
 {
     "items": [
         {
-          "id": "Grenade1",
+          "id": "Grenade",
           "name": "Grenade",
-          "description": "A small missile that contains an explosive or a chemical agent.",
+          "description": "A small missile that contains an explosive.",
           "weight": 50,
           "startingRoom":"Camps",
           "numBullets": 1,
@@ -12,9 +12,9 @@
   
         },
         {
-          "id": "Grenade2",
-          "name": "Grenade",
-          "description": "A small missile that contains an explosive or a chemical agent.",
+          "id": "FireBall",
+          "name": "FireBall",
+          "description": "A small ball with fire",
           "weight": 50,
           "startingRoom":"Hiding Spot",
           "numBullets": 1,
@@ -22,9 +22,9 @@
           "accuracy": 100
         },
         {
-          "id": "Grenade3",
-          "name": "Grenade",
-          "description": "A small missile that contains an explosive or a chemical agent.",
+          "id": "Bomb",
+          "name": "Bomb",
+          "description": "A small missile that contains a chemical agent.",
           "weight": 50,
           "startingRoom":"Teleporter B",
           "numBullets": 1,
@@ -32,9 +32,9 @@
           "accuracy": 100
         },
         {
-          "id": "Operator1",
-          "name": "Operator",
-          "description": "Opertor is a long range gun. It has 200 damage per bullet and 50% accuracy.",
+          "id": "Marshal",
+          "name": "Marshal",
+          "description": "Marshal is a long range gun. It has 200 damage per bullet and 50% accuracy.",
           "weight": 1000,
           "startingRoom": "Mid",
           "numBullets": 1,
@@ -42,7 +42,7 @@
           "accuracy": 50
         },
         {
-          "id": "Operator2",
+          "id": "Operator",
           "name": "Operator",
           "description": "Operator is a long range gun. It has 200 damage per bullet and 50% accuracy.",
           "weight": 1000,
@@ -52,9 +52,9 @@
           "accuracy": 50
         },
         {
-          "id": "Spectre1",
-          "name": "Spectre",
-          "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
+          "id": "Ares",
+          "name": "Ares",
+          "description": "Ares is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
           "weight": 500,
           "startingRoom":"Showers",
           "numBullets": 15,
@@ -62,7 +62,7 @@
           "accuracy": 70
         },
         {
-        "id": "Spectre2",
+        "id": "Spectre",
           "name": "Spectre",
           "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
           "weight": 500,
@@ -82,9 +82,9 @@
           "accuracy": 65
         },
         {
-          "id": "Odin2",
-          "name": "Odin",
-          "description": "Odin is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
+          "id": "MachineGun",
+          "name": "Machine Gun",
+          "description": "A machine gun is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
           "weight": 1050,
           "startingRoom": "B-Elbow",
           "numBullets": 45,
@@ -92,7 +92,7 @@
           "accuracy": 65
         },
         {
-          "id": "Vandal1",
+          "id": "Vandal",
           "name": "Vandal",
           "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
           "weight": 750,
@@ -102,9 +102,9 @@
           "accuracy": 70
         },
         {
-          "id": "Vandal2",
-          "name": "Vandal",
-          "description": "Vandal is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
+          "id": "Phantom",
+          "name": "Phantom",
+          "description": "Phantom is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
           "weight": 750,
           "startingRoom": "Living Room",
           "numBullets": 7,
