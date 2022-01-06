@@ -376,7 +376,8 @@
       {
         "isLocked": true,
         "direction": "West",
-        "adjacentRoom": "Hookah"
+        "adjacentRoom": "Hookah",
+        "keyId": "6666"
       }
     ]
   },
@@ -388,7 +389,8 @@
       {
         "isLocked": true,
         "direction": "West",
-        "adjacentRoom": "A-Hall"
+        "adjacentRoom": "A-Hall",
+        "keyId": "6666"
       }
     ]
   }
