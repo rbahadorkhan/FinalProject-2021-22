@@ -8,6 +8,7 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private Attacker attacker;
+  private ArrayList<Item> roomItems;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -123,5 +124,17 @@ public class Room {
 
   public Attacker getAttacker() {
     return attacker;
+  }
+
+  public boolean IsInRoom(Item item){
+    return roomItems.contains(item);
+  }
+
+  public void setItem(Item item){
+    roomItems.add(item);
+  }
+
+  public void removeItem(Item item){
+    roomItems.remove(item);
   }
 }

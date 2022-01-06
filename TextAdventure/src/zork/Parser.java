@@ -24,6 +24,8 @@ public class Parser {
     words = inputLine.split(" ");
 
     String word1 = words[0];
+    if (words.length > 1){
+
     String word2;
     if(isDirection(words) > -1){
       word2 = words[isDirection(words)];
@@ -35,14 +37,14 @@ public class Parser {
       word2 = null;
     }
 
-    if (words.length > 1)
-      word2 = words[1];
-
+  
     if (commands.isCommand(word1))
       return new Command(word1, word2);
     else
       return new Command(null, word2);
-  }
+  } 
+  return null; //need to change
+}
 
   /**
    * Print out a list of valid command words.
@@ -52,7 +54,7 @@ public class Parser {
   }
 
   public int isDirection(String[] input){
-    ArrayList<String> directions = new ArrayList<String>(Arrays.asList("north", "east", "south", "west", "northeast", "northwest", "southeast", "southwest", "n", "e", "s", "w", "ne", "nw", "se", "sw");
+    ArrayList<String> directions = new ArrayList<String>(Arrays.asList("north", "east", "south", "west", "northeast", "northwest", "southeast", "southwest", "n", "e", "s", "w", "ne", "nw", "se", "sw"));
 
     
     for (int i = 0; i < input.length; i++) {

@@ -17,6 +17,8 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
+  private int myHealth = 150;
+  private Inventory myInventory;
 
   /**
    * Create the game and initialise its internal map.
@@ -70,7 +72,7 @@ public class Game {
     JSONArray jsonItems = (JSONArray) json.get("items");
     
     for (Object itemObj : jsonItems) {
-      Item item = new Item(); //we need to make a no attribute constructor in Item.java
+      Item item = new Item(); 
       String itemName = (String) ((JSONObject) itemObj).get("name");
       String itemId = (String) ((JSONObject) itemObj).get("id");
       String itemDescription = (String) ((JSONObject) itemObj).get("description");
@@ -175,7 +177,7 @@ public class Game {
     }  else if (commandWord.equals("shoot")) 
         shoot(command); 
       else if(commandWord.equals("take"))
-        pickUp(command); //
+        take(command); //
         //we need write these methods
       else if(commandWord.equals("look"))
         currentRoom.longDescription();
@@ -186,6 +188,7 @@ public class Game {
   }
 
   // implementations of user commands:
+
 
 
   /**
@@ -231,18 +234,34 @@ public class Game {
       return;
     }
 
-    Item gun = command.getSecondWord();
-
-    int damageDealt = gun.damageDealt();
-    if(currentRoom.hasAttacker()){
-      Attacker attacker = currentRoom.getAttacker();
-      attacker.reduceHp(damageDealt);
-    }
-    else{
-      System.out.println("There is no enemy in this room");
-    }
-     
+    String gun = command.getSecondWord();
+    if(myInventory.inInventory(gun)){
+      //set the gun in inventory thing 
+      int damageDealt = gun.damageDealt();
+      if(currentRoom.hasAttacker()){
+        Attacker attacker = currentRoom.getAttacker();
+        attacker.reduceHp(damageDealt);
+        if(attacker.getHp() < 1){
+          attackerList.remove(attacker);
+        }
+        else{
+          myHealth -= attacker.getAttack();
+          if(myHealth < 1){
+            currentRoom = roomMap.get("Spawn");
+            System.out.println("You died you have been respawned in spawn");
+            //drop items idk how yet
+          }
+        }
+      }
+      else{
+        System.out.println("There is no enemy in this room");
+      }
+      
   }
+  else{
+    System.out.println("You do not have this gun");
+  }
+}
 
   private void take(Command command) {
     if(!command.hasSecondWord()) {
@@ -252,16 +271,22 @@ public class Game {
 
     String newitem = command.getSecondWord();
 
-    Item pickedup; //idekdikd
+    Item item = ItemList.get(1); //temporary until i figure out how to see the id and stuff
+
 
     //if item is in the room pick up and remove the item from the room and add to inventory
     //  
+    myInventory.addItem(item);
+    currentRoom.removeItem(item);
   }
 
   private void look(Command command) {
     System.out.println(currentRoom.getDescription());
   }
 
+  private void inventory() {
+    myInventory.printItems();
+  }
   
 
 }
