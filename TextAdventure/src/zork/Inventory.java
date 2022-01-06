@@ -49,6 +49,13 @@ public class Inventory {
     return false; 
   }
   
+  public void printItems() {
+    for (Item s: items){
+      System.out.print(s);
+    }
+    System.out.println();    
+  }
+
   //work on this
   public boolean inInventory (String item){
     for (Item i : items) {
