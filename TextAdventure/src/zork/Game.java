@@ -231,8 +231,8 @@ public class Game {
       return;
     }
 
-    Item gun = command.getSecondWord();
-
+    String gun = command.getSecondWord();
+ // needs to see if that item is in the inventory
     int damageDealt = gun.damageDealt();
     if(currentRoom.hasAttacker()){
       Attacker attacker = currentRoom.getAttacker();
