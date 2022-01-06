@@ -38,7 +38,7 @@
     {
       "id": "B-Elbow",
       "name": "B-Elbow",
-      "description": "You are in an elbow shaped hall. At the end of the hall there is an opening leading to a huge site. There is an odin in this room. You can go to B-Hall or you can go to the huge site.",
+      "description": "You are in an elbow shaped hall. At the end of the hall there is an opening leading to a huge site. There is an machine gun in this room. You can go to B-Hall or you can go to the huge site.",
       "exits": [
         {
           "isLocked": false,
@@ -183,7 +183,7 @@
   {
     "id": "Mid",
     "name": "Mid",
-    "description": "You're in a long hall that is covered in sand and cacti. There is an operator on the floor. There is an attacker hiding behind a cactus. You can shoot the attacker, go to Cafteria, A-Hall or to Fountain. ",
+    "description": "You're in a long hall that is covered in sand and cacti. There is a marshal on the floor. There is an attacker hiding behind a cactus. You can shoot the attacker, go to Cafteria, A-Hall or to Fountain. ",
     "exits": [
       {
         "isLocked": false,
@@ -227,7 +227,7 @@
   {
     "id": "Showers",
     "name": "Showers",
-    "description": "You're in an L-shaped room with water trickling down the wall. There is a specter in the room. There is an attacker waiting for you in the corner. You can shoot the attacker, go to A-Main, or go to A-Hall.",
+    "description": "You're in an L-shaped room with water trickling down the wall. There is a ares in the room. There is an attacker waiting for you in the corner. You can shoot the attacker, go to A-Main, or go to A-Hall.",
     "exits": [
       {
         "isLocked": false,
@@ -244,7 +244,7 @@
   {
     "id": "HidingSpot",
     "name": "Hiding Spot",
-    "description": "You are in a room that seems almost hidden. You found a grenade on the floor. You can go to A-Hall, Cafeteria, or to Living Room.",
+    "description": "You are in a room that seems almost hidden. You found a fire ball on the floor. You can go to A-Hall, Cafeteria, or to Living Room.",
     "exits": [
       {
         "isLocked": false,
@@ -266,7 +266,7 @@
   {
     "id": "LivingRoom",
     "name": "Living Room",
-    "description": "You are in a room with a couch. There is a vandal beside the couch. You can go to A-Main, Camps, Hiding Spot, or you can go to teleporter that leads to B site, but if you go into the teleporter you can't come out.",
+    "description": "You are in a room with a couch. There is a phantom beside the couch. You can go to A-Main, Camps, Hiding Spot, or you can go to teleporter that leads to B site, but if you go into the teleporter you can't come out.",
     "exits": [
       {
         "isLocked": false,
@@ -384,7 +384,7 @@
   {
     "id": "Teleporter-B",
     "name": "Teleporter B",
-    "description": "You've teleported to A-site. You saw a grenade in front of you. You can only go out of the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
+    "description": "You've teleported to A-site. You saw an explosive in front of you. You can only go out of the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
     "exits": [
       {
         "isLocked": true,
