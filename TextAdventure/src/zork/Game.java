@@ -60,10 +60,10 @@ public class Game {
       String attackerName = (String) ((JSONObject) attackerObj).get("name");
       String attackerId = (String) ((JSONObject) attackerObj).get("id");
       String attackerDescription = (String) ((JSONObject) attackerObj).get("description");
-      Room startingRoom = roomMap.get((String)((JSONObject)attackerObj).get("startingRoom"));
+      String startingRoom = ((String)((JSONObject)attackerObj).get("startingRoom"));
       int hp = ((Long)((JSONObject)attackerObj).get("hp")).intValue();
       int attack = ((Long)((JSONObject)attackerObj).get("attack")).intValue();;
-      attackerList.add(attacker);
+      attackerList.add(new Attacker(attackerId, attackerName, attackerDescription, startingRoom, hp, attack));
 
       }
   }
