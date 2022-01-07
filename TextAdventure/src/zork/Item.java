@@ -51,3 +51,4 @@ public void open() {
     return isWeapon;
   //}
 }
+}
