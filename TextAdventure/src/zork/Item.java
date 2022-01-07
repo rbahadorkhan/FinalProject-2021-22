@@ -85,21 +85,22 @@ public void open() {
   public String Spike(){
     boolean isDiffused = false;
     boolean isCorrect = false;
-    Scanner in = new Scanner(System.in);
-
-    if(in.hasNext("diffuse")){
-      System.out.println("Congratulations! You found the bomb, but you have to diffuse it. Hurry up! Before it explodes and destorys humanity. Before you can diffuse it you need to solve a riddle first:");
-      System.out.println("I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?");
-      System.out.println("Enter your answer: ");
+    try (Scanner in = new Scanner(System.in)) {
+      if(in.hasNext("diffuse")){
+        System.out.println("Congratulations! You found the bomb, but you have to diffuse it. Hurry up! Before it explodes and destorys humanity. Before you can diffuse it you need to solve a riddle first:");
+        System.out.println("I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?");
+        System.out.println("Enter your answer: ");
+      }
     }
 
-    Scanner ans = new Scanner(System.in);
-    if(ans.hasNext("R")){
-      isCorrect = true;
-      isDiffused = true;
-      return ("Good job! You diffused the bomb and saved humanity!");
-    }else{
-      return("The answer you have given is incorrect. Please try again! Hurry up, our lives are at risk here!");
+    try (Scanner ans = new Scanner(System.in)) {
+      if(ans.hasNext("R")){
+        isCorrect = true;
+        isDiffused = true;
+        return ("Good job! You diffused the bomb and saved humanity!");
+      }else{
+        return("The answer you have given is incorrect. Please try again! Hurry up, our lives are at risk here!");
+      }
     }
     
     
