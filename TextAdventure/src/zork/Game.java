@@ -84,10 +84,16 @@ public class Game {
      // Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
       int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
       String startingRoom = (String)((JSONObject)itemObj).get("startingRoom");
-      int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
-      int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
-      int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
-      ItemList.add(new Item(itemWeight, damage, accuracy, itemName, startingRoom));
+      boolean isWeapon = (boolean)((JSONObject)itemObj).get("isWeapon");
+      if(isWeapon){
+        int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
+        int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
+        int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
+        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon));
+      }
+      else{
+        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon));
+      }
 
       }
      

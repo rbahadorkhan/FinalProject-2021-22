@@ -9,20 +9,15 @@ public class Item extends OpenableObject {
   private int weight;
   private String name;
   private boolean isOpenable;
-  private int damage;
-  private int accuracy;
-  private int numBullets;
   private String startingRoom;
   private boolean isWeapon;
-  //private boolean isWeapon;
 
-  public Item(int weight, int damage, int accuracy, String name, String startingRoom) {
+  public Item(int weight, String name, String startingRoom, boolean isWeapon) {
     this.weight = weight;
     this.name = name;
     //this.isOpenable = isOpenable;
-    this.damage = damage;
     this.startingRoom = startingRoom;
-    this.accuracy = accuracy;
+    this.isWeapon = isWeapon;
   }
 
   public Item(){
@@ -60,32 +55,15 @@ public void open() {
     this.isOpenable = isOpenable;
   }
 
-  private int getNumBullets() {
-    return numBullets;
-  }
-
-  private int getDamage() {
-    return damage;
-  }
-
-  private int getAccuracy(){
-    return accuracy;
-  }
-
-  public int damageDealt(){
-    int totalDamage = 0;
-    for (int i = 0; i < this.getNumBullets(); i++) {
-      int accuracy = (int)(Math.random()*100 + 1);
-        if(accuracy < this.getAccuracy()){
-          totalDamage += this.getDamage();
-        }
-    }
-    return totalDamage;
-  }
 
   public String getStartingRoom() {
     return startingRoom;
 } 
+
+  public boolean isWeapon() {
+    return isWeapon;
+  }
+
   public String Spike(){
     boolean isDiffused = false;
     boolean isCorrect = false;
@@ -108,8 +86,5 @@ public void open() {
     }
   }
 
-  public boolean isWeapon() {
-    return isWeapon;
-  //}
-}
+
 }
