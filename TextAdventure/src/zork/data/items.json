@@ -114,8 +114,8 @@
         {
           "id": "Spike",
           "name": "Spike",
-          "description": "This is the bomb that you had to find and defuse to save humanity.",
-          "weight": 2050,
+          "description": "This is the bomb that you have to find and defuse to save humanity.",
+          "weight": 3000,
           "startingRoom": "",
           "numBullets": 1,
           "damage": 1,
