@@ -9,12 +9,15 @@ public class Item extends OpenableObject {
   private int damage;
   private int accuracy;
   private int numBullets;
+  private String startingRoom;
 
-  public Item(int weight, int damage, String name, boolean isOpenable) {
+  public Item(int weight, int damage, int accuracy, String name, String startingRoom) {
     this.weight = weight;
     this.name = name;
-    this.isOpenable = isOpenable;
+    //this.isOpenable = isOpenable;
     this.damage = damage;
+    this.startingRoom = startingRoom;
+    this.accuracy = accuracy;
   }
 
 
@@ -75,6 +78,10 @@ public void open() {
     }
     return totalDamage;
   }
+
+  public String getStartingRoom() {
+    return startingRoom;
+} 
   public String Spike(){
     boolean isDiffused = false;
     boolean isCorrect = false;

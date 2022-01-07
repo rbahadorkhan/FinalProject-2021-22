@@ -27,6 +27,11 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
+      for(Item item : ItemList){
+        String startingRoom = item.getStartingRoom();
+        Room room = roomMap.get(startingRoom);
+        room.setItem(item);
+      }
       initAttacker("src\\zork\\data\\attacker.json");
       for (Attacker attacker : attackerList) {
         String startingRoom = attacker.getStartingRoom();
@@ -76,13 +81,13 @@ public class Game {
       String itemName = (String) ((JSONObject) itemObj).get("name");
       String itemId = (String) ((JSONObject) itemObj).get("id");
       String itemDescription = (String) ((JSONObject) itemObj).get("description");
-      Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
+     // Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
       int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
-      Room startingRoom = roomMap.get((String)((JSONObject)itemObj).get("startingRoom"));
+      String startingRoom = (String)((JSONObject)itemObj).get("startingRoom");
       int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
       int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
       int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
-      ItemList.add(item);
+      ItemList.add(new Item(itemWeight, damage, accuracy, itemName, startingRoom));
 
       }
      
@@ -234,9 +239,16 @@ public class Game {
       return;
     }
 
-    String gun = command.getSecondWord();
-    if(myInventory.inInventory(gun)){
-      //set the gun in inventory thing 
+    String gunName = command.getSecondWord();
+    Item gun = null;
+
+    if(myInventory.inInventory(gunName)){
+      for (Item item : myInventory.getInventory()) {
+        if(gunName.equalsIgnoreCase(gun.getName())){
+          gun = item;
+          break;
+        }
+      }
       int damageDealt = gun.damageDealt();
       if(currentRoom.hasAttacker()){
         Attacker attacker = currentRoom.getAttacker();
@@ -249,7 +261,7 @@ public class Game {
           if(myHealth < 1){
             currentRoom = roomMap.get("Spawn");
             System.out.println("You died you have been respawned in spawn");
-            //drop items idk how yet
+            //drop items idk how yet or maybe just die idk
           }
         }
       }
@@ -269,13 +281,17 @@ public class Game {
       return;
     }
 
-    String newitem = command.getSecondWord();
+    String newItem = command.getSecondWord();
+    
+    Item item = null; //temporary until i figure out how to see the id and stuff
+    
+    for (Item potentialItem : currentRoom.getRoomItems()) {
+      if(newItem.equalsIgnoreCase(item.getName())){
+        item = potentialItem;
+        break;
+      }
+    }
 
-    Item item = ItemList.get(1); //temporary until i figure out how to see the id and stuff
-
-
-    //if item is in the room pick up and remove the item from the room and add to inventory
-    //  
     myInventory.addItem(item);
     currentRoom.removeItem(item);
   }
