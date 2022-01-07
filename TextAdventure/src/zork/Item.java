@@ -94,7 +94,7 @@ public void open() {
     }
 
     try (Scanner ans = new Scanner(System.in)) {
-      if(ans.hasNext("R")){
+      if(ans.hasNext("A map")){
         isCorrect = true;
         isDiffused = true;
         return ("Good job! You diffused the bomb and saved humanity!");
