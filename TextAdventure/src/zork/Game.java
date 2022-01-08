@@ -188,17 +188,27 @@ public class Game {
     }  else if (commandWord.equals("shoot")) 
         shoot(command); 
       else if(commandWord.equals("take"))
-        take(command); //
-        //we need write these methods
+        take(command);
       else if(commandWord.equals("look"))
         currentRoom.longDescription();
-      else if(commandWord.equals("use")){}
-        //useItem(command);
+      else if(commandWord.equals("use")){
+        useItem(command);
+      }
+      else if(commandWord.equals("inventory")){
+        myInventory.printItems();
+      }
+      else if(commandWord.equals("drop")){
+        myInventory.dropItem(command.getSecondWord());
+      }
+      else if(commandWord.equals("jump")){
+        jump(currentRoom);
+      }
      
     return false;
   }
 
   // implementations of user commands:
+
 
 
 
@@ -231,7 +241,7 @@ public class Game {
     Room nextRoom = currentRoom.nextRoom(direction);
 
     if (nextRoom == null)
-      System.out.println("There is no door!");
+      System.out.println("You cannot go that way");
     else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
@@ -250,29 +260,34 @@ public class Game {
 
     if(myInventory.inInventory(gunName)){
       for (Item item : myInventory.getInventory()) {
-        if(gunName.equalsIgnoreCase(gun.getName())){
+        if(gunName.equalsIgnoreCase(item.getName())){
           gun = item;
           break;
         }
       }
-      int damageDealt = gun.damageDealt();
-      if(currentRoom.hasAttacker()){
-        Attacker attacker = currentRoom.getAttacker();
-        attacker.reduceHp(damageDealt);
-        if(attacker.getHp() < 1){
-          attackerList.remove(attacker);
+      if(gun.isWeapon()){
+        int damageDealt = ((Weapon) gun).damageDealt();
+        if(currentRoom.hasAttacker()){
+          Attacker attacker = currentRoom.getAttacker();
+          attacker.reduceHp(damageDealt);
+          if(attacker.getHp() < 1){
+            attackerList.remove(attacker);
+          }
+          else{
+            myHealth -= attacker.getAttack();
+            if(myHealth < 1){
+              currentRoom = roomMap.get("Spawn");
+              System.out.println("You died you have been respawned in spawn");
+              //drop items idk how yet or maybe just die idk
+            }
+          }
         }
         else{
-          myHealth -= attacker.getAttack();
-          if(myHealth < 1){
-            currentRoom = roomMap.get("Spawn");
-            System.out.println("You died you have been respawned in spawn");
-            //drop items idk how yet or maybe just die idk
-          }
+          System.out.println("There is no enemy in this room");
         }
       }
       else{
-        System.out.println("There is no enemy in this room");
+        System.out.println("That item is not a weapon");
       }
       
   }
@@ -283,16 +298,16 @@ public class Game {
 
   private void take(Command command) {
     if(!command.hasSecondWord()) {
-      System.out.println("What do you want to pick up?");
+      System.out.println("What do you want to take?");
       return;
     }
 
     String newItem = command.getSecondWord();
     
-    Item item = null; //temporary until i figure out how to see the id and stuff
+    Item item = null; 
     
     for (Item potentialItem : currentRoom.getRoomItems()) {
-      if(newItem.equalsIgnoreCase(item.getName())){
+      if(newItem.equalsIgnoreCase(potentialItem.getName())){
         item = potentialItem;
         break;
       }
@@ -302,13 +317,48 @@ public class Game {
     currentRoom.removeItem(item);
   }
 
-  private void look(Command command) {
-    System.out.println(currentRoom.getDescription());
-  }
+  
+  private void useItem(Command command) {
+    //if there is no second word, we don't know what to use
+    if(!command.hasSecondWord()) {
+      System.out.println("use what?");
+      return;
+    }
+    String itemName = command.getSecondWord();
+    Item potentialItem = null;
 
-  private void inventory() {
-    myInventory.printItems();
+    if(myInventory.inInventory(itemName)){
+      for (Item item : myInventory.getInventory()) {
+        if(itemName.equalsIgnoreCase(item.getName())){
+          potentialItem = item;
+          break;
+        }
+      }
+      if(potentialItem.isWeapon()){
+        shoot(command);
+      }
+/*    else if(potentialItem.isHealing()){
+        myHealth += 60;
+        myInventory.dropItem(potentialItem); //need to make this a string or make dropitem a item constructor
+        itemList.remove(potentialItem);
+      } */
+      //need to make health
+    }
   }
   
+  private void jump(Room currentRoom) {
+    ArrayList<Exit> exits = currentRoom.getExits();
+    System.out.println("You jump above the walls and you see the whats in the adjacent rooms");
+    for (Exit exit : exits) {
+      String direction = exit.getDirection();
+      Room nextRoom = currentRoom.nextRoom(direction);
+      System.out.println("To the " + direction + nextRoom.getDescription());
+    }
+
+  }
 
 }
+
+  
+
+
