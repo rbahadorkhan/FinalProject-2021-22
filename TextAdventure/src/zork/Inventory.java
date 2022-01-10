@@ -65,4 +65,8 @@ public class Inventory {
     }
       return false;
     }
+  
+    public ArrayList<Item> getInventory(){
+      return items;
+    }
   }

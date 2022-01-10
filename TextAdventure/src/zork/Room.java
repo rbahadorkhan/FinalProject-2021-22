@@ -8,7 +8,8 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private Attacker attacker;
-  private ArrayList<Item> roomItems;
+  private ArrayList<Item> roomItems = new ArrayList<Item>();
+
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -31,6 +32,7 @@ public class Room {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
+    
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -136,5 +138,9 @@ public class Room {
 
   public void removeItem(Item item){
     roomItems.remove(item);
+  }
+
+  public ArrayList<Item> getRoomItems(){
+    return roomItems;
   }
 }

@@ -8,28 +8,30 @@
           "startingRoom":"Camps",
           "numBullets": 1,
           "damage": 100,
-          "accuracy": 100
-  
+          "accuracy": 100,
+          "isWeapon": true  
         },
         {
           "id": "FireBall",
           "name": "FireBall",
           "description": "A small ball with fire",
           "weight": 50,
-          "startingRoom":"Hiding Spot",
+          "startingRoom":"HidingSpot",
           "numBullets": 1,
           "damage": 100,
-          "accuracy": 100
+          "accuracy": 100,
+          "isWeapon": true  
         },
         {
           "id": "Explosive",
           "name": "Explosive",
           "description": "A small missile that contains a chemical agent.",
           "weight": 50,
-          "startingRoom":"Teleporter B",
+          "startingRoom":"Teleporter-B",
           "numBullets": 1,
           "damage": 100,
-          "accuracy": 100
+          "accuracy": 100,
+          "isWeapon": true  
         },
         {
           "id": "Marshal",
@@ -39,7 +41,8 @@
           "startingRoom": "Mid",
           "numBullets": 1,
           "damage": 200,
-          "accuracy": 50
+          "accuracy": 50,
+          "isWeapon": true  
         },
         {
           "id": "Operator",
@@ -49,7 +52,8 @@
           "startingRoom": "B-Hall",
           "numBullets": 1,
           "damage": 200,
-          "accuracy": 50
+          "accuracy": 50,
+          "isWeapon": true  
         },
         {
           "id": "Ares",
@@ -59,7 +63,8 @@
           "startingRoom":"Showers",
           "numBullets": 15,
           "damage": 45,
-          "accuracy": 70
+          "accuracy": 70,
+          "isWeapon": true  
         },
         {
         "id": "Spectre",
@@ -69,7 +74,8 @@
           "startingRoom":"Fountain",
           "numBullets": 15,
           "damage": 45,
-          "accuracy": 70
+          "accuracy": 70,
+          "isWeapon": true  
         },
         {
           "id": "Odin1",
@@ -79,7 +85,8 @@
           "startingRoom": "Spawn",
           "numBullets": 45,
           "damage": 40,
-          "accuracy": 65
+          "accuracy": 65,
+          "isWeapon": true  
         },
         {
           "id": "MachineGun",
@@ -89,7 +96,8 @@
           "startingRoom": "B-Elbow",
           "numBullets": 45,
           "damage": 40,
-          "accuracy": 65
+          "accuracy": 65,
+          "isWeapon": true  
         },
         {
           "id": "Vandal",
@@ -99,17 +107,31 @@
           "startingRoom": "Garage",
           "numBullets": 7,
           "damage": 75,
-          "accuracy": 70
+          "accuracy": 70,
+          "isWeapon": true  
         },
         {
           "id": "Phantom",
           "name": "Phantom",
           "description": "Phantom is a long range gun. It has 75 damage per bullet and it has 80% accuracy.",
           "weight": 750,
-          "startingRoom": "Living Room",
+          "startingRoom": "LivingRoom",
           "numBullets": 7,
           "damage": 75,
-          "accuracy": 70
+          "accuracy": 70,
+          "isWeapon": true  
+        },
+        {
+          "id": "Spike",
+          "name": "Spike",
+          "description": "This is the bomb that you have to find and defuse to save humanity.",
+          "weight": 3000,
+          "startingRoom": "",
+          "numBullets": 1,
+          "damage": 1,
+          "accuracy": 100,
+          "isdefused": false,
+          "isWeapon": false
         }
       ]   
 }

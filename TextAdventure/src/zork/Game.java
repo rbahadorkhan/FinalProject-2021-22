@@ -27,6 +27,11 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
+      for(Item item : ItemList){
+        String startingRoom = item.getStartingRoom();
+        Room room = roomMap.get(startingRoom);
+        room.setItem(item);
+      }
       initAttacker("src\\zork\\data\\attacker.json");
       for (Attacker attacker : attackerList) {
         String startingRoom = attacker.getStartingRoom();
@@ -55,10 +60,10 @@ public class Game {
       String attackerName = (String) ((JSONObject) attackerObj).get("name");
       String attackerId = (String) ((JSONObject) attackerObj).get("id");
       String attackerDescription = (String) ((JSONObject) attackerObj).get("description");
-      Room startingRoom = roomMap.get((String)((JSONObject)attackerObj).get("startingRoom"));
+      String startingRoom = ((String)((JSONObject)attackerObj).get("startingRoom"));
       int hp = ((Long)((JSONObject)attackerObj).get("hp")).intValue();
       int attack = ((Long)((JSONObject)attackerObj).get("attack")).intValue();;
-      attackerList.add(attacker);
+      attackerList.add(new Attacker(attackerId, attackerName, attackerDescription, startingRoom, hp, attack));
 
       }
   }
@@ -76,13 +81,19 @@ public class Game {
       String itemName = (String) ((JSONObject) itemObj).get("name");
       String itemId = (String) ((JSONObject) itemObj).get("id");
       String itemDescription = (String) ((JSONObject) itemObj).get("description");
-      Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
+     // Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
       int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
-      Room startingRoom = roomMap.get((String)((JSONObject)itemObj).get("startingRoom"));
-      int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
-      int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
-      int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
-      ItemList.add(item);
+      String startingRoom = (String)((JSONObject)itemObj).get("startingRoom");
+      boolean isWeapon = (boolean)((JSONObject)itemObj).get("isWeapon");
+      if(isWeapon){
+        int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
+        int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
+        int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
+        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon));
+      }
+      else{
+        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon));
+      }
 
       }
      
@@ -177,17 +188,27 @@ public class Game {
     }  else if (commandWord.equals("shoot")) 
         shoot(command); 
       else if(commandWord.equals("take"))
-        take(command); //
-        //we need write these methods
+        take(command);
       else if(commandWord.equals("look"))
         currentRoom.longDescription();
-      else if(commandWord.equals("use")){}
-        //useItem(command);
+      else if(commandWord.equals("use")){
+        useItem(command);
+      }
+      else if(commandWord.equals("inventory")){
+        myInventory.printItems();
+      }
+      else if(commandWord.equals("drop")){
+        myInventory.dropItem(command.getSecondWord());
+      }
+      else if(commandWord.equals("jump")){
+        jump(currentRoom);
+      }
      
     return false;
   }
 
   // implementations of user commands:
+
 
 
 
@@ -220,7 +241,7 @@ public class Game {
     Room nextRoom = currentRoom.nextRoom(direction);
 
     if (nextRoom == null)
-      System.out.println("There is no door!");
+      System.out.println("You cannot go that way");
     else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
@@ -234,27 +255,39 @@ public class Game {
       return;
     }
 
-    String gun = command.getSecondWord();
-    if(myInventory.inInventory(gun)){
-      //set the gun in inventory thing 
-      int damageDealt = gun.damageDealt();
-      if(currentRoom.hasAttacker()){
-        Attacker attacker = currentRoom.getAttacker();
-        attacker.reduceHp(damageDealt);
-        if(attacker.getHp() < 1){
-          attackerList.remove(attacker);
+    String gunName = command.getSecondWord();
+    Item gun = null;
+
+    if(myInventory.inInventory(gunName)){
+      for (Item item : myInventory.getInventory()) {
+        if(gunName.equalsIgnoreCase(item.getName())){
+          gun = item;
+          break;
+        }
+      }
+      if(gun.isWeapon()){
+        int damageDealt = ((Weapon) gun).damageDealt();
+        if(currentRoom.hasAttacker()){
+          Attacker attacker = currentRoom.getAttacker();
+          attacker.reduceHp(damageDealt);
+          if(attacker.getHp() < 1){
+            attackerList.remove(attacker);
+          }
+          else{
+            myHealth -= attacker.getAttack();
+            if(myHealth < 1){
+              currentRoom = roomMap.get("Spawn");
+              System.out.println("You died you have been respawned in spawn");
+              //drop items idk how yet or maybe just die idk
+            }
+          }
         }
         else{
-          myHealth -= attacker.getAttack();
-          if(myHealth < 1){
-            currentRoom = roomMap.get("Spawn");
-            System.out.println("You died you have been respawned in spawn");
-            //drop items idk how yet
-          }
+          System.out.println("There is no enemy in this room");
         }
       }
       else{
-        System.out.println("There is no enemy in this room");
+        System.out.println("That item is not a weapon");
       }
       
   }
@@ -265,28 +298,67 @@ public class Game {
 
   private void take(Command command) {
     if(!command.hasSecondWord()) {
-      System.out.println("What do you want to pick up?");
+      System.out.println("What do you want to take?");
       return;
     }
 
-    String newitem = command.getSecondWord();
+    String newItem = command.getSecondWord();
+    
+    Item item = null; 
+    
+    for (Item potentialItem : currentRoom.getRoomItems()) {
+      if(newItem.equalsIgnoreCase(potentialItem.getName())){
+        item = potentialItem;
+        break;
+      }
+    }
 
-    Item item = ItemList.get(1); //temporary until i figure out how to see the id and stuff
-
-
-    //if item is in the room pick up and remove the item from the room and add to inventory
-    //  
     myInventory.addItem(item);
     currentRoom.removeItem(item);
   }
 
-  private void look(Command command) {
-    System.out.println(currentRoom.getDescription());
-  }
+  
+  private void useItem(Command command) {
+    //if there is no second word, we don't know what to use
+    if(!command.hasSecondWord()) {
+      System.out.println("use what?");
+      return;
+    }
+    String itemName = command.getSecondWord();
+    Item potentialItem = null;
 
-  private void inventory() {
-    myInventory.printItems();
+    if(myInventory.inInventory(itemName)){
+      for (Item item : myInventory.getInventory()) {
+        if(itemName.equalsIgnoreCase(item.getName())){
+          potentialItem = item;
+          break;
+        }
+      }
+      if(potentialItem.isWeapon()){
+        shoot(command);
+      }
+/*    else if(potentialItem.isHealing()){
+        myHealth += 60;
+        myInventory.dropItem(potentialItem); //need to make this a string or make dropitem a item constructor
+        itemList.remove(potentialItem);
+      } */
+      //need to make health
+    }
   }
   
+  private void jump(Room currentRoom) {
+    ArrayList<Exit> exits = currentRoom.getExits();
+    System.out.println("You jump above the walls and you see the whats in the adjacent rooms");
+    for (Exit exit : exits) {
+      String direction = exit.getDirection();
+      Room nextRoom = currentRoom.nextRoom(direction);
+      System.out.println("To the " + direction + nextRoom.getDescription());
+    }
+
+  }
 
 }
+
+  
+
+
