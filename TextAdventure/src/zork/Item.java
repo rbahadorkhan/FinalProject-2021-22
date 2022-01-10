@@ -110,6 +110,5 @@ public void open() {
 
   public boolean isWeapon() {
     return isWeapon;
-  //}
 }
 }
