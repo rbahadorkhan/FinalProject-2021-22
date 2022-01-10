@@ -20,6 +20,7 @@ public class Parser {
     System.out.print("> "); // print prompt
 
     inputLine = in.nextLine();
+    inputLine.toLowerCase();
 
     words = inputLine.split(" ");
 
