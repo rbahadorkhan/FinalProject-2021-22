@@ -84,6 +84,11 @@ public class Game {
      // Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
       int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
       String startingRoom = (String)((JSONObject)itemObj).get("startingRoom");
+      if(startingRoom.equals("random")){
+        String[] possibleRooms = {"B-Elbow", "B-Main", "Garage", "B-Lobby", "Fountain", "Sahara", "Hookah", "Mid", "Showers", "HidingSpot", "LivingRoom", "Camps", "A-Main", "A-Elbow", "Haven", "Teleporter-A", "Teleporter-B"};
+        int randomRoom = (int)(Math.random()*possibleRooms.length);
+        startingRoom = possibleRooms[randomRoom];
+      }
       boolean isWeapon = (boolean)((JSONObject)itemObj).get("isWeapon");
       if(isWeapon){
         int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();

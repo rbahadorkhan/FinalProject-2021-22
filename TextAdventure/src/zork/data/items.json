@@ -126,12 +126,13 @@
           "name": "Spike",
           "description": "This is the bomb that you have to find and defuse to save humanity.",
           "weight": 3000,
-          "startingRoom": "return (int) (math.random()*2)-1)",
+          "startingRoom": "random",
           "numBullets": 1,
           "damage": 1,
           "accuracy": 100,
           "isdefused": false,
           "isWeapon": false
         }
+
       ]   
 }
