@@ -58,7 +58,7 @@ public String Spike(){
   boolean isCorrect = false;
   try (Scanner in = new Scanner(System.in)) {
     if(in.hasNext("diffuse")){
-      System.out.println("Congratulations! You found the bomb, but you have to diffuse it. Hurry up! Before it explodes and destorys humanity. Before you can diffuse it you need to solve a riddle first:");
+      System.out.println("Congratulations! You found the bomb, but you have to diffuse it. Hurry up! Before it explodes and destorys humanity. To diffuse it you need to solve a riddle first:");
       System.out.println("I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?");
       System.out.println("Enter your answer: ");
     }
