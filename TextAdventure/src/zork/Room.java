@@ -8,9 +8,9 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private Attacker attacker;
-  private boolean isTeleportRoom;
+  private boolean isTeleportRoom; // if its a teleport room
   private ArrayList<Item> roomItems;
-  private ArrayList<Room> teleportRooms; 
+  private ArrayList<Room> teleportRooms; // these are the rooms i can teleport to
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -37,9 +37,7 @@ public class Room {
     teleportRooms = new ArrayList<Room>(); 
     roomItems = new ArrayList<Item>();
   }
-  public boolean isTeleportRoom(){
-    return isTeleportRoom; 
-  }
+  
 
   public void addExit(Exit exit) throws Exception {
     exits.add(exit);
@@ -146,15 +144,24 @@ public class Room {
     roomItems.remove(item);
   }
 
+  public boolean isTeleportRoom(){ // if its telelport room gives option if its not you cant tp
+    return isTeleportRoom; 
+  }
+
+  public ArrayList <Room> getTeleportRooms(){ 
+  //If the currentRoom is a teleport toom then get the teleportRooms (getTeleportRooms() and then iterate and display the names of each of those rooms. Have them pick one and then get the id of the room and use the roomMap.get(roomid) and set the currentRoom.
+    return teleportRooms;
+  }
+
   public ArrayList<Item> getRoomItems(){
     return roomItems;
   }
 
-  public void setIsTeleportRoom(boolean isTeleportRoom) {
+  public void setIsTeleportRoom(boolean isTeleportRoom) { // this is just for initroom
     this.isTeleportRoom=isTeleportRoom;
   }
 
-  public void setTeleportRooms(ArrayList<Room> teleportRooms) {
+  public void setTeleportRooms(ArrayList<Room> teleportRooms) { // this is just for initroom
     this.teleportRooms=teleportRooms;
   }
 }
