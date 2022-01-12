@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter, however if you go into the teleporter you cannot come out and you get teleported immediately. You can go to garage that leads to B-Main or you can go to Fountain, however there is an attacker waiting for you at the entrance. ",
+  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter to go to either fountain or hookah, however if you go into the teleporter you cannot go back to B-lobby. You can go to garage that leads to B-Main or you can go to Fountain, however there is an attacker waiting for you at the entrance. ",
   "exits": [
     {
       "isLocked": false,
@@ -266,7 +266,7 @@
   {
     "id": "LivingRoom",
     "name": "Living Room",
-    "description": "You are in a room with a couch. There is a phantom beside the couch. You can go to A-Main, Camps, Hiding Spot, or you can go to teleporter that leads to B site, but if you go into the teleporter you can't come out.",
+    "description": "You are in a room with a couch. There is a phantom beside the couch. You can go to A-Main, Camps, Hiding Spot, or you can go to teleporter that leads to mid or garage, but if you go into the teleporter you can't go back.",
     "exits": [
       {
         "isLocked": false,
@@ -371,7 +371,7 @@
   {
     "id": "Teleporter-A",
     "name": "Teleporter A",
-    "description": "You've teleported to B-site. You can only go out of the teleporter to Hookah, or stay in the teleporter. You cannot teleport back.",
+    "description": "You are in teleport-A, you have two options, you can teleport to garage or mid.",
     "exits": [
       {
         "isLocked": true,
@@ -384,7 +384,7 @@
   {
     "id": "Teleporter-B",
     "name": "Teleporter B",
-    "description": "You've teleported to A-site. You saw an explosive in front of you. You can only go out of the teleporter to A-Hall, or stay in the teleporter. You cannot teleport back.",
+    "description": "You are in teleport-B, you have two options, you can teleport to fountain or hookah.",
     "exits": [
       {
         "isLocked": true,
