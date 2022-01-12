@@ -8,8 +8,9 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private Attacker attacker;
-  private ArrayList<Item> roomItems = new ArrayList<Item>();
-
+  private boolean isTeleportRoom;
+  private ArrayList<Item> roomItems;
+  private ArrayList<Room> teleportRooms; 
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -33,6 +34,11 @@ public class Room {
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
     
+    teleportRooms = new ArrayList<Room>(); 
+    roomItems = new ArrayList<Item>();
+  }
+  public boolean isTeleportRoom(){
+    return isTeleportRoom; 
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -142,5 +148,9 @@ public class Room {
 
   public ArrayList<Item> getRoomItems(){
     return roomItems;
+  }
+
+  public void setIsTeleportRoom(boolean isTeleportRoom) {
+    this.isTeleportRoom=isTeleportRoom;
   }
 }

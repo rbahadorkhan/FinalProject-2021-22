@@ -117,6 +117,9 @@ public class Game {
       String roomName = (String) ((JSONObject) roomObj).get("name");
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
+      Boolean isTeleportRoom = (Boolean) ((JSONObject) roomObj).get("isTeleport");
+      if(isTeleportRoom!=null)                                  
+        room.setIsTeleportRoom(isTeleportRoom);
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
 
@@ -208,6 +211,9 @@ public class Game {
       else if(commandWord.equals("jump")){
         jump(currentRoom);
       }
+      else if(commandWord.equals("teleport")){
+        teleport();
+      }
      
     return false;
   }
@@ -215,6 +221,11 @@ public class Game {
   // implementations of user commands:
 
 
+
+
+  private void teleport() {
+    System.out.println("Where do you want to teleport");
+  }
 
 
   /**
