@@ -224,7 +224,7 @@ public class Game {
   private void printHelp() {
     System.out.println("You are lost. You are alone. You wander");
     System.out.println("around at Monash Uni, Peninsula Campus.");
-    System.out.println("Your goal is to find the spike and defuse it, be careful you may be attacked");
+    System.out.println("Your goal is to find the spike and defuse it, be careful you may be attacked.");
     System.out.println();
     System.out.println("Your command words are:");
     parser.showCommands();
