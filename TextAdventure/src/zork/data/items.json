@@ -9,7 +9,8 @@
           "numBullets": 1,
           "damage": 100,
           "accuracy": 100,
-          "isWeapon": true  
+          "isWeapon": true, 
+          "isHealing": false 
         },
         {
           "id": "FireBall",
@@ -20,7 +21,8 @@
           "numBullets": 1,
           "damage": 100,
           "accuracy": 100,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Explosive",
@@ -31,7 +33,8 @@
           "numBullets": 1,
           "damage": 100,
           "accuracy": 100,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Marshal",
@@ -42,7 +45,8 @@
           "numBullets": 1,
           "damage": 200,
           "accuracy": 50,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Operator",
@@ -53,7 +57,8 @@
           "numBullets": 1,
           "damage": 200,
           "accuracy": 50,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Ares",
@@ -64,7 +69,8 @@
           "numBullets": 15,
           "damage": 45,
           "accuracy": 70,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
         "id": "Spectre",
@@ -75,7 +81,8 @@
           "numBullets": 15,
           "damage": 45,
           "accuracy": 70,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Odin1",
@@ -86,7 +93,8 @@
           "numBullets": 45,
           "damage": 40,
           "accuracy": 65,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "MachineGun",
@@ -97,7 +105,8 @@
           "numBullets": 45,
           "damage": 40,
           "accuracy": 65,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Vandal",
@@ -108,7 +117,8 @@
           "numBullets": 7,
           "damage": 75,
           "accuracy": 70,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Phantom",
@@ -119,7 +129,8 @@
           "numBullets": 7,
           "damage": 75,
           "accuracy": 70,
-          "isWeapon": true  
+          "isWeapon": true,
+          "isHealing": false  
         },
         {
           "id": "Spike",
@@ -131,7 +142,86 @@
           "damage": 1,
           "accuracy": 100,
           "isdefused": false,
-          "isWeapon": false
+          "isWeapon": false,
+          "isHealing": false
+        },
+        {
+          "id": "Heal",
+          "name": "Health Potion",
+          "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
+          "weight": 30,
+          "startingRoom": "random",
+          "numBullets": 0,
+          "damage": 0,
+          "accuracy": 0,
+          "isdefused": false,
+          "isWeapon": false,
+          "isHealing": true
+        },
+        {
+          "id": "Heal",
+          "name": "Health Potion",
+          "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
+          "weight": 30,
+          "startingRoom": "random",
+          "numBullets": 0,
+          "damage": 0,
+          "accuracy": 0,
+          "isdefused": false,
+          "isWeapon": false,
+          "isHealing": true
+        },
+        {
+          "id": "Heal",
+          "name": "Health Potion",
+          "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
+          "weight": 30,
+          "startingRoom": "random",
+          "numBullets": 0,
+          "damage": 0,
+          "accuracy": 0,
+          "isdefused": false,
+          "isWeapon": false,
+          "isHealing": true
+        },
+        {
+          "id": "Heal",
+          "name": "Health Potion",
+          "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
+          "weight": 30,
+          "startingRoom": "random",
+          "numBullets": 0,
+          "damage": 0,
+          "accuracy": 0,
+          "isdefused": false,
+          "isWeapon": false,
+          "isHealing": true
+        },
+        {
+          "id": "Heal",
+          "name": "Health Potion",
+          "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
+          "weight": 30,
+          "startingRoom": "random",
+          "numBullets": 0,
+          "damage": 0,
+          "accuracy": 0,
+          "isdefused": false,
+          "isWeapon": false,
+          "isHealing": true
+        },
+        {
+          "id": "Heal",
+          "name": "Health Potion",
+          "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
+          "weight": 30,
+          "startingRoom": "random",
+          "numBullets": 0,
+          "damage": 0,
+          "accuracy": 0,
+          "isdefused": false,
+          "isWeapon": false,
+          "isHealing": true
         }
 
       ]   
