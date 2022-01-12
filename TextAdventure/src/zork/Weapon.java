@@ -5,8 +5,8 @@ public class Weapon extends Item {
     private int accuracy;
     private int numBullets;
 
-    public Weapon(int itemWeight, int damage, int accuracy, int numBullets, String name, String startingRoom, boolean isWeapon) { //itemWeight, damage, accuracy, itemName, startingRoom
-        super(itemWeight, name, startingRoom, isWeapon);
+    public Weapon(int itemWeight, int damage, int accuracy, int numBullets, String name, String startingRoom, boolean isWeapon, boolean isHealing) { 
+        super(itemWeight, name, startingRoom, isWeapon, isHealing);
         this.damage = damage;
         this.accuracy = accuracy;
         this.numBullets = numBullets;
