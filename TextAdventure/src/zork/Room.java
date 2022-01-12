@@ -153,4 +153,8 @@ public class Room {
   public void setIsTeleportRoom(boolean isTeleportRoom) {
     this.isTeleportRoom=isTeleportRoom;
   }
+
+  public void setTeleportRooms(ArrayList<Room> teleportRooms) {
+    this.teleportRooms=teleportRooms;
+  }
 }

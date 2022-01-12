@@ -135,6 +135,20 @@ public class Game {
         exits.add(exit);
       }
       room.setExits(exits);
+      JSONArray jsonTeleportRooms = (JSONArray) ((JSONObject) roomObj).get("teleportRooms");
+      if(jsonTeleportRooms!=null){
+      ArrayList<Room> teleportRooms = new ArrayList<Room>();
+      for (Object teleObj : jsonTeleportRooms) {
+        String teleRoomId = (String) teleObj;
+        teleportRooms.add(roomMap.get(teleRoomId));
+      }
+
+      if(teleportRooms.size()>0){
+        room.setTeleportRooms(teleportRooms);
+
+      }
+    }
+
       roomMap.put(roomId, room);
     }
   }
