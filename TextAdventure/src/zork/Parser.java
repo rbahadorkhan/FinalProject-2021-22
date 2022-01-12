@@ -35,6 +35,9 @@ public class Parser {
       else if(isItem(words) > -1){
         word2 = words[isItem(words)];
       }
+      else if(isTeleportRoom(words) > -1){
+        word2 = words[isTeleportRoom(words)];
+      }
       else{
         word2 = null;
       }
@@ -83,5 +86,17 @@ public class Parser {
     return -1;
   }
   //see if any of the words in the arraylist are a direction or item or command and delete the rest of it...
+
+  public int isTeleportRoom(String[] input){
+    ArrayList<String> teleportRooms = new ArrayList<String>(Arrays.asList("Fountain, Hookah", "Mid", "Garage"));
+
+    for (int i = 0; i < input.length; i++) {
+      if(teleportRooms.contains(input[i])){
+        return i;
+    }
+  }
+    return -1;
+  }
+
 
 }

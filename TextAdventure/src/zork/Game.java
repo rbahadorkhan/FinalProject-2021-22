@@ -89,15 +89,16 @@ public class Game {
         int randomRoom = (int)(Math.random()*possibleRooms.length);
         startingRoom = possibleRooms[randomRoom];
       }
+      boolean isHealing = (boolean)((JSONObject)itemObj).get("isHealing");
       boolean isWeapon = (boolean)((JSONObject)itemObj).get("isWeapon");
       if(isWeapon){
         int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
         int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
         int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
-        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon));
+        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon, isHealing));
       }
       else{
-        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon));
+        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon, isHealing));
       }
 
       }
@@ -227,6 +228,9 @@ public class Game {
       }
       else if(commandWord.equals("teleport")){
         teleport();
+      }
+      else if(commandWord.equals("heal")){
+        heal();
       }
      
     return false;
@@ -368,15 +372,37 @@ public class Game {
       if(potentialItem.isWeapon()){
         shoot(command);
       }
-/*    else if(potentialItem.isHealing()){
+      else if(potentialItem.isHealing()){
         myHealth += 60;
-        myInventory.dropItem(potentialItem); //need to make this a string or make dropitem a item constructor
-        itemList.remove(potentialItem);
-      } */
-      //need to make health
+        myInventory.dropItem("Healing Potion");
+        ItemList.remove(potentialItem);
+        System.out.println("You have been healed to " + myHealth);
+      }
     }
   }
   
+  private void heal() {
+    if(myInventory.inInventory("Healing Potion")){
+      if(myHealth <= 100){
+      myHealth += 60;
+      System.out.println("You have been healed to " + myHealth);
+      Item healingItem;
+      for (Item item : myInventory.getInventory()) {
+        if(("Healing Potion").equals(item.getName())){
+          myInventory.dropItem("Healing Potion");
+          ItemList.remove(item);
+          break;
+        }
+      }
+
+    } else{
+      System.out.println("You cannot heal because you have greater than 100 health.");
+    }
+  }
+    else{
+      System.out.println("You do not have any healing potions");
+    }
+  }
   private void jump(Room currentRoom) {
     ArrayList<Exit> exits = currentRoom.getExits();
     System.out.println("You jump above the walls and you see the whats in the adjacent rooms");
