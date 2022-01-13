@@ -254,13 +254,14 @@ public class Game {
     if(currentRoom.isTeleportRoom()){
       System.out.println("You can teleport: ");
     for (Room room : currentRoom.getTeleportRooms()) {
-      System.out.println(room);
+      System.out.println(room.getRoomName());
     }
     String nextRoom = command.getSecondWord(); 
     Room possibleRoom = null; 
     for (Room room : currentRoom.getTeleportRooms()) {
       if(nextRoom.equalsIgnoreCase(room.getRoomName())){
       currentRoom=room; 
+      System.out.println(currentRoom.longDescription());
       return; 
       }
     }
