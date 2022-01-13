@@ -259,15 +259,12 @@ public class Game {
     String nextRoom = command.getSecondWord(); 
     Room possibleRoom = null; 
     for (Room room : currentRoom.getTeleportRooms()) {
-      if(nextRoom.equalsIgnoreCase(room.getRoomName()));
-      break; 
-    }
-    if(possibleRoom!=null){
+      if(nextRoom.equalsIgnoreCase(room.getRoomName())){
       currentRoom=possibleRoom; 
+      break; 
+      }
     }
-    else{
       System.out.println("You cannot go there.");
-    }
     }
     else{
       System.out.println("This is not a teleport room.");
