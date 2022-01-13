@@ -19,6 +19,8 @@ public class Game {
   private Room currentRoom;
   private int myHealth = 150;
   private Inventory myInventory = new Inventory(1000);
+  private boolean finished = false;
+
 
   /**
    * Create the game and initialise its internal map.
@@ -38,9 +40,9 @@ public class Game {
         Room room = roomMap.get(startingRoom);
         room.setAttacker(attacker);
       }
-      currentRoom = roomMap.get("Teleporter-B"); // use this tp & change spawn
+      currentRoom = roomMap.get("Spawn"); // use this tp & change spawn
     } catch (Exception e) {
-      currentRoom = roomMap.get("Teleporter-B"); //please remove this later we have many issues because we dont know how to code :))
+      currentRoom = roomMap.get("Spawn"); //please remove this later we have many issues because we dont know how to code :))
       e.printStackTrace();
     }
     parser = new Parser();
@@ -163,7 +165,7 @@ public class Game {
   public void play() {
     printWelcome();
 
-    boolean finished = false;
+    //boolean finished = false;
     while (!finished) {
       Command command;
       try {
@@ -240,6 +242,9 @@ public class Game {
       else if(commandWord.equals("heal")){
         heal();
       }
+      else if(commandWord.equals("defuse")){
+        defuse();
+      }
      
     return false;
   }
@@ -247,6 +252,23 @@ public class Game {
   // implementations of user commands:
 
 
+
+
+  private void defuse() {
+    Item spike = null;
+    for (Item item : currentRoom.getRoomItems()) {
+      if(item.getName().equalsIgnoreCase("spike")){
+        spike = item;
+        break;
+      }
+    }
+    if(spike == null){
+      return;
+    }
+    System.out.println("You successfully defused the spike and saved humanity!");
+    finished = true;
+    
+  }
 
 
   private void teleport(Command command) {

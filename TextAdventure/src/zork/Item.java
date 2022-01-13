@@ -59,19 +59,19 @@ public boolean isHealing() {
 }
 
 public String Spike(){
-  boolean isDiffused = false;
+  boolean isDefused = false;
   boolean isCorrect = false;
   try (Scanner in = new Scanner(System.in)) {
     if(in.hasNext("diffuse")){
-      System.out.println("Congratulations! You found the bomb, but you have to diffuse it. Hurry up! Before it explodes and destorys humanity. To diffuse it you need to solve a riddle first:");
+      System.out.println("Congratulations! You found the bomb, but you have to defuse it. Hurry up! Before it explodes and destorys humanity. To diffuse it you need to solve a riddle first:");
       System.out.println("I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?");
       System.out.println("Enter your answer: ");
     }
   }
   try (Scanner ans = new Scanner(System.in)) {
-    if(ans.hasNext("A map")){
+    if(ans.hasNext("map")){
       isCorrect = true;
-      isDiffused = true;
+      isDefused = true;
       return ("Good job! You diffused the bomb and saved humanity!");
     }else{
       return("The answer you have given is incorrect. Please try again! Hurry up, our lives are at risk here!");
