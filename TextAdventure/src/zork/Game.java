@@ -260,7 +260,7 @@ public class Game {
     Room possibleRoom = null; 
     for (Room room : currentRoom.getTeleportRooms()) {
       if(nextRoom.equalsIgnoreCase(room.getRoomName())){
-      currentRoom=possibleRoom; 
+      currentRoom=room; 
       break; 
       }
     }
