@@ -193,12 +193,13 @@ public class Game {
    * the game, true is returned, otherwise false is returned.
    */
   private boolean processCommand(Command command) {
-    if (command.isUnknown()) {
+    String commandWord = command.getCommandWord();
+
+    if (command.isUnknown() || commandWord == null) {
       System.out.println("I don't know what you mean...");
       return false;
     }
-
-    String commandWord = command.getCommandWord();
+    
     if (commandWord.equals("help"))
       printHelp();
     else if (commandWord.equals("go"))
@@ -251,12 +252,17 @@ public class Game {
     if(!command.hasSecondWord()) {
       System.out.println("Where do you want to teleport?");
     }
-    if(currentRoom.isTeleportRoom()){
-      System.out.println("You can teleport: ");
-    for (Room room : currentRoom.getTeleportRooms()) {
-      System.out.println(room.getRoomName());
-    }
+
+    
     String nextRoom = command.getSecondWord(); 
+    if(!currentRoom.isTeleportRoom()){
+      System.out.println("This is not a teleport room.");
+      return;
+    }
+    if (nextRoom == null){
+      System.out.println("You cannot teleport there.");
+      return;
+    }
     Room possibleRoom = null; 
     for (Room room : currentRoom.getTeleportRooms()) {
       if(nextRoom.equalsIgnoreCase(room.getRoomName())){
@@ -267,13 +273,8 @@ public class Game {
     }
       System.out.println("You cannot go there."); 
     }
-    else{
-      System.out.println("This is not a teleport room.");
-    }
-  
-    
 
-  }
+  
 
 
   /**
