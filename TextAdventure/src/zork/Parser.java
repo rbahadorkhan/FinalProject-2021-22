@@ -90,7 +90,7 @@ public class Parser {
   //see if any of the words in the arraylist are a direction or item or command and delete the rest of it...
 
   public int isTeleportRoom(String[] input){
-    ArrayList<String> teleportRooms = new ArrayList<String>(Arrays.asList("Fountain, Hookah", "Mid", "Garage"));
+    ArrayList<String> teleportRooms = new ArrayList<String>(Arrays.asList("fountain", "hookah", "mid", "garage"));
 
     for (int i = 0; i < input.length; i++) {
       if(teleportRooms.contains(input[i])){

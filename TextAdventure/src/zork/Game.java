@@ -38,9 +38,9 @@ public class Game {
         Room room = roomMap.get(startingRoom);
         room.setAttacker(attacker);
       }
-      currentRoom = roomMap.get("Spawn"); // use this tp & change spawn
+      currentRoom = roomMap.get("Teleporter-B"); // use this tp & change spawn
     } catch (Exception e) {
-      currentRoom = roomMap.get("Spawn"); //please remove this later we have many issues because we dont know how to code :))
+      currentRoom = roomMap.get("Teleporter-B"); //please remove this later we have many issues because we dont know how to code :))
       e.printStackTrace();
     }
     parser = new Parser();
