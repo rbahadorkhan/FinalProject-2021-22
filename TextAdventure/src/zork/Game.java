@@ -261,10 +261,10 @@ public class Game {
     for (Room room : currentRoom.getTeleportRooms()) {
       if(nextRoom.equalsIgnoreCase(room.getRoomName())){
       currentRoom=room; 
-      break; 
+      return; 
       }
     }
-      System.out.println("You cannot go there.");
+      System.out.println("You cannot go there."); 
     }
     else{
       System.out.println("This is not a teleport room.");
