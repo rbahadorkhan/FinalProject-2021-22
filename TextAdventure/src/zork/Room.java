@@ -150,7 +150,10 @@ public class Room {
   }
 
   public ArrayList <Room> getTeleportRooms(){ 
-  //If the currentRoom is a teleport toom then get the teleportRooms (getTeleportRooms() and then iterate and display the names of each of those rooms. Have them pick one and then get the id of the room and use the roomMap.get(roomid) and set the currentRoom.
+  //If the currentRoom is a teleport toom then get the teleportRooms 
+  //(getTeleportRooms() and then iterate and display the names of each of those rooms. 
+  // Have them pick one and then get the id of the room and use the roomMap.get(roomid) 
+  //and set the currentRoom.
     return teleportRooms;
   }
 

@@ -233,7 +233,7 @@ public class Game {
         jump(currentRoom);
       }
       else if(commandWord.equals("teleport")){
-        teleport();
+        teleport(command);
       }
       else if(commandWord.equals("heal")){
         heal();
@@ -247,8 +247,34 @@ public class Game {
 
 
 
-  private void teleport() {
-    System.out.println("Where do you want to teleport");
+  private void teleport(Command command) {
+    if(!command.hasSecondWord()) {
+      System.out.println("Where do you want to teleport?");
+    }
+    if(currentRoom.isTeleportRoom()){
+      System.out.println("You can teleport: ");
+    for (Room room : currentRoom.getTeleportRooms()) {
+      System.out.println(room);
+    }
+    String nextRoom = command.getSecondWord(); 
+    Room possibleRoom = null; 
+    for (Room room : currentRoom.getTeleportRooms()) {
+      if(nextRoom.equalsIgnoreCase(room.getRoomName()));
+      break; 
+    }
+    if(possibleRoom!=null){
+      currentRoom=possibleRoom; 
+    }
+    else{
+      System.out.println("You cannot go there.");
+    }
+    }
+    else{
+      System.out.println("This is not a teleport room.");
+    }
+  
+    
+
   }
 
 
