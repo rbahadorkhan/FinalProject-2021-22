@@ -11,7 +11,7 @@ public class Item extends OpenableObject {
   private boolean isWeapon;
   private boolean isHealing;
   
-  public Item(int weight, String name, String startingRoom, boolean isWeapon, boolean isHealing) {
+  public Item(int weight, String name, String startingRoom, boolean isWeapon, boolean isHealing, boolean isSpike) {
     this.weight = weight;
     this.name = name;
     //this.isOpenable = isOpenable;

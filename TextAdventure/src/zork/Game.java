@@ -91,14 +91,15 @@ public class Game {
       }
       boolean isHealing = (boolean)((JSONObject)itemObj).get("isHealing");
       boolean isWeapon = (boolean)((JSONObject)itemObj).get("isWeapon");
+      boolean isSpike = (boolean)((JSONObject)itemObj).get("isSpike");
       if(isWeapon){
         int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
         int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
         int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
-        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon, isHealing));
+        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon, isHealing, isSpike));
       }
       else{
-        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon, isHealing));
+        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon, isHealing, isSpike));
       }
 
       }
