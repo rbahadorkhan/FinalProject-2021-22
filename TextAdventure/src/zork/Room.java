@@ -57,7 +57,23 @@ public class Room {
    */
   public String longDescription() {
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString();
+    String teleportString = "";
+    String itemString = "There are no items in this room.";
+
+    if(isTeleportRoom){
+      teleportString += "This is a teleport room. \n You can teleport to: ";
+      for (Room teleport : teleportRooms) {
+        teleportString += teleport.getRoomName() + ", ";
+      } 
+    }
+    if(roomItems.size() > 0){
+      itemString = "The items in this room are: ";
+    for (Item item : roomItems) {
+      itemString += item.getName() + ", ";
+    }
+  }
+
+    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString + "\n" + teleportString;
   }
 
   /**
