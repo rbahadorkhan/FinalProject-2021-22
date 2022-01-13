@@ -3,7 +3,7 @@
     {
       "id": "Spawn",
       "name": "Spawn",
-      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity. There is an Odin laying on the ground. You have two choices: You can go east towards B-site or west towards A-site.",
+      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity.",
       "exits": [
         {
           "isLocked": false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -20,7 +20,7 @@
     {
       "id": "B-Hall",
       "name": "B-Hall",
-      "description": "You are in a hall that leads towards B-Main. There is an Operator in fornt of you. There is a door on the south side of the hall and there is an opening on the north side that leads to another room.",
+      "description": "You are in a long hall that leads towards B-Main. It looks dirty and run down. ",
       "exits": [
         {
           "isLocked": true,
@@ -38,7 +38,7 @@
     {
       "id": "B-Elbow",
       "name": "B-Elbow",
-      "description": "You are in an elbow shaped hall. At the end of the hall there is an opening leading to a huge site. There is an machine gun in this room. You can go to B-Hall or you can go to the huge site.",
+      "description": "You are in an elbow shaped hall. The hall is covered with dust and sand.",
       "exits": [
         {
           "isLocked": false,
@@ -55,7 +55,7 @@
     {
       "id": "B-Main",
       "name": "B-Main",
-      "description": "You are in a huge site with sand surrounding you. There is an attacker waiting to hurt you. You have five choices: You can go to B-hall, B-Elbow, Garage, Hookah, or you can shoot at the attacker.",
+      "description": "You are in a huge site with sand surrounding you. The sun is shining at you and it's boiling hot.",
       "exits": [
         {
           "isLocked": true,
@@ -83,7 +83,7 @@
     {
     "id": "Garage",
     "name": "Garage",
-    "description": "You are in a room with dark walls surrounding you. There is a Vandal in this room. You can go to B-Hall or you can go to B-Lobby. If you go to B-Lobby you can teleport to A site.",
+    "description": "You are in a room with dark walls surrounding you. You can see a hint of the sun but other than that it's dark. Sand surrounding your feet. ",
     "exits": [
       {
         "isLocked": false,
@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. You can go into the teleporter to go to either Fountain or Hookah, however if you go into the teleporter you cannot go back to B-lobby. You can go to Garage that leads to B-Main or you can go to Fountain, however there is an attacker waiting for you at the entrance. ",
+  "description": "You are in a long hall that leads to the open dessert. There are cacti surrounding you. ",
   "exits": [
     {
       "isLocked": false,
@@ -122,7 +122,7 @@
   {
     "id": "Fountain",
     "name": "Fountain",
-    "description": "You are in a an outdoor area with a huge fountain that stands in the middle. It seems like this is the only water source here. There is also a Specter. You have many options: you can go to B-Lobby, Sahara, Cafeteria or to Mid. ",
+    "description": "You are in a an outdoor area with a huge fountain that stands in the middle. It seems like this is the only water source here.",
     "exits": [
       {
         "isLocked": false,
@@ -144,7 +144,7 @@
   {
     "id": "Sahara",
     "name": "Sahara",
-    "description": "You're in a room with dusty old walls and sand as floor. You can go to Fountain, Hookah which leads to B-Main or Cafeteria which leads to A-Hall.",
+    "description": "You're in a room with dusty old walls and sand as floor. It's a weird looking place with old paintings on the wall.",
     "exits": [
       {
         "isLocked": false,
@@ -166,7 +166,7 @@
   {
     "id": "Hookah",
     "name": "Hookah",
-    "description": "You're in a room that looks like a balcony, behind a box is an attacker waiting to shoot you. You can go to Cafeteria, to A-Main, or you can shoot the attacker.",
+    "description": "You're in a room that looks like a balcony. The sand covering your feet, and the sun shining into your face.",
     "exits": [
       {
         "isLocked": false,
@@ -183,7 +183,7 @@
   {
     "id": "Mid",
     "name": "Mid",
-    "description": "You're in a long hall that is covered in sand and cacti. There is a Marshal on the floor. There is an attacker hiding behind a cactus. You can shoot the attacker, go to Cafteria, A-Hall or to Fountain. ",
+    "description": "You're in a long hall that is covered in sand and cacti. The walls around you have peeling wallpaper, and some mold. Gross really.",
     "exits": [
       {
         "isLocked": false,
@@ -205,7 +205,7 @@
   {
     "id": "A-Hall",
     "name": "A-Hall",
-    "description": "You're in a room covered with weird paintings. There is an attacker standing beside the teleporter. You can shoot him or you can go towards Showers or Hiding Spot which both lead to A-Main, or you can go to Mid.",
+    "description": "You're in a room covered with weird paintings. One of them looks like a cactus with a face, weird.",
     "exits": [
       {
         "isLocked": false,
@@ -227,7 +227,7 @@
   {
     "id": "Showers",
     "name": "Showers",
-    "description": "You're in an L-shaped room with water trickling down the wall. There is an Ares in the room. There is an attacker waiting for you in the corner. You can shoot the attacker, go to A-Main, or go to A-Hall.",
+    "description": "You're in an L-shaped room with water trickling down the wall. You can see the mold forming on the walls. This place is kind of moldy.",
     "exits": [
       {
         "isLocked": false,
@@ -244,7 +244,7 @@
   {
     "id": "HidingSpot",
     "name": "Hiding Spot",
-    "description": "You are in a room that seems almost hidden. You found a Fireball on the floor. You can go to A-Hall, Cafeteria, or to Living Room.",
+    "description": "You are in a room that seems almost hidden. This room is kind of plain with no mold or anything. Intersting.",
     "exits": [
       {
         "isLocked": false,
@@ -266,7 +266,7 @@
   {
     "id": "LivingRoom",
     "name": "Living Room",
-    "description": "You are in a room with a couch. There is a Phantom beside the couch. You can go to A-Main, Camps, Hiding Spot, or you can go to teleporter that leads to mid or garage, but if you go into the teleporter you can't go back.",
+    "description": "You are in a room with a couch and a coffee table. There are some little decorations around the room. Cute decorations, kind of moldy and dirty though.",
     "exits": [
       {
         "isLocked": false,
@@ -293,7 +293,7 @@
   {
     "id": "Camps",
     "name": "Camps",
-    "description": "You are in a small room with a box in the corner. There is also a grenade on the floor. There is an attacker waiting for you behind them. You can attack them, go to A-Hall, or go to A-Main.",
+    "description": "You are in a small room with a box in the corner. The box has weird spots on it, maybe it's mold again.",
     "exits": [
       {
         "isLocked": false,
@@ -310,7 +310,7 @@
   {
     "id": "A-Main",
     "name": "A-Main",
-    "description": "You are in a huge site. In the middle of the site there is an attacker. You can shoot the attacker, go to A-Elbow, Camps, Living Room, or Showers.",
+    "description": "You are in a huge site. It's an open spave with sand surrounding you. The sun is shining on all spots with no shade anywhere.",
     "exits": [
       {
         "isLocked": false,
@@ -337,7 +337,7 @@
   {
     "id": "A-Elbow",
     "name": "A-Elbow",
-    "description": "You are in an L-Shaped room that leads to A-site. You can go to Spawn, or to A-Main.",
+    "description": "You are in an L-Shaped room. This is a room with a floor. Nice! Not many of those here.",
     "exits": [
       {
         "isLocked": false,
@@ -354,7 +354,7 @@
   {
     "id": "Haven",
     "name": "Haven",
-    "description": "You are in a balcony that stares into A-Main. You can jump down to A-Main, or you can go to Spawn.",
+    "description": "You are in a balcony that stares into A-Main. The balcony is covered in steel, and there is some sort of display of something behind you.",
     "exits": [
       {
         "isLocked": false,
@@ -373,7 +373,7 @@
     "name": "Teleporter A",
     "isTeleport": true,
     "teleportRooms": ["Garage", "Mid"],
-    "description": "You are in teleport-A, you have two options, you can teleport to garage or mid.",
+    "description": "You are in teleport-A.",
     "exits": [
       {
         "isLocked": true,
@@ -388,7 +388,7 @@
     "name": "Teleporter B",
     "isTeleport": true,
     "teleportRooms": ["Fountain", "Hookah"],
-    "description": "You are in teleport-B, you have two options, you can teleport to fountain or hookah.",
+    "description": "You are in teleport-B.",
     "exits": [
       {
         "isLocked": true,
