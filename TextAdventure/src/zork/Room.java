@@ -59,6 +59,18 @@ public class Room {
 
     String teleportString = "";
     String itemString = "There are no items in this room.";
+    String attackerString = "";
+
+    if(roomItems.size() > 0){
+      itemString = "The items in this room are: ";
+    for (Item item : roomItems) {
+      itemString += item.getName() + ", ";
+    }
+   }
+
+    if(hasAttacker()){
+      attackerString += "You see an attacker in this room, they call themselves " + attacker.getName() + "\n" + attacker.getDescription();
+    }
 
     if(isTeleportRoom){
       teleportString += "This is a teleport room. \n You can teleport to: ";
@@ -66,14 +78,9 @@ public class Room {
         teleportString += teleport.getRoomName() + ", ";
       } 
     }
-    if(roomItems.size() > 0){
-      itemString = "The items in this room are: ";
-    for (Item item : roomItems) {
-      itemString += item.getName() + ", ";
-    }
-  }
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString + "\n" + teleportString;
+    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString + "\n" + attackerString + "\n" + teleportString;
+
   }
 
   /**
