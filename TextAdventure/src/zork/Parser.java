@@ -31,7 +31,7 @@ public class Parser {
       String word2;
       if(isDirection(words) > -1){
         word2 = words[isDirection(words)];
-      }
+      } 
       else if(isItem(words) > -1){
         word2 = words[isItem(words)];
         if(word2.equals("health") || word2.equals("potion"))

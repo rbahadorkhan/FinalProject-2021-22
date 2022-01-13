@@ -19,7 +19,7 @@ public class Item extends OpenableObject {
     this.isWeapon = isWeapon;
     this.isHealing = isHealing;
   }
-
+ 
   public Item(){
   }
   public void open() {
