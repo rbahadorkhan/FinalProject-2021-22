@@ -36,23 +36,24 @@ public class Inventory {
 
 
   
-  public void dropItem (String item){
+  public Item dropItem (String item){
     if (inInventory(item)) {
       for (int i = 0; i < items.size(); i++) { 
         Item rem = items.get(i);
-          if (rem.getName().equals(item)){
-            items.remove(i);
+          if (rem.getName().equalsIgnoreCase(item)){
+            items.remove(i);             
             System.out.println("You dropped " + item + ".");
-            return;
+            return rem;
           }
       }
     }
-    return; 
+    System.out.println("You do not have that item");
+    return null;
   }
   
   public void printItems() {
     for (Item s: items){
-      System.out.print(s);
+      System.out.print(s.getName());
     }
     System.out.println();    
   }
@@ -60,7 +61,7 @@ public class Inventory {
   //work on this
   public boolean inInventory (String item){
     for (Item i : items) {
-      if (i.getName().equals(item)){
+      if (i.getName().equalsIgnoreCase(item)){
         return true;
       }
     }

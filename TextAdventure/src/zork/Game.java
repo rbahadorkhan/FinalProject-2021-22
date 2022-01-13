@@ -18,7 +18,7 @@ public class Game {
   private Parser parser;
   private Room currentRoom;
   private int myHealth = 150;
-  private Inventory myInventory;
+  private Inventory myInventory = new Inventory(1000);
 
   /**
    * Create the game and initialise its internal map.
@@ -213,7 +213,7 @@ public class Game {
       else if(commandWord.equals("take"))
         take(command);
       else if(commandWord.equals("look"))
-        currentRoom.longDescription();
+        System.out.println(currentRoom.longDescription());
       else if(commandWord.equals("use")){
         useItem(command);
       }
@@ -221,7 +221,13 @@ public class Game {
         myInventory.printItems();
       }
       else if(commandWord.equals("drop")){
-        myInventory.dropItem(command.getSecondWord());
+        Item item = myInventory.dropItem(command.getSecondWord());
+        if(!item.isHealing())
+          currentRoom.setItem(item);
+        else {
+          System.out.println("Oh no, you dropped the glass potion, you can no longer use it");
+          ItemList.remove(item);
+        }
       }
       else if(commandWord.equals("jump")){
         jump(currentRoom);
@@ -307,6 +313,7 @@ public class Game {
           attacker.reduceHp(damageDealt);
           if(attacker.getHp() < 1){
             attackerList.remove(attacker);
+            System.out.println("You Killed " + attacker.getName() );
           }
           else{
             myHealth -= attacker.getAttack();
@@ -350,6 +357,7 @@ public class Game {
 
     myInventory.addItem(item);
     currentRoom.removeItem(item);
+    System.out.println("You now have " + item.getName());
   }
 
   
@@ -373,23 +381,31 @@ public class Game {
         shoot(command);
       }
       else if(potentialItem.isHealing()){
-        myHealth += 60;
-        myInventory.dropItem("Healing Potion");
-        ItemList.remove(potentialItem);
-        System.out.println("You have been healed to " + myHealth);
+        if(myHealth <= 100){
+          myHealth += 60;
+          myInventory.dropItem("Health Potion");
+          ItemList.remove(potentialItem);
+          System.out.println("You have been healed to " + myHealth);
+        }
+        else{
+          System.out.println("You have too much health to heal.");
+        }
       }
+    }else{
+      System.out.println("You do not have this item.");
     }
   }
   
   private void heal() {
-    if(myInventory.inInventory("Healing Potion")){
+    if(myInventory.inInventory("Health Potion")){
       if(myHealth <= 100){
       myHealth += 60;
       System.out.println("You have been healed to " + myHealth);
       Item healingItem;
       for (Item item : myInventory.getInventory()) {
-        if(("Healing Potion").equals(item.getName())){
-          myInventory.dropItem("Healing Potion");
+        if(("Health Potion").equals(item.getName())){
+          myInventory.dropItem("Health Potion");
+          currentRoom.removeItem(item);
           ItemList.remove(item);
           break;
         }
@@ -400,7 +416,7 @@ public class Game {
     }
   }
     else{
-      System.out.println("You do not have any healing potions");
+      System.out.println("You do not have any health potions");
     }
   }
   private void jump(Room currentRoom) {
@@ -409,7 +425,7 @@ public class Game {
     for (Exit exit : exits) {
       String direction = exit.getDirection();
       Room nextRoom = currentRoom.nextRoom(direction);
-      System.out.println("To the " + direction + nextRoom.getDescription());
+      System.out.println("To the " + direction + ": " + nextRoom.getDescription() + "\n");
     }
 
   }

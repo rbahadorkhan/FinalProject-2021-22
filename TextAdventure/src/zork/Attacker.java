@@ -40,6 +40,10 @@ public class Attacker {
     public String getStartingRoom() {
         return startingRoom;
     }
+
+    public String getName(){
+        return name;
+    }
     
 
 

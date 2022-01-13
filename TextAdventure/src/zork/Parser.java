@@ -34,6 +34,8 @@ public class Parser {
       }
       else if(isItem(words) > -1){
         word2 = words[isItem(words)];
+        if(word2.equals("health") || word2.equals("potion"))
+          word2 = "Health Potion";
       }
       else if(isTeleportRoom(words) > -1){
         word2 = words[isTeleportRoom(words)];
@@ -63,7 +65,7 @@ public class Parser {
   }
 
   public int isDirection(String[] input){
-    ArrayList<String> directions = new ArrayList<String>(Arrays.asList("north", "east", "south", "west", "northeast", "northwest", "southeast", "southwest", "n", "e", "s", "w", "ne", "nw", "se", "sw"));
+    ArrayList<String> directions = new ArrayList<String>(Arrays.asList("north", "east", "south", "west", "northeast", "northwest", "southeast", "southwest"));
 
     
     for (int i = 0; i < input.length; i++) {
@@ -75,7 +77,7 @@ public class Parser {
   }
 
   public int isItem(String[] input){
-    ArrayList<String> items = new ArrayList<String>(Arrays.asList("grenade", "operator", "spectre", "odin", "vandal"));
+    ArrayList<String> items = new ArrayList<String>(Arrays.asList("grenade", "operator", "spectre", "odin", "vandal", "health"));
 
     
     for (int i = 0; i < input.length; i++) {

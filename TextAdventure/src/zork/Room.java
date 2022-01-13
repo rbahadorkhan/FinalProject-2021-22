@@ -137,7 +137,8 @@ public class Room {
   }
 
   public void setItem(Item item){
-    roomItems.add(item);
+    if(item != null)
+     roomItems.add(item);
   }
 
   public void removeItem(Item item){
