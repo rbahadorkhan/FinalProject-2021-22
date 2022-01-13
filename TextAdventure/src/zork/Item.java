@@ -10,14 +10,16 @@ public class Item extends OpenableObject {
   private String startingRoom;
   private boolean isWeapon;
   private boolean isHealing;
+  private String description;
   
-  public Item(int weight, String name, String startingRoom, boolean isWeapon, boolean isHealing, boolean isSpike) {
+  public Item(int weight, String name, String startingRoom, boolean isWeapon, boolean isHealing, boolean isSpike, String description) {
     this.weight = weight;
     this.name = name;
     //this.isOpenable = isOpenable;
     this.startingRoom = startingRoom;
     this.isWeapon = isWeapon;
     this.isHealing = isHealing;
+    this.description = description;
   }
  
   public Item(){
@@ -56,6 +58,10 @@ public boolean isWeapon() {
 
 public boolean isHealing() {
   return isHealing;
+}
+
+public String getDescription(){
+  return description;
 }
 
 public String Spike(){

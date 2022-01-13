@@ -18,8 +18,9 @@ public class Game {
   private Parser parser;
   private Room currentRoom;
   private int myHealth = 150;
-  private Inventory myInventory = new Inventory(1000);
+  private Inventory myInventory = new Inventory(2500);
   private boolean finished = false;
+  private int myKills = 0;
 
 
   /**
@@ -94,14 +95,15 @@ public class Game {
       boolean isHealing = (boolean)((JSONObject)itemObj).get("isHealing");
       boolean isWeapon = (boolean)((JSONObject)itemObj).get("isWeapon");
       boolean isSpike = (boolean)((JSONObject)itemObj).get("isSpike");
+      String description = (String)((JSONObject)itemObj).get("description");
       if(isWeapon){
         int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
         int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
         int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
-        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon, isHealing, isSpike));
+        ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon, isHealing, isSpike, description));
       }
       else{
-        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon, isHealing, isSpike));
+        ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon, isHealing, isSpike, description));
       }
 
       }
@@ -245,6 +247,9 @@ public class Game {
       else if(commandWord.equals("defuse")){
         defuse();
       }
+      else if(commandWord.equals("display")){
+        display(command.getSecondWord());
+      }
      
     return false;
   }
@@ -254,7 +259,25 @@ public class Game {
 
 
 
+  private void display(String secondWord) {
+    if(secondWord.equalsIgnoreCase("health")){
+      System.out.println("Your health is: " + myHealth + ".");
+    }
+    else if(secondWord.equalsIgnoreCase("kills")){
+      System.out.println("You have " + myKills + " kills.");
+    }
+    else if(secondWord.equalsIgnoreCase("inventory")){
+      myInventory.printItems();
+      System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+    }
+  }
+
+
   private void defuse() {
+    if(myKills < 3){
+      int remainingKills = 3 - myKills;
+      System.out.println("You need to kill " + remainingKills + " more attackers to defuse the spike.");
+    }
     Item spike = null;
     for (Item item : currentRoom.getRoomItems()) {
       if(item.getName().equalsIgnoreCase("spike")){
@@ -362,6 +385,8 @@ public class Game {
           if(attacker.getHp() < 1){
             attackerList.remove(attacker);
             System.out.println("You Killed " + attacker.getName() );
+            myKills++;
+            System.out.println("You now have " + myKills + " kills");
           }
           else{
             myHealth -= attacker.getAttack();
@@ -404,8 +429,12 @@ public class Game {
     }
 
     myInventory.addItem(item);
+    if(myInventory.remainingWeight() > 0){
     currentRoom.removeItem(item);
     System.out.println("You now have " + item.getName());
+    System.out.println(item.getDescription());
+    System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+    }
   }
 
   

@@ -40,6 +40,9 @@ public class Parser {
       else if(isTeleportRoom(words) > -1){
         word2 = words[isTeleportRoom(words)];
       }
+      else if(isDisplayable(words)> -1){
+        word2 = words[isDisplayable(words)];
+      }
       else{
         word2 = null;
       }
@@ -100,5 +103,15 @@ public class Parser {
     return -1;
   }
 
+  public int isDisplayable(String[] input){
+    ArrayList<String> teleportRooms = new ArrayList<String>(Arrays.asList("kills", "health", "inventory"));
+
+    for (int i = 0; i < input.length; i++) {
+      if(teleportRooms.contains(input[i])){
+        return i;
+    }
+  }
+    return -1;
+  }
 
 }

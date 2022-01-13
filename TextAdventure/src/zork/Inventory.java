@@ -28,6 +28,7 @@ public class Inventory {
   public void addItem (Item item) {
     if (item.getWeight() + currentWeight <= maxWeight) {
      items.add(item);
+     currentWeight += item.getWeight();
      return;
     } 
     System.out.println("You don't have room in your inventory for this item");
@@ -42,6 +43,7 @@ public class Inventory {
         Item rem = items.get(i);
           if (rem.getName().equalsIgnoreCase(item)){
             items.remove(i);             
+            currentWeight -= rem.getWeight();
             System.out.println("You dropped " + item + ".");
             return rem;
           }
@@ -71,4 +73,8 @@ public class Inventory {
     public ArrayList<Item> getInventory(){
       return items;
     }
-  }
+    public int remainingWeight(){
+      return maxWeight-currentWeight;
+    }
+}
+
