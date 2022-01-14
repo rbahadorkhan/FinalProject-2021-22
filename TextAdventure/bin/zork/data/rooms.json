@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. There are cacti surrounding you. ",
+  "description": "You are in a long hall that leads to the open dessert. There are cacti around you. ",
   "exits": [
     {
       "isLocked": false,
@@ -110,7 +110,7 @@
     {
       "isLocked": false,
       "direction": "West",
-      "adjacentRoom": "Teleporter B"
+      "adjacentRoom": "Teleporter-B"
     },
     {
       "isLocked": false,
@@ -286,7 +286,7 @@
       {
         "isLocked": false, 
         "direction": "West", 
-        "adjacentRoom": "Teleporter A"
+        "adjacentRoom": "Teleporter-A"
       }
     ]
   },
