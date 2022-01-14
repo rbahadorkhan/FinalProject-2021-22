@@ -26,6 +26,13 @@ public class Parser {
 
     String word1 = words[0];
 
+    for (String s : words) {
+      if(commands.isCommand(s)){
+        word1 = s;
+        break;
+      }
+    }
+
     if (words.length > 1){
 
       String word2;
@@ -57,7 +64,7 @@ public class Parser {
       return new Command(word1, null);
     }
   }
-  return null;
+  return new Command(null, null);
 }
 
   /**

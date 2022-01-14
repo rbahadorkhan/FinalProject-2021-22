@@ -191,4 +191,8 @@ public class Room {
   public void setTeleportRooms(ArrayList<Room> teleportRooms) { // this is just for initroom
     this.teleportRooms=teleportRooms;
   }
+
+  public void removeAttacker(){
+    attacker = null;
+  }
 }

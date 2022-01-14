@@ -19,7 +19,6 @@ public class Game {
   private Room currentRoom;
   private int myHealth = 150;
   private Inventory myInventory = new Inventory(2500);
-  private boolean finished = false;
   private int myKills = 0;
 
 
@@ -166,8 +165,7 @@ public class Game {
    */
   public void play() {
     printWelcome();
-
-    //boolean finished = false;
+    boolean finished = false;
     while (!finished) {
       Command command;
       try {
@@ -186,8 +184,8 @@ public class Game {
    */
   private void printWelcome() {
     System.out.println();
-    System.out.println("Welcome to Zork!");
-    System.out.println("Zork is a interactive shooting game.");
+    System.out.println("Welcome to TextShoot!");
+    System.out.println("TextShoot is a interactive shooting game.");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
@@ -225,6 +223,7 @@ public class Game {
       }
       else if(commandWord.equals("inventory")){
         myInventory.printItems();
+        System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
       }
       else if(commandWord.equals("drop")){
         Item item = myInventory.dropItem(command.getSecondWord());
@@ -260,7 +259,7 @@ public class Game {
 
 
   private void display(String secondWord) {
-    if(secondWord.equalsIgnoreCase("health")){
+    if(secondWord.indexOf("Health") > -1){
       System.out.println("Your health is: " + myHealth + ".");
     }
     else if(secondWord.equalsIgnoreCase("kills")){
@@ -273,10 +272,11 @@ public class Game {
   }
 
 
-  private void defuse() {
+  private boolean defuse() {
     if(myKills < 3){
       int remainingKills = 3 - myKills;
       System.out.println("You need to kill " + remainingKills + " more attackers to defuse the spike.");
+      return false;
     }
     Item spike = null;
     for (Item item : currentRoom.getRoomItems()) {
@@ -286,10 +286,11 @@ public class Game {
       }
     }
     if(spike == null){
-      return;
+      System.out.println("Spike is not in this room.");
+      return false;
     }
     System.out.println("You successfully defused the spike and saved humanity!");
-    finished = true;
+    return true;
     
   }
 
@@ -328,8 +329,8 @@ public class Game {
    * and a list of the command words.
    */
   private void printHelp() {
-    System.out.println("You are lost. You are alone. You wander");
-    System.out.println("around at Monash Uni, Peninsula Campus.");
+    System.out.println("Hurry Up! The spike is going to explode");
+    System.out.println("You need " + (3 - myKills) + " more kills to defuse the spike.");
     System.out.println("Your goal is to find the spike and defuse it, be careful you may be attacked.");
     System.out.println();
     System.out.println("Your command words are:");
@@ -383,7 +384,8 @@ public class Game {
           Attacker attacker = currentRoom.getAttacker();
           attacker.reduceHp(damageDealt);
           if(attacker.getHp() < 1){
-            attackerList.remove(attacker);
+            currentRoom.removeAttacker();
+            //attackerList.remove(attacker);
             System.out.println("You Killed " + attacker.getName() );
             myKills++;
             System.out.println("You now have " + myKills + " kills");
