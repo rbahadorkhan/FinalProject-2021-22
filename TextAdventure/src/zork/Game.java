@@ -390,6 +390,8 @@ public class Game {
           }
           else{
             myHealth -= attacker.getAttack();
+            System.out.println("You did: " + damageDealt + " damage to " + attacker.getName() + "\n" + "They are now on " + attacker.getHp() + " hp" );
+            System.out.println("They did " + attacker.getAttack() + " damage to you." + "\n" + "You are now on " + myHealth + " hp");
             if(myHealth < 1){
               currentRoom = roomMap.get("Spawn");
               System.out.println("You died you have been respawned in spawn");
