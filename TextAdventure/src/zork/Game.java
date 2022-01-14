@@ -247,7 +247,7 @@ public class Game {
         defuse();
       }
       else if(commandWord.equals("display")){
-        display(command.getSecondWord());
+        display(command);
       }
      
     return false;
@@ -258,7 +258,12 @@ public class Game {
 
 
 
-  private void display(String secondWord) {
+  private void display(Command command) {
+    if(!command.hasSecondWord()){
+      System.out.println("Display what?");
+      return;
+    }
+    String secondWord = command.getSecondWord();
     if(secondWord.indexOf("Health") > -1){
       System.out.println("Your health is: " + myHealth + ".");
     }
@@ -434,10 +439,10 @@ public class Game {
 
     myInventory.addItem(item);
     if(myInventory.remainingWeight() > 0){
-    currentRoom.removeItem(item);
-    System.out.println("You now have " + item.getName());
-    System.out.println(item.getDescription());
-    System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+      currentRoom.removeItem(item);
+      System.out.println("You now have " + item.getName());
+      System.out.println(item.getDescription());
+      System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
     }
   }
 
