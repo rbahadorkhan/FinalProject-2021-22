@@ -5,12 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Game {
-
+  private Scanner in;
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
   public static ArrayList<Attacker> attackerList = new ArrayList<Attacker>();
   public static ArrayList<Item> ItemList = new ArrayList<Item>();
@@ -259,11 +261,16 @@ public class Game {
 
 
   private void display(Command command) {
+    String secondWord = command.getSecondWord();
     if(!command.hasSecondWord()){
       System.out.println("Display what?");
-      return;
+      System.out.println("Go where?");
+      if(in == null){
+        in = new Scanner(System.in);
+      }
+      System.out.print("> ");
+      secondWord = in.nextLine();
     }
-    String secondWord = command.getSecondWord();
     if(secondWord.indexOf("Health") > -1){
       System.out.println("Your health is: " + myHealth + ".");
     }
@@ -301,12 +308,17 @@ public class Game {
 
 
   private void teleport(Command command) {
+    String nextRoom = command.getSecondWord(); 
     if(!command.hasSecondWord()) {
       System.out.println("Where do you want to teleport?");
+      if(in == null){
+        in = new Scanner(System.in);
+      }
+      System.out.print("> ");
+      nextRoom = in.nextLine();
     }
 
     
-    String nextRoom = command.getSecondWord(); 
     if(!currentRoom.isTeleportRoom()){
       System.out.println("This is not a teleport room.");
       return;
@@ -347,13 +359,18 @@ public class Game {
    * otherwise print an error message.
    */
   private void goRoom(Command command) {
+    String direction = command.getSecondWord();
     if (!command.hasSecondWord()) {
       // if there is no second word, we don't know where to go...
       System.out.println("Go where?");
-      return;
+      if(in == null){
+        in = new Scanner(System.in);
+      }
+      System.out.print("> ");
+      direction = in.nextLine();
+
     }
 
-    String direction = command.getSecondWord();
 
     // Try to leave current room.
     Room nextRoom = currentRoom.nextRoom(direction);
@@ -367,13 +384,18 @@ public class Game {
   }
 
   private void shoot(Command command) {
+    String gunName = command.getSecondWord();
+
     if(!command.hasSecondWord())  {
       //if there is no second word, we don't know what to shoot with...
       System.out.println("Shoot with what?");
-      return;
+      if(in == null){
+        in = new Scanner(System.in);
+      }
+      System.out.print("> ");
+      gunName = in.nextLine();
     }
 
-    String gunName = command.getSecondWord();
     Item gun = null;
 
     if(myInventory.inInventory(gunName)){
@@ -421,12 +443,16 @@ public class Game {
 }
 
   private void take(Command command) {
+    String newItem = command.getSecondWord();
     if(!command.hasSecondWord()) {
       System.out.println("What do you want to take?");
-      return;
+      if(in == null){
+        in = new Scanner(System.in);
+      }
+      System.out.print("> ");
+      newItem = in.nextLine();
     }
 
-    String newItem = command.getSecondWord();
     
     Item item = null; 
     
@@ -449,12 +475,17 @@ public class Game {
 
   
   private void useItem(Command command) {
+    String itemName = command.getSecondWord();
     //if there is no second word, we don't know what to use
     if(!command.hasSecondWord()) {
       System.out.println("use what?");
-      return;
+      if(in == null){
+        in = new Scanner(System.in);
+      }
+      System.out.print("> ");
+      itemName = in.nextLine();
     }
-    String itemName = command.getSecondWord();
+    
     Item potentialItem = null;
 
     if(myInventory.inInventory(itemName)){

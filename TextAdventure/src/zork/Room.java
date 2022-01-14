@@ -79,7 +79,7 @@ public class Room {
       } 
     }
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString + "\n" + attackerString + "\n" + teleportString;
+    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString + (attackerString.equals("")?"":("\n" + attackerString)) + (teleportString.equals("")?"":("\n" + teleportString));
 
   }
 
