@@ -440,10 +440,10 @@ public class Game {
           System.out.println(item.getDescription());
           System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
         }
-        break;
+        return;
       }
     }
-
+      System.out.println("You cannot take this item.");
     }
 
 
