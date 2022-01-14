@@ -433,18 +433,19 @@ public class Game {
     for (Item potentialItem : currentRoom.getRoomItems()) {
       if(newItem.equalsIgnoreCase(potentialItem.getName())){
         item = potentialItem;
+        myInventory.addItem(item);
+        if(myInventory.remainingWeight() - item.getWeight()> 0){
+          currentRoom.removeItem(item);
+          System.out.println("You now have " + item.getName());
+          System.out.println(item.getDescription());
+          System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+        }
         break;
       }
     }
 
-    myInventory.addItem(item);
-    if(myInventory.remainingWeight() - item.getWeight()> 0){
-      currentRoom.removeItem(item);
-      System.out.println("You now have " + item.getName());
-      System.out.println(item.getDescription());
-      System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
     }
-  }
+
 
   
   private void useItem(Command command) {
