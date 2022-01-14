@@ -25,7 +25,7 @@
         {
           "isLocked": true,
           "direction": "West",
-          "adjacentRoom": "B-Hall",
+          "adjacentRoom": "Spawn",
           "keyId": "6666"
         },
         {
