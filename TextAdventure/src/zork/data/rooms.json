@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. There are cacti surrounding you. ",
+  "description": "You are in a long hall that leads to the open dessert. There are cacti around you. ",
   "exits": [
     {
       "isLocked": false,
