@@ -110,7 +110,7 @@
     {
       "isLocked": false,
       "direction": "West",
-      "adjacentRoom": "Teleporter B"
+      "adjacentRoom": "Teleporter-B"
     },
     {
       "isLocked": false,
@@ -286,7 +286,7 @@
       {
         "isLocked": false, 
         "direction": "West", 
-        "adjacentRoom": "Teleporter A"
+        "adjacentRoom": "Teleporter-A"
       }
     ]
   },
