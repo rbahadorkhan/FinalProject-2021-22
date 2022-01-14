@@ -164,6 +164,28 @@
     ]
   },
   {
+    "id": "Cafeteria",
+    "name": "Cafeteria",
+    "description": "You're in a room with food and drinks around you. There are tables but it doesn't look very appealing.",
+    "exits": [
+      {
+        "isLocked": false,
+        "direction": "North",
+        "adjacentRoom": "Sahara"
+      },
+      {
+        "isLocked": false,
+        "direction": "Southeast",
+        "adjacentRoom": "Mid"
+      },
+      {
+        "isLocked": false, 
+        "direction": "East", 
+        "adjacentRoom": "HidingSpot"
+      }
+    ]
+  },
+  {
     "id": "Hookah",
     "name": "Hookah",
     "description": "You're in a room that looks like a balcony. The sand covering your feet, and the sun shining into your face.",
@@ -215,7 +237,7 @@
       {
         "isLocked": false,
         "direction": "Northwest",
-        "adjacentRoom": "Hiding Spot"
+        "adjacentRoom": "HidingSpot"
       },
       {
         "isLocked": false, 
@@ -249,7 +271,7 @@
       {
         "isLocked": false,
         "direction": "North",
-        "adjacentRoom": "Living Room"
+        "adjacentRoom": "LivingRoom"
       },
       {
         "isLocked": false,
@@ -271,7 +293,7 @@
       {
         "isLocked": false,
         "direction": "South",
-        "adjacentRoom": "Hiding Spot"
+        "adjacentRoom": "HidingSpot"
       },
       {
         "isLocked": false,
@@ -298,7 +320,7 @@
       {
         "isLocked": false,
         "direction": "South",
-        "adjacentRoom": "Living Room"
+        "adjacentRoom": "LivingRoom"
       },
       {
         "isLocked": false,
@@ -377,9 +399,8 @@
     "exits": [
       {
         "isLocked": true,
-        "direction": "West",
-        "adjacentRoom": "Hookah",
-        "keyId": "6666"
+        "direction": "East",
+        "adjacentRoom": "LivingRoom"
       }
     ]
   },
@@ -392,9 +413,8 @@
     "exits": [
       {
         "isLocked": true,
-        "direction": "West",
-        "adjacentRoom": "A-Hall",
-        "keyId": "6666"
+        "direction": "East",
+        "adjacentRoom": "B-Lobby"
       }
     ]
   }
