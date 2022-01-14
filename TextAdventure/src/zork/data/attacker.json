@@ -47,7 +47,7 @@
         "name": "Yoru",
         "description": "He has blue hair, and he's staring you down.",
         "startingRoom": "Garage",
-        "hp": 75,
+        "hp":75,
         "attack":135
       },
       {
