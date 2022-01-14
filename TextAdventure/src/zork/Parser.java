@@ -87,7 +87,7 @@ public class Parser {
   }
 
   public int isItem(String[] input){
-    ArrayList<String> items = new ArrayList<String>(Arrays.asList("grenade", "operator", "spectre", "odin", "vandal", "health", "pistol", "explosive", "fireball", "marshall", "pistol", "phantom"));
+    ArrayList<String> items = new ArrayList<String>(Arrays.asList("grenade", "operator", "spectre", "odin", "vandal", "health", "pistol", "explosive", "fireball", "marshal", "pistol", "phantom"));
 
     
     for (int i = 0; i < input.length; i++) {
