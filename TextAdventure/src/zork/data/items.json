@@ -42,7 +42,7 @@
         {
           "id": "Marshal",
           "name": "Marshal",
-          "description": "Marshal is a long range gun. It has 200 damage per bullet and 50% accuracy.",
+          "description": "Marshal is a long range sniper. It has 200 damage per bullet and 50% accuracy.",
           "weight": 1000,
           "startingRoom": "Mid",
           "numBullets": 1,
@@ -92,7 +92,7 @@
           "isSpike": false  
         },
         {
-          "id": "Odin1",
+          "id": "Odin",
           "name": "Odin",
           "description": "Odin is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
           "weight": 1050,
@@ -105,14 +105,14 @@
           "isSpike": false  
         },
         {
-          "id": "MachineGun",
-          "name": "Machine Gun",
-          "description": "A machine gun is an average range gun. It has 30 damage per bullet and it has 30% accuracy.",
-          "weight": 1050,
+          "id": "Pistol",
+          "name": "Pistol",
+          "description": "Pistol is a basic handgun. It has 40 damage per bullet and it has 75% accuracy.",
+          "weight": 45,
           "startingRoom": "B-Elbow",
-          "numBullets": 45,
+          "numBullets": 3,
           "damage": 40,
-          "accuracy": 65,
+          "accuracy": 75,
           "isWeapon": true,
           "isHealing": false,
           "isSpike": false 
