@@ -399,9 +399,8 @@
     "exits": [
       {
         "isLocked": true,
-        "direction": "West",
-        "adjacentRoom": "Hookah",
-        "keyId": "6666"
+        "direction": "East",
+        "adjacentRoom": "LivingRoom"
       }
     ]
   },
@@ -414,9 +413,8 @@
     "exits": [
       {
         "isLocked": true,
-        "direction": "West",
-        "adjacentRoom": "A-Hall",
-        "keyId": "6666"
+        "direction": "East",
+        "adjacentRoom": "B-Lobby"
       }
     ]
   }
