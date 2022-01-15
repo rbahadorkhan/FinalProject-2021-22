@@ -188,8 +188,8 @@ public class Game {
     System.out.println();
     System.out.println("Welcome to TextShoot!");
     System.out.println("TextShoot is a interactive shooting game.");
+    System.out.println("You are spawned. There is a bomb in a random room that you have to find and defuse to save humanity.");
     System.out.println("Type 'help' if you need help.");
-    System.out.println();
     System.out.println(currentRoom.longDescription());
   }
 
@@ -263,7 +263,7 @@ public class Game {
   private void display(Command command) {
     String secondWord = command.getSecondWord();
     if(!command.hasSecondWord()){
-      System.out.println("Display what?");
+      System.out.println("Display what? (You can display health, kills, and inventory)");
       System.out.println("Go where?");
       if(in == null){
         in = new Scanner(System.in);
