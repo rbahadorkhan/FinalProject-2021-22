@@ -1,5 +1,5 @@
 package zork;
-
+//java imports
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,10 +22,12 @@ public class Game {
   private int myHealth = 150;
   private Inventory myInventory = new Inventory(2500);
   private int myKills = 0;
+  private final int NEEDED_KILLS = 3;
 
 
   /**
-   * Create the game and initialise its internal map.
+   * Create the game.
+   * Initializes the map, items, and enemies. 
    */
   public Game() {
     try {
@@ -258,11 +260,15 @@ public class Game {
 
   // implementations of user commands:
 
-
-
-
+  /**
+   * 
+   * @param command takes in a command to process.
+   * Uses the parser to determine what is wanting to display
+   * Allows the player to display their kills, health and inventory
+   */
   private void display(Command command) {
     String secondWord = command.getSecondWord();
+  //if there is only one word in the command, it will allow them to enter another word.
     if(!command.hasSecondWord()){
       System.out.println("Display what? (You can display health, kills, and inventory)");
       System.out.println("Go where?");
@@ -272,6 +278,7 @@ public class Game {
       System.out.print("> ");
       secondWord = in.nextLine();
     }
+    //parser returns health as health potion. 
     if(secondWord.indexOf("Health") > -1){
       System.out.println("Your health is: " + myHealth + ".");
     }
