@@ -3,7 +3,7 @@
     {
       "id": "Spawn",
       "name": "Spawn",
-      "description": "You are spawned. There is a bomb that you have to find and defuse to save humanity. Find the bomb, dodge and kill atackers, and save humanity.",
+      "description": "You are in an empty room with sand instead of a floor. The room is in a desert, called Bind.",
       "exits": [
         {
           "isLocked": false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -20,7 +20,7 @@
     {
       "id": "B-Hall",
       "name": "B-Hall",
-      "description": "You are in a long hall that leads towards B-Main. It looks dirty and run down. ",
+      "description": "You are in a long hall, it looks dirty and run down. You hear wind blowing the sand to different directions.",
       "exits": [
         {
           "isLocked": true,
@@ -38,7 +38,7 @@
     {
       "id": "B-Elbow",
       "name": "B-Elbow",
-      "description": "You are in an elbow shaped hall. The hall is covered with dust and sand.",
+      "description": "You are in an elbow shaped hall. The hall is covered with dust, sand and mold, like the rest of the place.",
       "exits": [
         {
           "isLocked": false,
@@ -55,7 +55,7 @@
     {
       "id": "B-Main",
       "name": "B-Main",
-      "description": "You are in a huge site with sand surrounding you. The sun is shining at you and it's boiling hot.",
+      "description": "You are in a huge site with sand surrounding you. The sun is shining at you and it's boiling hot. Which makes sense, you're in a desert.",
       "exits": [
         {
           "isLocked": true,
@@ -83,7 +83,7 @@
     {
     "id": "Garage",
     "name": "Garage",
-    "description": "You are in a room with dark walls surrounding you. You can see a hint of the sun but other than that it's dark. Sand surrounding your feet. ",
+    "description": "You are in a room with dark walls. You can see a hint of the sun but other than that it's dark. You can feel sand in your shoes.",
     "exits": [
       {
         "isLocked": false,
@@ -100,7 +100,7 @@
   {
   "id": "B-Lobby",
   "name": "B-Lobby",
-  "description": "You are in a long hall that leads to the open dessert. There are cacti around you. ",
+  "description": "You are in a long hall that leads to the open desert. Sand and cacti surround you. You can hear water trickling in the distance.",
   "exits": [
     {
       "isLocked": false,
@@ -122,7 +122,7 @@
   {
     "id": "Fountain",
     "name": "Fountain",
-    "description": "You are in a an outdoor area with a huge fountain that stands in the middle. It seems like this is the only water source here.",
+    "description": "You are in a an outdoor area with a huge fountain that stands in the middle. It seems like this is the only water source here. The sound of water running is refreshing.",
     "exits": [
       {
         "isLocked": false,
@@ -144,7 +144,7 @@
   {
     "id": "Sahara",
     "name": "Sahara",
-    "description": "You're in a room with dusty old walls and sand as floor. It's a weird looking place with old paintings on the wall.",
+    "description": "You are in a room with dusty old walls and sand around you. It's a weird looking place with old paintings on the wall. One painting looks like a cactus with a face. Weird.",
     "exits": [
       {
         "isLocked": false,
@@ -166,7 +166,7 @@
   {
     "id": "Cafeteria",
     "name": "Cafeteria",
-    "description": "You're in a room with food and drinks around you. There are tables but it doesn't look very appealing.",
+    "description": "You are in a room with food and drinks around you, they don't look very appealing. You look at them closer and realize they aren't even real.",
     "exits": [
       {
         "isLocked": false,
@@ -188,7 +188,7 @@
   {
     "id": "Hookah",
     "name": "Hookah",
-    "description": "You're in a room that looks like a balcony. The sand covering your feet, and the sun shining into your face.",
+    "description": "You are in a room that looks like a balcony. Huge boxes are in this weird room, but they look dusty and untouched.",
     "exits": [
       {
         "isLocked": false,
@@ -205,7 +205,7 @@
   {
     "id": "Mid",
     "name": "Mid",
-    "description": "You're in a long hall that is covered in sand and cacti. The walls around you have peeling wallpaper, and some mold. Gross really.",
+    "description": "You are in a long hall that is covered in sand and cacti. The walls around you have peeling wallpaper, and some mold. Gross really.",
     "exits": [
       {
         "isLocked": false,
@@ -227,7 +227,7 @@
   {
     "id": "A-Hall",
     "name": "A-Hall",
-    "description": "You're in a room covered with weird paintings. One of them looks like a cactus with a face, weird.",
+    "description": "You are in a room covered with mirros. You can see your reflection. Kinda scary.",
     "exits": [
       {
         "isLocked": false,
@@ -249,7 +249,7 @@
   {
     "id": "Showers",
     "name": "Showers",
-    "description": "You're in an L-shaped room with water trickling down the wall. You can see the mold forming on the walls. This place is kind of moldy.",
+    "description": "You are in an L-shaped room with water trickling down the wall. You can see the mold forming on the walls from the water.",
     "exits": [
       {
         "isLocked": false,
@@ -266,7 +266,7 @@
   {
     "id": "HidingSpot",
     "name": "Hiding Spot",
-    "description": "You are in a room that seems almost hidden. This room is kind of plain with no mold or anything. Intersting.",
+    "description": "You are in a room that seems almost hidden. This room is kind of plain with no mold or anything. It's clean. Intersting.",
     "exits": [
       {
         "isLocked": false,
@@ -288,7 +288,7 @@
   {
     "id": "LivingRoom",
     "name": "Living Room",
-    "description": "You are in a room with a couch and a coffee table. There are some little decorations around the room. Cute decorations, kind of moldy and dirty though.",
+    "description": "You are in a room with a couch and a coffee table. There are some little decorations around the room. Cute decorations, kind of moldy and dusty though.",
     "exits": [
       {
         "isLocked": false,
@@ -332,7 +332,7 @@
   {
     "id": "A-Main",
     "name": "A-Main",
-    "description": "You are in a huge site. It's an open spave with sand surrounding you. The sun is shining on all spots with no shade anywhere.",
+    "description": "You are in a huge site. It's an open space with sand surrounding you. The sun is shining on all spots with no shade anywhere.",
     "exits": [
       {
         "isLocked": false,
@@ -376,7 +376,7 @@
   {
     "id": "Haven",
     "name": "Haven",
-    "description": "You are in a balcony that stares into A-Main. The balcony is covered in steel, and there is some sort of display of something behind you.",
+    "description": "You are in a balcony that stares into A-Main. The balcony is covered in steel, and there is some sort of display of something or someone behind you.",
     "exits": [
       {
         "isLocked": false,

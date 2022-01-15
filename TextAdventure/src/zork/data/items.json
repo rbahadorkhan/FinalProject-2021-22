@@ -68,7 +68,7 @@
         {
           "id": "Ares",
           "name": "Ares",
-          "description": "Ares is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
+          "description": "Ares is a submachine gun, effective at close ranges. It has 30 damage per bullet, and it has 80% accuracy. ",
           "weight": 500,
           "startingRoom":"Showers",
           "numBullets": 15,
@@ -81,7 +81,7 @@
         {
         "id": "Spectre",
           "name": "Spectre",
-          "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet and it has 80% accuracy. ",
+          "description": "Spectre is a submachine gun, effective at close ranges. It has 30 damage per bullet, and it has 80% accuracy. ",
           "weight": 500,
           "startingRoom":"Fountain",
           "numBullets": 15,
@@ -144,8 +144,8 @@
           "isSpike": false 
         },
         {
-          "id": "Spike",
-          "name": "Spike",
+          "id": "Bomb",
+          "name": "Bomb",
           "description": "This is the bomb that you have to find and defuse to save humanity.",
           "weight": 3000,
           "startingRoom": "random",
