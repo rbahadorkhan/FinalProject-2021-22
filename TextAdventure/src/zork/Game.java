@@ -1,5 +1,5 @@
 package zork;
-
+//java imports
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,10 +22,12 @@ public class Game {
   private int myHealth = 150;
   private Inventory myInventory = new Inventory(2500);
   private int myKills = 0;
+  private final int NEEDED_KILLS = 3;
 
 
   /**
-   * Create the game and initialise its internal map.
+   * Create the game.
+   * Initializes the map, items, and enemies. 
    */
   public Game() {
     try {
@@ -188,8 +190,9 @@ public class Game {
     System.out.println();
     System.out.println("Welcome to TextShoot!");
     System.out.println("TextShoot is a interactive shooting game.");
+    System.out.println("You are spawned. There is a bomb in a random room that you have to find and defuse to save humanity.");
+    System.out.println("You need to kill 3 attackers in order to defuse the spike. Hurry up, all of humanity is on the line");
     System.out.println("Type 'help' if you need help.");
-    System.out.println();
     System.out.println(currentRoom.longDescription());
   }
 
@@ -257,13 +260,17 @@ public class Game {
 
   // implementations of user commands:
 
-
-
-
+  /**
+   * 
+   * @param command takes in a command to process.
+   * Uses the parser to determine what is wanting to display
+   * Allows the player to display their kills, health and inventory
+   */
   private void display(Command command) {
     String secondWord = command.getSecondWord();
+  //if there is only one word in the command, it will allow them to enter another word.
     if(!command.hasSecondWord()){
-      System.out.println("Display what?");
+      System.out.println("Display what? (You can display health, kills, and inventory)");
       System.out.println("Go where?");
       if(in == null){
         in = new Scanner(System.in);
@@ -271,6 +278,7 @@ public class Game {
       System.out.print("> ");
       secondWord = in.nextLine();
     }
+    //parser returns health as health potion. 
     if(secondWord.indexOf("Health") > -1){
       System.out.println("Your health is: " + myHealth + ".");
     }
@@ -292,16 +300,16 @@ public class Game {
     }
     Item spike = null;
     for (Item item : currentRoom.getRoomItems()) {
-      if(item.getName().equalsIgnoreCase("spike")){
+      if(item.getName().equalsIgnoreCase("bomb")){
         spike = item;
         break;
       }
     }
     if(spike == null){
-      System.out.println("Spike is not in this room.");
+      System.out.println("The bomb is not in this room.");
       return false;
     }
-    System.out.println("You successfully defused the spike and saved humanity!");
+    System.out.println("You successfully defused the bomb and saved humanity!");
     return true;
     
   }
@@ -460,7 +468,7 @@ public class Game {
       if(newItem.equalsIgnoreCase(potentialItem.getName())){
         item = potentialItem;
         myInventory.addItem(item);
-        if(myInventory.remainingWeight() - item.getWeight()> 0){
+        if(myInventory.remainingWeight() > 0){
           currentRoom.removeItem(item);
           System.out.println("You now have " + item.getName());
           System.out.println(item.getDescription());
