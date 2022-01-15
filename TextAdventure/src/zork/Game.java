@@ -180,7 +180,7 @@ public class Game {
       }
 
     }
-    System.out.println("Thank you for playing. Good bye.");
+    System.out.println("Thank you for playing. Goodbye!");
   }
 
   /**
@@ -189,9 +189,9 @@ public class Game {
   private void printWelcome() {
     System.out.println();
     System.out.println("Welcome to TextShoot!");
-    System.out.println("TextShoot is a interactive shooting game.");
-    System.out.println("You are spawned. There is a bomb in a random room that you have to find and defuse to save humanity.");
-    System.out.println("You need to kill 3 attackers in order to defuse the spike. Hurry up, all of humanity is on the line");
+    System.out.println("TextShoot is an interactive shooting game.");
+    System.out.println("You are spawned. There is a bomb in a random room that you must find and defuse to save humanity.");
+    System.out.println("You need to kill 3 attackers in order to defuse the spike. Hurry up! All of humanity is on the line.");
     System.out.println("Type 'help' if you need help.");
     System.out.println(currentRoom.longDescription());
   }
@@ -228,14 +228,14 @@ public class Game {
       }
       else if(commandWord.equals("inventory")){
         myInventory.printItems();
-        System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+        System.out.println("You can hold " + myInventory.remainingWeight() + " more grams.");
       }
       else if(commandWord.equals("drop")){
         Item item = myInventory.dropItem(command.getSecondWord());
         if(!item.isHealing())
           currentRoom.setItem(item);
         else {
-          System.out.println("Oh no, you dropped the glass potion, you can no longer use it");
+          System.out.println("Oh no, you dropped the glass potion, you can no longer use it.");
           ItemList.remove(item);
         }
       }
@@ -270,7 +270,7 @@ public class Game {
     String secondWord = command.getSecondWord();
   //if there is only one word in the command, it will allow them to enter another word.
     if(!command.hasSecondWord()){
-      System.out.println("Display what? (You can display health, kills, and inventory)");
+      System.out.println("Display what? (You can display health, kills, and inventory).");
       System.out.println("Go where?");
       if(in == null){
         in = new Scanner(System.in);
@@ -287,7 +287,7 @@ public class Game {
     }
     else if(secondWord.equalsIgnoreCase("inventory")){
       myInventory.printItems();
-      System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+      System.out.println("You can hold " + myInventory.remainingWeight() + " more grams.");
     }
   }
 
@@ -354,7 +354,7 @@ public class Game {
    * and a list of the command words.
    */
   private void printHelp() {
-    System.out.println("Hurry Up! The spike is going to explode");
+    System.out.println("Hurry Up! The spike is going to explode.");
     System.out.println("You need " + (3 - myKills) + " more kills to defuse the spike.");
     System.out.println("Your goal is to find the spike and defuse it, be careful you may be attacked.");
     System.out.println();
@@ -384,7 +384,7 @@ public class Game {
     Room nextRoom = currentRoom.nextRoom(direction);
 
     if (nextRoom == null)
-      System.out.println("You cannot go that way");
+      System.out.println("You cannot go that way.");
     else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
@@ -421,32 +421,32 @@ public class Game {
           if(attacker.getHp() < 1){
             currentRoom.removeAttacker();
             //attackerList.remove(attacker);
-            System.out.println("You Killed " + attacker.getName() );
+            System.out.println("You killed " + attacker.getName() + ".");
             myKills++;
-            System.out.println("You now have " + myKills + " kills");
+            System.out.println("You now have " + myKills + " kills.");
           }
           else{
             myHealth -= attacker.getAttack();
-            System.out.println("You did: " + damageDealt + " damage to " + attacker.getName() + "\n" + "They are now on " + attacker.getHp() + " hp" );
-            System.out.println("They did " + attacker.getAttack() + " damage to you." + "\n" + "You are now on " + myHealth + " hp");
+            System.out.println("You did: " + damageDealt + " damage to " + attacker.getName() + "." + "\n" + "They are now on " + attacker.getHp() + " hp." );
+            System.out.println("They did " + attacker.getAttack() + " damage to you." + "\n" + "You are now on " + myHealth + " hp.");
             if(myHealth < 1){
               currentRoom = roomMap.get("Spawn");
-              System.out.println("You died you have been respawned in spawn");
+              System.out.println("You died you have been respawned in spawn.");
               //drop items idk how yet or maybe just die idk
             }
           }
         }
         else{
-          System.out.println("There is no enemy in this room");
+          System.out.println("There is no enemy in this room.");
         }
       }
       else{
-        System.out.println("That item is not a weapon");
+        System.out.println("That item is not a weapon.");
       }
       
   }
   else{
-    System.out.println("You do not have this gun");
+    System.out.println("You do not have this gun.");
   }
 }
 
@@ -470,9 +470,9 @@ public class Game {
         myInventory.addItem(item);
         if(myInventory.remainingWeight() > 0){
           currentRoom.removeItem(item);
-          System.out.println("You now have " + item.getName());
+          System.out.println("You now have " + item.getName() + ".");
           System.out.println(item.getDescription());
-          System.out.println("You can hold " + myInventory.remainingWeight() + " more grams");
+          System.out.println("You can hold " + myInventory.remainingWeight() + " more grams.");
         }
         return;
       }
@@ -486,7 +486,7 @@ public class Game {
     String itemName = command.getSecondWord();
     //if there is no second word, we don't know what to use
     if(!command.hasSecondWord()) {
-      System.out.println("use what?");
+      System.out.println("Use what?");
       if(in == null){
         in = new Scanner(System.in);
       }
@@ -511,7 +511,7 @@ public class Game {
           myHealth += 60;
           myInventory.dropItem("Health Potion");
           ItemList.remove(potentialItem);
-          System.out.println("You have been healed to " + myHealth);
+          System.out.println("You have been healed to " + myHealth + ".");
         }
         else{
           System.out.println("You have too much health to heal.");
@@ -526,7 +526,7 @@ public class Game {
     if(myInventory.inInventory("Health Potion")){
       if(myHealth <= 100){
       myHealth += 60;
-      System.out.println("You have been healed to " + myHealth);
+      System.out.println("You have been healed to " + myHealth + );
       Item healingItem;
       for (Item item : myInventory.getInventory()) {
         if(("Health Potion").equals(item.getName())){
@@ -542,16 +542,16 @@ public class Game {
     }
   }
     else{
-      System.out.println("You do not have any health potions");
+      System.out.println("You do not have any health potions.");
     }
   }
   private void jump(Room currentRoom) {
     ArrayList<Exit> exits = currentRoom.getExits();
-    System.out.println("You jump above the walls and you see the whats in the adjacent rooms");
+    System.out.println("You jump above the walls and you see the what is in the adjacent rooms.");
     for (Exit exit : exits) {
       String direction = exit.getDirection();
       Room nextRoom = currentRoom.nextRoom(direction);
-      System.out.println("To the " + direction + ": " + nextRoom.getDescription() + "\n");
+      System.out.println("To the " + direction + ": " + nextRoom.getDescription() + "." + "\n");
     }
 
   }
