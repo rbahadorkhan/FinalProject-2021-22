@@ -189,6 +189,7 @@ public class Game {
     System.out.println("Welcome to TextShoot!");
     System.out.println("TextShoot is a interactive shooting game.");
     System.out.println("You are spawned. There is a bomb in a random room that you have to find and defuse to save humanity.");
+    System.out.println("You need to kill 3 attackers in order to defuse the spike. Hurry up, all of humanity is on the line");
     System.out.println("Type 'help' if you need help.");
     System.out.println(currentRoom.longDescription());
   }
@@ -292,16 +293,16 @@ public class Game {
     }
     Item spike = null;
     for (Item item : currentRoom.getRoomItems()) {
-      if(item.getName().equalsIgnoreCase("spike")){
+      if(item.getName().equalsIgnoreCase("bomb")){
         spike = item;
         break;
       }
     }
     if(spike == null){
-      System.out.println("Spike is not in this room.");
+      System.out.println("The bomb is not in this room.");
       return false;
     }
-    System.out.println("You successfully defused the spike and saved humanity!");
+    System.out.println("You successfully defused the bomb and saved humanity!");
     return true;
     
   }
