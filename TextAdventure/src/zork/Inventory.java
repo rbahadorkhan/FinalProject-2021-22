@@ -31,7 +31,7 @@ public class Inventory {
      currentWeight += item.getWeight();
      return;
     } 
-    System.out.println("You don't have room in your inventory for this item");
+    System.out.println("You don't have room in your inventory for this item.");
      
   }
 
@@ -49,7 +49,7 @@ public class Inventory {
           }
       }
     }
-    System.out.println("You do not have that item");
+    System.out.println("You do not have that item.");
     return null;
   }
   
