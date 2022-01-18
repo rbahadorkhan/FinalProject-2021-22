@@ -372,23 +372,6 @@
     ]
   },
   {
-    "id": "Haven",
-    "name": "Haven",
-    "description": "You are in a balcony that stares into A-Main. The balcony is covered in steel, and there is some sort of display of something or someone behind you.",
-    "exits": [
-      {
-        "isLocked": false,
-        "direction": "Jump",
-        "adjacentRoom": "A-Main"
-      },
-      {
-        "isLocked": false,
-        "direction": "West",
-        "adjacentRoom": "Spawn"
-      }
-    ]
-  },
-  {
     "id": "Teleporter-A",
     "name": "Teleporter A",
     "isTeleport": true,
