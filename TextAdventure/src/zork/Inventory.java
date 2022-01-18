@@ -76,5 +76,12 @@ public class Inventory {
     public int remainingWeight(){
       return maxWeight-currentWeight;
     }
+  public ArrayList<Item> dropAll () {
+    ArrayList<Item> newRoomItems = new ArrayList<Item>();
+    newRoomItems.addAll(items);
+    items.clear();
+    System.out.println(newRoomItems);
+    return newRoomItems;
+  }
 }
 

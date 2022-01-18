@@ -20,6 +20,7 @@ public class Command {
   //adding all the words, so 2
   commandWords.add(word1);
   commandWords.add(word2);
+  //sets command word and secondword from the parser
   commandWord = word1;
   secondWord = word2;
 }

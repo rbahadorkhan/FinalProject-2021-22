@@ -23,6 +23,7 @@ public class Game {
   private Inventory myInventory = new Inventory(2500);
   private int myKills = 0;
   private final int NEEDED_KILLS = 3;
+  private int livesLeft = 3;
 
 
   /**
@@ -33,12 +34,14 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
+      //gets all items in itemlist and sets them to their starting room
       for(Item item : ItemList){
         String startingRoom = item.getStartingRoom();
         Room room = roomMap.get(startingRoom);
         room.setItem(item);
       }
       initAttacker("src\\zork\\data\\attacker.json");
+      //gets all items in attackerlist and sets them to their starting room
       for (Attacker attacker : attackerList) {
         String startingRoom = attacker.getStartingRoom();
         Room room = roomMap.get(startingRoom);
@@ -46,7 +49,6 @@ public class Game {
       }
       currentRoom = roomMap.get("Spawn"); // use this tp & change spawn
     } catch (Exception e) {
-      currentRoom = roomMap.get("Spawn"); //please remove this later we have many issues because we dont know how to code :))
       e.printStackTrace();
     }
     parser = new Parser();
@@ -69,6 +71,7 @@ public class Game {
       String startingRoom = ((String)((JSONObject)attackerObj).get("startingRoom"));
       int hp = ((Long)((JSONObject)attackerObj).get("hp")).intValue();
       int attack = ((Long)((JSONObject)attackerObj).get("attack")).intValue();;
+      //creates an attacker and adds it to the attackerList
       attackerList.add(new Attacker(attackerId, attackerName, attackerDescription, startingRoom, hp, attack));
 
       }
@@ -90,6 +93,7 @@ public class Game {
      // Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
       int itemWeight = ((Long)((JSONObject)itemObj).get("weight")).intValue();
       String startingRoom = (String)((JSONObject)itemObj).get("startingRoom");
+      //creates a random room by having an array of all the possible rooms for it to start in and picks a random one
       if(startingRoom.equals("random")){
         String[] possibleRooms = {"B-Elbow", "B-Main", "Garage", "B-Lobby", "Fountain", "Sahara", "Hookah", "Mid", "Showers", "HidingSpot", "LivingRoom", "Camps", "A-Main", "A-Elbow", "Haven", "Teleporter-A", "Teleporter-B"};
         int randomRoom = (int)(Math.random()*possibleRooms.length);
@@ -103,9 +107,11 @@ public class Game {
         int numBullets = ((Long)((JSONObject)itemObj).get("numBullets")).intValue();
         int damage = ((Long)((JSONObject)itemObj).get("damage")).intValue();
         int accuracy = ((Long)((JSONObject)itemObj).get("accuracy")).intValue();
+        //adds a new weapon to the itemlist
         ItemList.add(new Weapon(itemWeight, damage, accuracy, numBullets, itemName, startingRoom, isWeapon, isHealing, isSpike, description));
       }
       else{
+        //adds a item to the itemlist
         ItemList.add(new Item(itemWeight, itemName, startingRoom, isWeapon, isHealing, isSpike, description));
       }
 
@@ -191,7 +197,7 @@ public class Game {
     System.out.println("Welcome to TextShoot!");
     System.out.println("TextShoot is an interactive shooting game.");
     System.out.println("You are spawned. There is a bomb in a random room that you must find and defuse to save humanity.");
-    System.out.println("You need to kill 3 attackers in order to defuse the spike. Hurry up! All of humanity is on the line.");
+    System.out.println("You need to kill " +  NEEDED_KILLS + " attackers in order to defuse the spike. Hurry up! All of humanity is on the line.");
     System.out.println("Type 'help' if you need help.");
     System.out.println(currentRoom.longDescription());
   }
@@ -218,7 +224,7 @@ public class Game {
       else
         return true; // signal that we want to quit
     }  else if (commandWord.equals("shoot")) 
-        shoot(command); 
+        return shoot(command); 
       else if(commandWord.equals("take"))
         take(command);
       else if(commandWord.equals("look"))
@@ -292,25 +298,29 @@ public class Game {
   }
 
 
+
   private boolean defuse() {
-    if(myKills < 3){
-      int remainingKills = 3 - myKills;
+    //Checks to see if player has enough kills to defuse the spike. 
+    if(myKills < NEEDED_KILLS){
+      int remainingKills = NEEDED_KILLS - myKills;
       System.out.println("You need to kill " + remainingKills + " more attackers to defuse the spike.");
       return false;
     }
-    Item spike = null;
+    Item bomb = null;
+    //checks to see if the bomb is in the room
     for (Item item : currentRoom.getRoomItems()) {
       if(item.getName().equalsIgnoreCase("bomb")){
-        spike = item;
+        bomb = item;
         break;
       }
     }
-    if(spike == null){
+    //if the bomb is not in the room it exits the method
+    if(bomb == null){
       System.out.println("The bomb is not in this room.");
       return false;
     }
     System.out.println("You successfully defused the bomb and saved humanity!");
-    return true;
+    return true; //returns true indicating the game will end
     
   }
 
@@ -324,18 +334,21 @@ public class Game {
       }
       System.out.print("> ");
       nextRoom = in.nextLine();
+      //if there is only one word in the command, it will allow them to enter another word.
     }
 
-    
+    //checks to see if the current room is a teleport room
     if(!currentRoom.isTeleportRoom()){
       System.out.println("This is not a teleport room.");
       return;
     }
+    //checks to see if you can teleport to where the player inputted 
     if (nextRoom == null){
       System.out.println("You cannot teleport there.");
       return;
     }
     Room possibleRoom = null; 
+    //gets the newroom and puts the player in it
     for (Room room : currentRoom.getTeleportRooms()) {
       if(nextRoom.equalsIgnoreCase(room.getRoomName())){
       currentRoom=room; 
@@ -355,7 +368,7 @@ public class Game {
    */
   private void printHelp() {
     System.out.println("Hurry Up! The spike is going to explode.");
-    System.out.println("You need " + (3 - myKills) + " more kills to defuse the spike.");
+    System.out.println("You need " + (NEEDED_KILLS - myKills) + " more kills to defuse the spike.");
     System.out.println("Your goal is to find the spike and defuse it, be careful you may be attacked.");
     System.out.println();
     System.out.println("Your command words are:");
@@ -391,7 +404,7 @@ public class Game {
     }
   }
 
-  private void shoot(Command command) {
+  private boolean shoot(Command command) {
     String gunName = command.getSecondWord();
 
     if(!command.hasSecondWord())  {
@@ -430,9 +443,18 @@ public class Game {
             System.out.println("You did: " + damageDealt + " damage to " + attacker.getName() + "." + "\n" + "They are now on " + attacker.getHp() + " hp." );
             System.out.println("They did " + attacker.getAttack() + " damage to you." + "\n" + "You are now on " + myHealth + " hp.");
             if(myHealth < 1){
-              currentRoom = roomMap.get("Spawn");
-              System.out.println("You died you have been respawned in spawn.");
-              //drop items idk how yet or maybe just die idk
+              livesLeft--;
+              if(livesLeft > 0){
+                currentRoom.setMultipleItems(myInventory.dropAll());
+                System.out.println("You died and all items have been dropped in " + currentRoom.getRoomName());
+                System.out.println("You have " + livesLeft + " lives left");
+                currentRoom = roomMap.get("Spawn");
+                System.out.println("You died you have been respawned in spawn.");
+              }
+              else{
+                System.out.println("You have no remaining lives and failed to save humanity. Better luck next time!");
+                return true; 
+              }
             }
           }
         }
@@ -448,6 +470,7 @@ public class Game {
   else{
     System.out.println("You do not have this gun.");
   }
+  return false;
 }
 
   private void take(Command command) {

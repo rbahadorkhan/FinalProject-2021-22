@@ -164,6 +164,13 @@ public class Room {
      roomItems.add(item);
   }
 
+  public void setMultipleItems(ArrayList<Item> items){
+    for (Item item : items) {
+      if(item != null)
+      roomItems.add(item);
+    }
+  }
+
   public void removeItem(Item item){
     roomItems.remove(item);
   }
