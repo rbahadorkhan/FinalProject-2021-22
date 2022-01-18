@@ -36,7 +36,7 @@ public class Attacker {
         return attack; 
     }
 
-    //gets a string of the startingroom of this attacker
+    //gets a string of the starting room of this attacker
     public String getStartingRoom() {
         return startingRoom;
     }
