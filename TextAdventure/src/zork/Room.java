@@ -66,6 +66,7 @@ public class Room {
     for (Item item : roomItems) {
       itemString += item.getName() + ", ";
     }
+      itemString = itemString.substring(0, itemString.lastIndexOf(","));
    }
 
     if(hasAttacker()){
@@ -77,6 +78,7 @@ public class Room {
       for (Room teleport : teleportRooms) {
         teleportString += teleport.getRoomName() + ", ";
       } 
+      teleportString = teleportString.substring(0, teleportString.lastIndexOf(","));
     }
 
     return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString + (attackerString.equals("")?"":("\n" + attackerString)) + (teleportString.equals("")?"":("\n" + teleportString));

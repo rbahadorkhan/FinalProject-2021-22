@@ -25,14 +25,14 @@ public class Inventory {
     return currentWeight;
   }
   
-  public void addItem (Item item) {
+  public boolean addItem (Item item) {
     if (item.getWeight() + currentWeight <= maxWeight) {
      items.add(item);
      currentWeight += item.getWeight();
-     return;
+     return true;
     } 
     System.out.println("You don't have room in your inventory for this item.");
-     
+     return false;
   }
 
 
@@ -80,6 +80,7 @@ public class Inventory {
     ArrayList<Item> newRoomItems = new ArrayList<Item>();
     newRoomItems.addAll(items);
     items.clear();
+    System.out.println(newRoomItems);
     return newRoomItems;
   }
 }

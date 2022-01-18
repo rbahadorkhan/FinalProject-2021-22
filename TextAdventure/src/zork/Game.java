@@ -20,7 +20,7 @@ public class Game {
   private Parser parser;
   private Room currentRoom;
   private int myHealth = 150;
-  private Inventory myInventory = new Inventory(2500);
+  private Inventory myInventory = new Inventory(2000);
   private int myKills = 0;
   private final int NEEDED_KILLS = 3;
   private int livesLeft = 3;
@@ -224,6 +224,7 @@ public class Game {
       else
         return true; // signal that we want to quit
     }  else if (commandWord.equals("shoot")) 
+      //shoot will return true or false if you ran out of lives, if you run out of lives it will return true and the game will be over. 
         return shoot(command); 
       else if(commandWord.equals("take"))
         take(command);
@@ -237,7 +238,9 @@ public class Game {
         System.out.println("You can hold " + myInventory.remainingWeight() + " more grams.");
       }
       else if(commandWord.equals("drop")){
+        //takes this item out of inventory
         Item item = myInventory.dropItem(command.getSecondWord());
+        //if it is healing it will remove this item from the list and not add it to the current room
         if(!item.isHealing())
           currentRoom.setItem(item);
         else {
@@ -347,7 +350,6 @@ public class Game {
       System.out.println("You cannot teleport there.");
       return;
     }
-    Room possibleRoom = null; 
     //gets the newroom and puts the player in it
     for (Room room : currentRoom.getTeleportRooms()) {
       if(nextRoom.equalsIgnoreCase(room.getRoomName())){
@@ -404,6 +406,7 @@ public class Game {
     }
   }
 
+  //returns true if player runs out of lives
   private boolean shoot(Command command) {
     String gunName = command.getSecondWord();
 
@@ -413,21 +416,29 @@ public class Game {
       if(in == null){
         in = new Scanner(System.in);
       }
+      //allows the player to input a second word.
       System.out.print("> ");
       gunName = in.nextLine();
     }
 
     Item gun = null;
-
+    //checks to see if the entered gun is in the inventory
     if(myInventory.inInventory(gunName)){
       for (Item item : myInventory.getInventory()) {
         if(gunName.equalsIgnoreCase(item.getName())){
           gun = item;
-          break;
+          break; //exits the loop because the item was already found
         }
       }
+      //checks to see if this item is a weapon
       if(gun.isWeapon()){
+        //gets the damage dealt by this weapon
         int damageDealt = ((Weapon) gun).damageDealt();
+        /**checks to see if the current room has an attacker and then reduces their health by damageDealt
+         * if the attacker does not die, the players health will be reduced by the attackers damage.
+         * If the player health is 0 or less, it will drop all the player's items in their current room and set them to spawn.
+         * If the player ran out of lives, it will return true and end the game.  
+         */
         if(currentRoom.hasAttacker()){
           Attacker attacker = currentRoom.getAttacker();
           attacker.reduceHp(damageDealt);
@@ -473,6 +484,7 @@ public class Game {
   return false;
 }
 
+
   private void take(Command command) {
     String newItem = command.getSecondWord();
     if(!command.hasSecondWord()) {
@@ -480,18 +492,21 @@ public class Game {
       if(in == null){
         in = new Scanner(System.in);
       }
+      //if there is no second word it allows the user to input another word
       System.out.print("> ");
       newItem = in.nextLine();
     }
 
     
     Item item = null; 
-    
+    /**checks to see if this item is in the room
+     * if it is in the room, it will call the add function in the addItem method in the Inventory Class
+     * if the item is successfully added to the inventory it will tell you about the item. 
+     */
     for (Item potentialItem : currentRoom.getRoomItems()) {
       if(newItem.equalsIgnoreCase(potentialItem.getName())){
         item = potentialItem;
-        myInventory.addItem(item);
-        if(myInventory.remainingWeight() > 0){
+        if(myInventory.addItem(item)){
           currentRoom.removeItem(item);
           System.out.println("You now have " + item.getName() + ".");
           System.out.println(item.getDescription());
@@ -504,7 +519,10 @@ public class Game {
     }
 
 
-  
+  /**
+   * the useItem method checks to see if the item used is a weapon or is a health orb.
+   * if it is one of those, it will call those respective methods. 
+   */
   private void useItem(Command command) {
     String itemName = command.getSecondWord();
     //if there is no second word, we don't know what to use
@@ -530,27 +548,19 @@ public class Game {
         shoot(command);
       }
       else if(potentialItem.isHealing()){
-        if(myHealth <= 100){
-          myHealth += 60;
-          myInventory.dropItem("Health Potion");
-          ItemList.remove(potentialItem);
-          System.out.println("You have been healed to " + myHealth + ".");
-        }
-        else{
-          System.out.println("You have too much health to heal.");
-        }
+        heal();
       }
     }else{
       System.out.println("You do not have this item.");
     }
   }
   
+  //Checks to see if you have a health potion. If you are below 100 health it will add 60 health to you and then remove that item
   private void heal() {
     if(myInventory.inInventory("Health Potion")){
       if(myHealth <= 100){
       myHealth += 60;
       System.out.println("You have been healed to " + myHealth + "." );
-      Item healingItem;
       for (Item item : myInventory.getInventory()) {
         if(("Health Potion").equals(item.getName())){
           myInventory.dropItem("Health Potion");
@@ -568,6 +578,8 @@ public class Game {
       System.out.println("You do not have any health potions.");
     }
   }
+
+  //prints out the short descriptions of the adjacent rooms. 
   private void jump(Room currentRoom) {
     ArrayList<Exit> exits = currentRoom.getExits();
     System.out.println("You jump above the walls and you see the what is in the adjacent rooms.");
