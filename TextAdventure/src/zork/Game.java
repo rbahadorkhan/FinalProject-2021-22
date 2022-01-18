@@ -240,6 +240,9 @@ public class Game {
       else if(commandWord.equals("drop")){
         //takes this item out of inventory
         Item item = myInventory.dropItem(command.getSecondWord());
+        if(item == null){
+          return false;
+        }
         //if it is healing it will remove this item from the list and not add it to the current room
         if(!item.isHealing())
           currentRoom.setItem(item);
