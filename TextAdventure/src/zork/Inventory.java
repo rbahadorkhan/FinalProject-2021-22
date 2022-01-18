@@ -80,7 +80,6 @@ public class Inventory {
     ArrayList<Item> newRoomItems = new ArrayList<Item>();
     newRoomItems.addAll(items);
     items.clear();
-    System.out.println(newRoomItems);
     return newRoomItems;
   }
 }
