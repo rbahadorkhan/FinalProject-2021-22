@@ -526,7 +526,7 @@ public class Game {
     if(myInventory.inInventory("Health Potion")){
       if(myHealth <= 100){
       myHealth += 60;
-      System.out.println("You have been healed to " + myHealth + );
+      System.out.println("You have been healed to " + myHealth + "." );
       Item healingItem;
       for (Item item : myInventory.getInventory()) {
         if(("Health Potion").equals(item.getName())){
