@@ -232,7 +232,7 @@
           "name": "Health Potion",
           "description": "This is a healing potion that will give you 60hp, you can only drink it when you are under 100hp",
           "weight": 30,
-          "startingRoom": "Haven",
+          "startingRoom": "Showers",
           "numBullets": 0,
           "damage": 0,
           "accuracy": 0,
