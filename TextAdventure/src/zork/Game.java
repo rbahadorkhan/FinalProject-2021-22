@@ -197,7 +197,7 @@ public class Game {
     System.out.println("Welcome to TextShoot!");
     System.out.println("TextShoot is an interactive shooting game.");
     System.out.println("You are spawned. There is a bomb in a random room that you must find and defuse to save humanity.");
-    System.out.println("You need to kill " +  NEEDED_KILLS + " attackers in order to defuse the spike. Hurry up! All of humanity is on the line.");
+    System.out.println("You need to kill " +  NEEDED_KILLS + " attackers in order to defuse the bomb. Hurry up! All of humanity is on the line.");
     System.out.println("Type 'help' if you need help.");
     System.out.println(currentRoom.longDescription());
   }
@@ -303,10 +303,10 @@ public class Game {
 
 
   private boolean defuse() {
-    //Checks to see if player has enough kills to defuse the spike. 
+    //Checks to see if player has enough kills to defuse the bomb. 
     if(myKills < NEEDED_KILLS){
       int remainingKills = NEEDED_KILLS - myKills;
-      System.out.println("You need to kill " + remainingKills + " more attackers to defuse the spike.");
+      System.out.println("You need to kill " + remainingKills + " more attackers to defuse the bomb.");
       return false;
     }
     Item bomb = null;
@@ -369,9 +369,9 @@ public class Game {
    * and a list of the command words.
    */
   private void printHelp() {
-    System.out.println("Hurry Up! The spike is going to explode.");
-    System.out.println("You need " + (NEEDED_KILLS - myKills) + " more kills to defuse the spike.");
-    System.out.println("Your goal is to find the spike and defuse it, be careful you may be attacked.");
+    System.out.println("Hurry Up! The bomb is going to explode.");
+    System.out.println("You need " + (NEEDED_KILLS - myKills) + " more kills to defuse the bomb.");
+    System.out.println("Your goal is to find the bomb and defuse it, be careful you may be attacked.");
     System.out.println();
     System.out.println("Your command words are:");
     parser.showCommands();
