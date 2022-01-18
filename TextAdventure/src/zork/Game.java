@@ -444,7 +444,7 @@ public class Game {
           attacker.reduceHp(damageDealt);
           if(attacker.getHp() < 1){
             currentRoom.removeAttacker();
-            //attackerList.remove(attacker);
+            attackerList.remove(attacker);
             System.out.println("You killed " + attacker.getName() + ".");
             myKills++;
             System.out.println("You now have " + myKills + " kills.");

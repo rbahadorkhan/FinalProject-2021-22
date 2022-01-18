@@ -8,6 +8,7 @@ public class Parser {
   private CommandWords commands; // holds all valid command words
   private Scanner in;
 
+  //creates new parser
   public Parser() {
     commands = new CommandWords();
     in = new Scanner(System.in);
@@ -22,16 +23,22 @@ public class Parser {
     inputLine = in.nextLine();
     inputLine.toLowerCase();
 
+    //splits the words and adds them to the array words
     words = inputLine.split(" ");
 
     String word1 = words[0];
 
+    //checks to see if there is a command word in words. Sets it to word 1
     for (String s : words) {
       if(commands.isCommand(s)){
         word1 = s;
         break;
       }
     }
+
+    /*if there is more than 1 word it checks to see if any of the other words is a direction, item, something you can display
+     * or teleport room and makes that the second word
+     */ 
 
     if (words.length > 1){
 
@@ -54,7 +61,7 @@ public class Parser {
         word2 = null;
       }
 
-    
+    //creates and returns the commands. 
       if (commands.isCommand(word1))
         return new Command(word1, word2);
       else
@@ -74,6 +81,7 @@ public class Parser {
     commands.showAll();
   }
 
+  //checks to see if there is a direction word in the array
   public int isDirection(String[] input){
     ArrayList<String> directions = new ArrayList<String>(Arrays.asList("north", "east", "south", "west", "northeast", "northwest", "southeast", "southwest"));
 
@@ -86,6 +94,7 @@ public class Parser {
     return -1;
   }
 
+ //checks to see if there is a item word in the array
   public int isItem(String[] input){
     ArrayList<String> items = new ArrayList<String>(Arrays.asList("grenade", "operator", "spectre", "odin", "vandal", "health", "pistol", "explosive", "fireball", "marshal", "pistol", "phantom", "ares"));
 
@@ -99,6 +108,8 @@ public class Parser {
   }
   //see if any of the words in the arraylist are a direction or item or command and delete the rest of it...
 
+
+  //checks to see if there is a teleport room word in the array
   public int isTeleportRoom(String[] input){
     ArrayList<String> teleportRooms = new ArrayList<String>(Arrays.asList("fountain", "hookah", "mid", "garage"));
 
@@ -110,6 +121,7 @@ public class Parser {
     return -1;
   }
 
+  //checks to see if there is a display word in the array
   public int isDisplayable(String[] input){
     ArrayList<String> teleportRooms = new ArrayList<String>(Arrays.asList("kills", "health", "inventory"));
 

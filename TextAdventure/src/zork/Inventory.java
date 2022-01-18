@@ -10,21 +10,24 @@ public class Inventory {
   private int currentWeight;
   
     
-
+//constructor for a new inventory
   public Inventory(int maxWeight) {
     this.items = new ArrayList<Item>();
     this.maxWeight = maxWeight;
     this.currentWeight = 0;
   }
 
+  //returns the maximum weight
   public int getMaxWeight() {
     return maxWeight;
   }
 
+  //returns the amount of weight the player is holding
   public int getCurrentWeight() {
     return currentWeight;
   }
   
+  //adds an item to the inventory
   public boolean addItem (Item item) {
     if (item.getWeight() + currentWeight <= maxWeight) {
      items.add(item);
@@ -36,7 +39,7 @@ public class Inventory {
   }
 
 
-  
+  //drops an item from the inventory
   public Item dropItem (String item){
     if (inInventory(item)) {
       for (int i = 0; i < items.size(); i++) { 
@@ -53,14 +56,17 @@ public class Inventory {
     return null;
   }
   
+  //prints out all the items in the inventory
   public void printItems() {
+    String inventory = "";
     for (Item s: items){
-      System.out.print(s.getName() + ", ");
+      inventory += s.getName() + ", ";
     }
-    System.out.println();    
+      inventory = inventory.substring(0, inventory.lastIndexOf(",")); //removes the last comma
+    System.out.println(inventory);    
   }
 
-  //work on this
+  //checks to see if an item is in the inventory
   public boolean inInventory (String item){
     for (Item i : items) {
       if (i.getName().equalsIgnoreCase(item)){
@@ -70,18 +76,22 @@ public class Inventory {
       return false;
     }
   
+    //returns an the items in the inventory
     public ArrayList<Item> getInventory(){
       return items;
     }
+
+    //returns the remaining weight the player can hold
     public int remainingWeight(){
       return maxWeight-currentWeight;
     }
-  public ArrayList<Item> dropAll () {
-    ArrayList<Item> newRoomItems = new ArrayList<Item>();
-    newRoomItems.addAll(items);
-    items.clear();
-    System.out.println(newRoomItems);
-    return newRoomItems;
-  }
+
+    //drops all the items in the inventory and returns all the items that were previously there
+    public ArrayList<Item> dropAll () {
+      ArrayList<Item> newRoomItems = new ArrayList<Item>();
+      newRoomItems.addAll(items);
+      items.clear();
+      return newRoomItems;
+    }
 }
 
