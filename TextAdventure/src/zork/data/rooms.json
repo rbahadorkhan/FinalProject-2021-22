@@ -14,6 +14,11 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "A-Hall"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "A-Elbow"
         }
       ]
     },
@@ -25,8 +30,7 @@
         {
           "isLocked": true,
           "direction": "West",
-          "adjacentRoom": "Spawn",
-          "keyId": "6666"
+          "adjacentRoom": "Spawn"
         },
         {
           "isLocked": false,
@@ -58,24 +62,18 @@
       "description": "You are in a huge site with sand surrounding you. The sun is shining at you and it's boiling hot. Which makes sense, you're in a desert.",
       "exits": [
         {
-          "isLocked": true,
-          "direction": "North",
-          "adjacentRoom": "B-Hall",
-          "keyId": "6666"
-        },
-        {
           "isLocked": false, 
-          "direction": "West",
+          "direction": "East",
           "adjacentRoom": "B-Elbow"
         },
         {
           "isLocked": false,
-          "direction": "SouthWest",
+          "direction": "Southwest",
           "adjacentRoom": "Garage"
         },
         {
           "isLocked": false, 
-          "direction": "SouthEast",
+          "direction": "Southeast",
           "adjacentRoom":"Hookah"
         }
       ]
@@ -87,7 +85,7 @@
     "exits": [
       {
         "isLocked": false,
-        "direction": "North",
+        "direction": "Northeast",
         "adjacentRoom": "B-Main"
       },
       {
@@ -126,7 +124,7 @@
     "exits": [
       {
         "isLocked": false,
-        "direction": "West",
+        "direction": "Southwest",
         "adjacentRoom": "B-Lobby"
       },
       {
@@ -192,7 +190,7 @@
     "exits": [
       {
         "isLocked": false,
-        "direction": "North",
+        "direction": "Northwest",
         "adjacentRoom": "B-Main"
       },
       {
@@ -227,7 +225,7 @@
   {
     "id": "A-Hall",
     "name": "A-Hall",
-    "description": "You are in a room covered with mirros. You can see your reflection. Kinda scary.",
+    "description": "You are in a room covered with mirrors. You can see your reflection. Kinda scary.",
     "exits": [
       {
         "isLocked": false,
@@ -241,8 +239,13 @@
       },
       {
         "isLocked": false, 
-        "direction": "South", 
+        "direction": "Southwest", 
         "adjacentRoom": "Mid"
+      },
+      {
+        "isLocked": false, 
+        "direction": "East", 
+        "adjacentRoom": "Spawn"
       }
     ]
   }, 
@@ -258,7 +261,7 @@
       },
       {
         "isLocked": false,
-        "direction": "South",
+        "direction": "Southwest",
         "adjacentRoom": "A-Hall"
       }
     ]
@@ -275,7 +278,7 @@
       },
       {
         "isLocked": false,
-        "direction": "South",
+        "direction": "Southeast",
         "adjacentRoom": "A-Hall"
       },
       {
@@ -294,11 +297,6 @@
         "isLocked": false,
         "direction": "South",
         "adjacentRoom": "HidingSpot"
-      },
-      {
-        "isLocked": false,
-        "direction": "East",
-        "adjacentRoom": "A-Main"
       },
       {
         "isLocked": false, 
@@ -351,7 +349,7 @@
       },
       {
         "isLocked": false, 
-        "direction": "North", 
+        "direction": "Northeast", 
         "adjacentRoom": "Showers"
       }
     ]
@@ -368,7 +366,7 @@
       },
       {
         "isLocked": false,
-        "direction": "East",
+        "direction": "Southeast",
         "adjacentRoom": "A-Main"
       }
     ]
