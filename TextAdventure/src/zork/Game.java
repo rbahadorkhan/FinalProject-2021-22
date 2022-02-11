@@ -261,7 +261,7 @@ public class Game {
         heal();
       }
       else if(commandWord.equals("defuse")){
-        defuse();
+        return defuse();
       }
       else if(commandWord.equals("display")){
         display(command);
